@@ -1,18 +1,18 @@
-const sequelize = require("../config/connection");
-const seedUser = require("./userData.js");
-const seedTrip = require("./tripData.js");
-const seedVacation = require("./vacationData.js");
+// const sequelize = require("../config/connection");
+// const seedUser = require("./userData.js");
+// const seedTrip = require("./tripData.js");
+// const seedVacation = require("./vacationData.js");
 
-const seedAll = async () => {
-  await sequelize.sync({ force: true });
+// const seedAll = async () => {
+//   await sequelize.sync({ force: true });
 
-  await seedUser();
+//   await seedUser();
 
-  await seedTrip();
+//   await seedTrip();
 
-  await seedVacation();
+//   await seedVacation();
 
-  process.exit(0);
-};
+//   process.exit(0);
+// };
 
-seedAll();
+// seedAll();
