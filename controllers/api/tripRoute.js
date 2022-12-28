@@ -1,9 +1,11 @@
 const router = require("express").Router();
-const { Trip } = require("../../models");
+const { Trip, User, Vacations } = require("../../models");
 
 router.get("/:id", async (req, res) => {
   try {
-    const tripData = await Trip.findByPk(req.params.id);
+    const tripData = await Trip.findByPk(req.params.id, {
+      include: [{ model: User, through: Vacations, as: "destinations" }],
+    });
     res.status(200).json(tripData);
   } catch (err) {
     res.status(404).json(err);
