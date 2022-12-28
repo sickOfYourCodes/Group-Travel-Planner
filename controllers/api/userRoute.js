@@ -1,8 +1,5 @@
 const router = require("express").Router();
-const { User, Trip, Vacations } = require("../../models");
-const tripRoute = require("./tripRoute.js");
-
-router.use("/trip", tripRoute);
+const { User } = require("../../models");
 
 router.get("/:user_name", async (req, res) => {
   try {
