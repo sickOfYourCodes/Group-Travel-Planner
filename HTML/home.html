@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Travel Planner</title>
+    <meta name="description" content="A group travel planner, so you and your group are all on the same page!" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="reset" href="./assets/css/reset.css" />
+    <link href="https://unpkg.com/tailwindcss@%5E1.0/dist/tailwind.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body class="relative h-full bg-white flex flex-col">
+    <!-- hamburger menu for mobile devices -->
+    <nav id="hamburger-nav" class="">
+        <div class="navbar-mobile">
+            <div class="container nav-container">
+                <input class="checkbox" type="checkbox" name="" id="" />
+                <div class="hamburger-lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+                <div class="logo">
+                    <h1>Travel Planner</h1>
+                </div>
+                <div class="menu-items">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="home.html">Travel Planner</a></li>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar for large viewports -->
+    <nav id="large-navbar"
+        class="flex text-white flex-row justify-between items-center p-2 bg-blue-400 font-semibold h-16">
+        <li class="list-none p-1 hover:opacity-35 hover:bg-blue-300 rounded-md duration-300 ease-out hover:text-black">
+            <a href="./home.html">Travel Planner</a>
+        </li>
+        <ul class="flex flex-row justify-between gap-2 md:gap-8 mr-4">
+            <li class="p-1 hover:opacity-15 hover:bg-blue-300 rounded-md duration-300 ease-out hover:text-black">
+                <a href="faq.html">FAQ</a>
+            </li>
+            <li class="p-1 hover:opacity-35 hover:bg-blue-300 rounded-md duration-300 ease-out hover:text-black">
+                <a href="login.html">Login</a>
+            </li>
+            <li class="p-1 hover:opacity-35 hover:bg-blue-300 rounded-md duration-300 ease-out hover:text-black">
+                <a href="about.html">About Us</a>
+        </ul>
+    </nav>
+    <header id="header" class="relative overflow-hidden bg-white pt-16 pb-32">
+        <div class="relative">
+            <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
+                <div class="mx-auto lg:max-w-none lg:py-16 lg:px-0 max-w-xl px-6 lg:mx-0">
+                    <div>
+                        <div>
+                            <span class="flex rounded-xl bg-blue-400 h-12 w-full items-center justify-center">
+                                <h1 class="font-bold text-2xl md:text-3xl text-center md:text-center">
+                                    Travel Planner
+                                </h1>
+                            </span>
+                        </div>
+                        <div class="mt-6">
+                            <h2 class="text-3xl font-bold tracking-tight text-gray-900">
+                                A group travel planner, so you and your group are all on the same page!
+                            </h2>
+                            </div>
+                        </div>
+                    </div>
+                <div class="sm:mt-16 mt-12 lg:mt-0">
+                    <div class="-mr-48 lg:relative lg:m-0 lg:h-full pl-4 sm:pl-6 md:-mr-16 lg:px-0">
+                        <img class="w-full rounded-xl ring-opacity-5 lg:absolute lg:left-0 lg:h-full shadow-2xl ring-1 ring-black lg:w-auto lg:max-w-none"
+                            src="./assets/images/hero-image.png" alt="Hero Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    <footer id="footer" class="p-4 justify-center h-48 mt-24 flex gap-4 flex-col bg-blue-400">
+        <p class="text-center text-white text-xl font-semibold">
+            &copy; 2023 Travel Planner
+        </p>
+        <ul class="flex flex-row justify-center gap-2">
+            <li id="footer-items"
+                class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md">
+                <a href="#home.html">Travel Planner</a>
+            </li>
+            <li id="footer-items"
+                class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md">
+                <a href="#about.html">About Us</a>
+            </li>
+            <li id="footer-items"
+                class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md">
+                <a href="#faq.html">FAQ</a>
+            </li>
+            <li id="footer-items"
+                class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md">
+                <a href="#login.html">Login</a>
+        </ul>
+    </footer>
+    <script src="./models/index.js" type='module' async defer></script>
+    <script src="./models/trip.js" type="module" async defer></script>
+    <script src="./models/user.js" type='module' async defer></script>
+    <script src="./models/vacations.js" type='module' async defer></script>
+</body>
+
+</html>
