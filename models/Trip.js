@@ -24,8 +24,9 @@ Trip.init(
       allowNull: false,
     },
     companions: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: 1,
     },
     budget: {
       type: DataTypes.INTEGER,

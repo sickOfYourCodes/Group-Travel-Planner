@@ -17,13 +17,16 @@ Vacations.init(
       references: {
         model: "trip",
         key: "id",
+        unique: false,
       },
     },
-    user_id: {
-      type: DataTypes.UUID,
+    user_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
       references: {
         model: "user",
-        key: "id",
+        key: "user_name",
+        unique: false,
       },
     },
   },
