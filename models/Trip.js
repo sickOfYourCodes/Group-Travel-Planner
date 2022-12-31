@@ -23,7 +23,7 @@ Trip.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    companions: {
+    numPeople: {
       type: DataTypes.STRING,
       allowNull: false,
       defaultValue: 1,
