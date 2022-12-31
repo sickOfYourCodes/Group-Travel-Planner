@@ -1,0 +1,19 @@
+
+
+------------------------- ABOUT US ---------------------------------------------
+HELLO ! 
+
+  We are a group of friendly coders who are sick of using excel and imessages to plan group activities. We want to help save some phone batteries and make lives easier by designing this app.  
+  
+  Our product will help friends collaborate on informations on what to do and communicate better when traveling. Data is power, and clear communication on tasks empowers friendships and reserve stemina. Who is going to where and when, what the weather is, and how to put budgets into porportions, and with great gusto we present our appliaction to the world. Explore the world with preparation and confidence! Go you! 
+  
+
+
+TEAM MEMBER's ROLE / SKILLSET: 
+Bryan Wang 
+Eileen Ma - idk what my role. coordinating ?? floating around ?? backend a little and front end a little... 
+Jap ( sorry not sure on spelling didn't want to butcher the rest)
+Kevin Tran 
+
+Core  model : A free to use application for planning out group activities. 
+
