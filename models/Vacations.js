@@ -12,7 +12,7 @@ Vacations.init(
       autoIncrement: true,
     },
     trip_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: "trip",
@@ -32,22 +32,9 @@ Vacations.init(
   },
   {
     sequelize,
-    timestamps: true,
-    freezeTableName: true,
-    underscored: true,
+    timestamps: false,
     modelName: "vacation",
   }
 );
 
 module.exports = Vacations;
-
-// var vacation = {
-//   {
-//     trip_id:1,
-//     user_id:2
-//   },
-//   {
-//     trip_id:1,
-//     user_id:1
-//   }
-// }
