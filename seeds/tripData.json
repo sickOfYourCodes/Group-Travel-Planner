@@ -3,21 +3,21 @@
     "trip_name": "Kardasians Trip",
     "location": "New York City",
     "description": "Trip with friends to see a braodway show",
-    "companions": true,
+    "numPeople": 5,
     "budget": 800
   },
   {
     "trip_name": "Japan Solo Trip",
     "location": "Japan",
     "description": "Solo trip to see the cherry blossoms",
-    "companions": false,
+    "numPeople": 1,
     "budget": 2000
   },
   {
     "trip_name": "Taiwan Trip",
     "location": "Taiwan",
     "description": "A trip to see family.",
-    "companions": true,
+    "numPeople": 1,
     "budget": 2500
   }
 ]
