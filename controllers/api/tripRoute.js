@@ -3,18 +3,23 @@ const { Trip, User, Vacations } = require("../../models");
 
 router.get("/:id", async (req, res) => {
   try {
-    const tripData = await Trip.findByPk(req.params.id, {
-      include: [{ model: User, through: Vacations, as: "destinations" }],
-    });
+    const tripData = await Trip.findByPk(
+      req.params.id
+      // { include: [{ model: User, through: Vacations, as: "travelers" }]}
+    );
+    if (!tripData) {
+      res.status(404).json({ message: "This trip does not exist." });
+      return;
+    }
     res.status(200).json(tripData);
   } catch (err) {
     res.status(404).json(err);
   }
 });
 
-router.put("/", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
-    const tripData = await Trip.create(req.body);
+    const tripData = await Trip.create(req.body, { individualHooks: true });
     res.status(200).json(tripData);
   } catch (err) {
     res.status(500).json(err);
@@ -23,7 +28,7 @@ router.put("/", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
   try {
-    const tripData = await Trip.destroy(req.params.id);
+    const tripData = await Trip.destroy({ where: { id: req.params.id } });
     if (!tripData) {
       res.status(404).json({ message: "Trip not found." });
     }

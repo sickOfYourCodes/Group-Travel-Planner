@@ -1,18 +1,21 @@
-// const sequelize = require("../config/connection");
-// const seedUser = require("./userData.js");
-// const seedTrip = require("./tripData.js");
-// const seedVacation = require("./vacationData.js");
+require("dotenv").config();
 
-// const seedAll = async () => {
-//   await sequelize.sync({ force: true });
+const sequelize = require("../config/connection");
+const { User, Trip, Vacations } = require("../models");
+const userSeedData = require("./userData.json");
+const tripSeedData = require("./tripData.json");
+const vacationSeedData = require("./vacationData.json");
 
-//   await seedUser();
+const seedAll = async () => {
+  await sequelize.sync({ force: true });
 
-//   await seedTrip();
+  await User.bulkCreate(userSeedData, { individualHooks: true });
 
-//   await seedVacation();
+  await Trip.bulkCreate(tripSeedData, { individualHooks: true });
 
-//   process.exit(0);
-// };
+  await Vacations.bulkCreate(vacationSeedData, { individualHooks: true });
 
-// seedAll();
+  process.exit();
+};
+
+seedAll();

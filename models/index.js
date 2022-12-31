@@ -9,7 +9,7 @@ User.belongsToMany(Trip, {
 
 Trip.belongsToMany(User, {
   through: { model: Vacations, unique: false },
-  as: "destinations",
+  as: "travelers",
 });
 
 module.exports = { User, Trip, Vacations };

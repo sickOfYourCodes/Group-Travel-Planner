@@ -1,8 +1,14 @@
 const { Model, DataTypes, Sequelize } = require("sequelize");
 const sequelize = require("../config/connection.js");
 const { v4: uuidv4 } = require("uuid");
+const bcrypt = require("bcrypt");
+const { beforeUpdate } = require("./Vacations.js");
 
-class User extends Model {}
+class User extends Model {
+  checkPassword(password) {
+    return bcrypt.compareSync(password, this.password);
+  }
+}
 
 User.init(
   {
@@ -11,7 +17,6 @@ User.init(
       defaultValue: Sequelize.UUIDV4,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
     },
     first_name: {
       type: DataTypes.STRING,
@@ -40,9 +45,6 @@ User.init(
     password: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [6],
-      },
     },
   },
   {
@@ -50,6 +52,13 @@ User.init(
       async beforeCreate(newUserData) {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
+      },
+      async beforeUpdate(updatedUserData) {
+        updatedUserData.password = await bcrypt.hash(
+          updatedUserData.password,
+          10
+        );
+        return updatedUserData;
       },
     },
     sequelize,
