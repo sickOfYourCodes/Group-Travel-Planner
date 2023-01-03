@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="A group travel planner, so you and your group are all on the same page!" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--style reset links -->
-    <link rel="reset" href="../public/assets/css/reset.css" />
+    <link rel="reset" href="/public/assets/css/reset.css" />
     <!--framework links -->
     <link href="https://unpkg.com/tailwindcss@%5E1.0/dist/tailwind.min.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,42 +16,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!--framework stylesheets -->
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../public/assets/css/style.css" />
-    <title>Travel Planner</title>
+    <!--link for bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css">
+    <link rel="stylesheet" href="/public/assets/css/style.css" />
+    <title>Group Travel Planner</title>
 </head>
-<nav class="navbar navbar-expand-custom navbar-mainbg">
-    <a class="navbar-brand navbar-logo" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <i class="fas fa-bars text-white"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-            <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
-            <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0);"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="javascript:void(0);"><i class="far fa-address-book"></i>Address Book</a>
-            </li>
-    
-            <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0);"><i class="far fa-calendar-alt"></i>Calendar</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0);"><i class="far fa-clone"></i>FAQs</a>
-            </li>
-            <!-- <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0);"><i class="far fa-chart-bar"></i>Charts</a>
-            </li> -->
-            <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0);"><i class="far fa-copy"></i>About Us</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-<!-- <body class="relative h-full bg-white flex flex-col">
-    <!-- hamburger menu for mobile devices -->
-    <!-- <nav id="hamburger-nav" class="">
+
+<body class="relative h-full bg-white flex flex-col">
+     <nav id="hamburger-nav" class="">
         <div class="navbar-mobile">
             <div class="container nav-container">
                 <input class="checkbox" type="checkbox" name="" id="" />
@@ -59,20 +34,24 @@
                     <span class="line line2"></span>
                     <span class="line line3"></span>
                 </div>
-                <div class="logo">
+                <!-- <div class="logo">
                     <h1>Travel Planner</h1>
-                </div>
-                <div class="menu-items">
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="home.html">Travel Planner</a></li>
-                </div>
+                </div> -->
+                <div class="wrapper">
+  <nav class="tabs">
+    <div class="selector"></div>
+    <a href="#home.html" class="active"><i class="fa-solid fa-house"></i>Home</a>
+    <a href="#about.html"><i class="fas fa-hand-rock"></i>About Us</a>
+    <a href="#faq.html"><i class="fas fa-bolt"></i>FAQ</a>
+    <a href="#login.html"><i class="fa-thin fa-user">Log In</i></a>
+  </nav>
+</div> 
             </div>
         </div>
-    </nav> --> -->
-    <!-- navbar for large viewports
-    <nav id="large-navbar"
+    </nav> 
+    
+    <!-- navbar for large viewports -->
+    <!-- <nav id="large-navbar"
         class="flex text-white flex-row justify-between items-center p-2 bg-blue-400 font-semibold h-16">
         <li class="list-none p-1 hover:opacity-35 hover:bg-blue-300 rounded-md duration-300 ease-out hover:text-black">
             <a href="./home.html">Travel Planner</a>
@@ -87,8 +66,8 @@
             <li class="p-1 hover:opacity-35 hover:bg-blue-300 rounded-md duration-300 ease-out hover:text-black">
                 <a href="about.html">About Us</a>
         </ul>
-    </nav> -->
-    <header id="header" class="relative overflow-hidden bg-white pt-16 pb-32">
+    </nav>  -->
+<!-- <header id="header" class="relative overflow-hidden bg-white pt-16 pb-32">
         <div class="relative">
             <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
                 <div class="mx-auto lg:max-w-none lg:py-16 lg:px-0 max-w-xl px-6 lg:mx-0">
@@ -114,34 +93,43 @@
                     </div>
                 </div>
             </div>
-        </div>
-    <footer id="footer" class="p-4 justify-center h-48 mt-24 flex gap-4 flex-col bg-blue-400">
-        <p class="text-center text-white text-xl font-semibold">
-            &copy; 2023 Travel Planner
-        </p>
-        <ul class="flex flex-row justify-center gap-2">
-            <li id="Travel-Planner"
-                class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md footer-items">
-                <a href="#home.html">Travel Planner</a>
-            </li>
-            <li id="About-Us"
-                class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md footer-items">
-                <a href="#about.html">About Us</a>
-            </li>
-            <li id="FAQ"
-                class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md footer-items">
-                <a href="#faq.html">FAQ</a>
-            </li>
-            <li id="Login"
-                class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md footer-items">
-                <a href="#login.html">Login</a>
-        </ul>
-    </footer>
-    <script src="./models/index.js" type='module' async defer></script>
-    <script src="./models/trip.js" type="module" async defer></script>
-    <script src="./models/user.js" type='module' async defer></script>
-    <script src="./models/vacations.js" type='module' async defer></script>
-    <script src="/public/assets/js/navbar.js"></script>
+        </div> -->
+
+
+
+
+
+<!-- footer section -->
+<footer id="footer" class="p-4 justify-center h-48 mt-24 flex gap-4 flex-col bg-blue-400">
+    <p class="text-center text-white text-xl font-semibold">
+        &copy; 2023 Travel Planner
+    </p>
+    <ul class="flex flex-row justify-center gap-2">
+        <li id="Travel-Planner"
+            class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md footer-items">
+            <a href="#home.html">Travel Planner</a>
+        </li>
+        <li id="About-Us"
+            class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md footer-items">
+            <a href="#about.html">About Us</a>
+        </li>
+        <li id="FAQ"
+            class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md footer-items">
+            <a href="#faq.html">FAQ</a>
+        </li>
+        <li id="Login"
+            class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md footer-items">
+            <a href="#login.html">Login</a>
+    </ul>
+</footer>
+<!-- <script src="./models/index.js" type='module' async defer></script>
+<script src="./models/trip.js" type="module" async defer></script>
+<script src="./models/user.js" type='module' async defer></script>
+<script src="./models/vacations.js" type='module' async defer></script>
+<!--links for navbar scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/public/assets/js/navbar.js"></script> 
+
 </body>
 
 </html>
