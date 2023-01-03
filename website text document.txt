@@ -10,9 +10,9 @@ HELLO !
 
 
 TEAM MEMBER's ROLE / SKILLSET: 
-Bryan Wang 
+Brian Wang 
 Eileen Ma - idk what my role. coordinating ?? floating around ?? backend a little and front end a little... 
-Jap ( sorry not sure on spelling didn't want to butcher the rest)
+Japbir Chhina - HTML pages and a bit of styling
 Kevin Tran 
 
 Core  model : A free to use application for planning out group activities. 
