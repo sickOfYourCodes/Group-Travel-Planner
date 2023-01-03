@@ -58,9 +58,12 @@ Database used: MYSQL
 TODO: EDIT /// ADD GIF //////////////->>>>>>>> HERE 
 ## Tutorial
 
-## Contributing 
+## Contributors  
 
-This application is designed as a free resource for any professional. No contributions necessary 
+Eileen Ma
+Japbir Chhina
+Brian Wang
+Kevin Tran
 
 ## License 
 MIT license 
