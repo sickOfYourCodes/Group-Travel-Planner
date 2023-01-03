@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const { Vacations } = require("../../models");
+const withAuth = require("../../utils/auth.js");
 
-router.get("/user/:user_name", async (req, res) => {
+router.get("/user/:user_name", withAuth, async (req, res) => {
   try {
     const vacationData = await Vacations.findAll({
       where: { user_name: req.params.user_name },
@@ -18,7 +19,7 @@ router.get("/user/:user_name", async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", withAuth, async (req, res) => {
   try {
     const vacationData = await Vacations.findByPk(req.params.id);
     if (!vacationData) {
@@ -31,7 +32,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   try {
     const vacationData = await Vacations.create(req.body);
     res.status(200).json(vacationData);
@@ -40,7 +41,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", withAuth, async (req, res) => {
   try {
     const vacationData = await Vacations.destroy({
       where: { id: req.params.id },

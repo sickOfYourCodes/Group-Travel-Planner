@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const { Trip, User, Vacations } = require("../../models");
+const withAuth = require("../../utils/auth.js");
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", withAuth, async (req, res) => {
   try {
     const tripData = await Trip.findByPk(
       req.params.id
@@ -17,7 +18,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   try {
     const tripData = await Trip.create(req.body, { individualHooks: true });
     res.status(200).json(tripData);
@@ -26,7 +27,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", withAuth, async (req, res) => {
   try {
     const updatedTripData = await Trip.update(req.body, {
       where: { id: req.params.id },
@@ -41,7 +42,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", withAuth, async (req, res) => {
   try {
     const tripData = await Trip.destroy({ where: { id: req.params.id } });
     if (!tripData) {

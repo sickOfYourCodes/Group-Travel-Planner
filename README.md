@@ -6,15 +6,15 @@
 ## Table of Content 
 - [Group-Travel-Planner](#group-travel-planner)
 - [Group Travel Planner](#group-travel-planner-1)
-  - [Table of Content](#table-of-content)
-  - [Description](#description)
-  - [Usage](#usage)
-  - [Screenshot](#screenshot)
-  - [Development](#development)
-  - [Tutorial](#tutorial)
-  - [Contributing](#contributing)
-  - [License](#license)
-  - [Badges](#badges)
+- [Table of Content](#table-of-content)
+- [Description](#description)
+- [Usage](#usage)
+- [Screenshot](#screenshot)
+- [Development](#development)
+- [Tutorial](#tutorial)
+- [Contributing](#contributing)
+- [License](#license)
+- [Badges](#badges)
 ## Description
 This application is used for anyone to plan out group trips and hopes to provide users accessibility. The features included in this application are a calender with participant names, projected weather at designated locations, and budgeting amenities. This application is unique in its features. The motivations behind its design due to the lack of a usable application with similar features. 
 
