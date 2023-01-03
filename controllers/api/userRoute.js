@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const { User, Trip, Vacations } = require("../../models");
+const withAuth = require("../../utils/auth.js");
 
-router.get("/:user_name", async (req, res) => {
+router.get("/:user_name", withAuth, async (req, res) => {
   try {
     const userData = await User.findOne({
       where: { user_name: req.params.user_name },
@@ -37,7 +38,9 @@ router.post("/login", async (req, res) => {
         .json({ message: "No user with that username was found." });
       return;
     }
-    const validPassword = await userLogin.checkPassword(req.body.password);
+    const validPassword = await userLogin.checkPassword(req.body.password, {
+      individualHooks: true,
+    });
     if (!validPassword) {
       res
         .status(400)
@@ -50,7 +53,7 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.put("/:user_name", async (req, res) => {
+router.put("/:user_name", withAuth, async (req, res) => {
   try {
     const updatedUserData = await User.update(req.body, {
       where: { user_name: req.params.user_name },
@@ -66,7 +69,7 @@ router.put("/:user_name", async (req, res) => {
   }
 });
 
-router.delete("/:user_name", async (req, res) => {
+router.delete("/:user_name", withAuth, async (req, res) => {
   try {
     const userData = await User.destroy({
       where: { user_name: req.params.user_name },

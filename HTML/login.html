@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Login Page</title>
-   </head>
-   <body>
-      <!-- Begin Page Content -->
-      <div id="container">
-         <form action="login_process.php" method="post">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password">
-            <div id="lower">
-               <input type="checkbox"><label class="check" for="checkbox">Keep me logged in</label>
-               <input type="submit" value="Login" id="login">
-            </div>
-            <!--/ lower-->
-         </form>
-      </div>
-      <!--/ container-->
-      <!-- End Page Content -->
-   </body>
+<head>
+   <meta charset="utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="description" content="A group travel planner, so you and your group are all on the same page!" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <link rel="reset" href="../public/assets/css/reset.css" />
+   <link rel="stylesheet" href="../public/assets/css/login.css">
+   <title>Login Page</title>
+</head>
+<body>
+   <!-- Begin Page Content -->
+   <div id="container">
+      <form>
+         <label for="username">Username:</label>
+         <input type="text" id="username" name="username">
+         <label for="password">Password:</label>
+         <input type="password" id="password" name="password">
+         <div id="lower">
+            <input type="submit" value="Login" id="login"></input>
+         </div>
+         <!--/ lower-->
+      </form>
+   </div>
+   <!--/ container-->
+   <!-- End Page Content -->
+   <script src="../public/assets/js/login.js"></script>
+</body>
 </html>
