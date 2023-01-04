@@ -18,4 +18,5 @@ $(".tabs").on("click","a",function(e){
     "left":itemPos.left + "px", 
     "width": activeWidth + "px"
   });
+  console.log(e)
 });
