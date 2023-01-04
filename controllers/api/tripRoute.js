@@ -6,17 +6,16 @@ const withAuth = require("../../utils/auth.js");
 
 router.get("/:id", withAuth, async (req, res) => {
   try {
-    const tripData = await Trip.findByPk(
-      req.params.id
-      // { include: [{ model: User, through: Vacations, as: "travelers" }]}
-    );
+    const tripData = await Trip.findByPk(req.params.id, {
+      include: [{ model: User, through: Vacations }],
+    });
     if (!tripData) {
       res.status(404).json({ message: "This trip does not exist." });
       return;
     }
     res.status(200).json(tripData);
   } catch (err) {
-    res.status(404).json(err);
+    res.status(500).json(err);
   }
 });
 

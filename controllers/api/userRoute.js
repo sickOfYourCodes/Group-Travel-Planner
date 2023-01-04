@@ -4,11 +4,11 @@ const withAuth = require("../../utils/auth.js");
 
 // When logged in, users will be able to get their information as well as the trips they are going on
 
-router.get("/:user_name", async (req, res) => {
+router.get("/:user_name", withAuth, async (req, res) => {
   try {
     const userData = await User.findOne({
       where: { user_name: req.params.user_name },
-      include: [{ model: Trip, through: Vacations, as: "destinations" }],
+      include: [{ model: Trip, through: Vacations }],
     });
     if (!userData) {
       res.status(404).json({ message: "Unable to find this user." });
@@ -25,6 +25,7 @@ router.get("/:user_name", async (req, res) => {
 router.post("/", async (req, res) => {
   try {
     const userData = await User.create(req.body, { individualHooks: true });
+    req.session.user = userData.user_name;
     res.status(200).json(userData);
   } catch (err) {
     res.status(400).json(err);
@@ -58,10 +59,21 @@ router.post("/login", async (req, res) => {
         return;
       }
       req.session.loggedIn = true;
+      req.session.user = userData.user_name;
       res.status(200).json({ message: "Login successful!" });
     }
   } catch (err) {
     res.status(500).json(err);
+  }
+});
+
+router.post("/logout", (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
   }
 });
 
