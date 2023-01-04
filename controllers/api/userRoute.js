@@ -2,6 +2,8 @@ const router = require("express").Router();
 const { User, Trip, Vacations } = require("../../models");
 const withAuth = require("../../utils/auth.js");
 
+// When logged in, users will be able to get their information as well as the trips they are going on
+
 router.get("/:user_name", async (req, res) => {
   try {
     const userData = await User.findOne({
@@ -18,6 +20,8 @@ router.get("/:user_name", async (req, res) => {
   }
 });
 
+// Users will be able to create an account
+
 router.post("/", async (req, res) => {
   try {
     const userData = await User.create(req.body, { individualHooks: true });
@@ -26,6 +30,8 @@ router.post("/", async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+// This is the login route that checks to see if the username exists and if the password is correct
 
 router.post("/login", async (req, res) => {
   try {
@@ -59,6 +65,8 @@ router.post("/login", async (req, res) => {
   }
 });
 
+// Users will be able to make edits to their account
+
 router.put("/:user_name", withAuth, async (req, res) => {
   try {
     const updatedUserData = await User.update(req.body, {
@@ -74,6 +82,8 @@ router.put("/:user_name", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// Users will be able to delete their account
 
 router.delete("/:user_name", withAuth, async (req, res) => {
   try {

@@ -2,6 +2,8 @@ const router = require("express").Router();
 const { Trip, User, Vacations } = require("../../models");
 const withAuth = require("../../utils/auth.js");
 
+// When logged in, users will be able to see a specific trip's information and should include which users are tied to this trip
+
 router.get("/:id", withAuth, async (req, res) => {
   try {
     const tripData = await Trip.findByPk(
@@ -18,6 +20,8 @@ router.get("/:id", withAuth, async (req, res) => {
   }
 });
 
+// When logged in, users will be able to create a new trip
+
 router.post("/", withAuth, async (req, res) => {
   try {
     const tripData = await Trip.create(req.body, { individualHooks: true });
@@ -26,6 +30,8 @@ router.post("/", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// When logged in, users will be able to edit their trip
 
 router.put("/:id", withAuth, async (req, res) => {
   try {
@@ -41,6 +47,8 @@ router.put("/:id", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// When logged in, users will be able to delete a trip
 
 router.delete("/:id", withAuth, async (req, res) => {
   try {
