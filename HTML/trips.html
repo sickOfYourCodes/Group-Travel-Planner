@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trips</title>
+    <!--link for CSS framework -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!--link for google font  -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+</head>
+
+<body>
+    <!-- Sidebar (hidden by default) -->
+    <nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left"
+        style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
+        <!--TODO: add section for budget-->
+        <a href="#dashboard.html" onclick="w3_close()" class="w3-bar-item w3-button">Calendar</a>
+        <a href="#" onclick="w3_close()" class="w3-bar-item w3-button">How to use</a>
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button">Close</a>
+    </nav>
+
+    <!-- header -->
+    <div class="w3-top">
+        <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+            <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
+            <div class="w3-center w3-padding-16">My Trips</div>
+        </div>
+    </div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+        <div class="w3-row-padding w3-padding-16 w3-center" id="trips">
+            <div class="w3-container w3-blue w3-padding-32">
+                <div class="w3-row">
+                  <div class="w3-container w3-third trip">
+                    <h3 class="w3-bottombar w3-border-green" id="trip_name">Spring Break</h5>
+                    <h4 id="trip_location">New York</h4>
+                    <p id="trip_description">Description</p>
+                    <h6 id="trip_date"> Jan15th </h6>
+                    <h5 id="trip_participants">People</h5>
+                    <h5 id="trip_budget">$$$</h5>
+                  </div>
+                  <div class="w3-container w3-third trip">
+                    <h3 class="w3-bottombar w3-border-green" id="trip_name">Spring Break</h5>
+                    <h4 id="trip_location">New York</h4>
+                    <p id="trip_description">Description</p>
+                    <h6 id="trip_date"> Jan15th </h6>
+                    <h5 id="trip_participants">People</h5>
+                    <h5 id="trip_budget">$$$</h5>
+                  </div>
+                  <div class="w3-container w3-third trip">
+                  <h3 class="w3-bottombar w3-border-green" id="trip_name">Spring Break</h5>
+                  <h4 id="trip_location">New York</h4>
+                  <p id="trip_description">Description</p>
+                  <h6 id="trip_date"> Jan15th </h6>
+                  <h5 id="trip_participants">People</h5>
+                  <h5 id="trip_budget">$$$</h5>
+                </div>
+                </div>
+              </div>
+
+        <!-- Pagination -->
+        <div class="w3-center w3-padding-32">
+            <div class="w3-bar">
+                <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+                <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+                <!-- <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+                <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+                <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+                <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a> -->
+            </div>
+        </div>
+        <!--secton for tags -->
+        <!-- <div class="w3-third w3-serif">
+            <h3>POPULAR TAGS</h3>
+            <p>
+              <span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Dinner</span>
+              <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Salmon</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">France</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Drinks</span>
+              <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Flavors</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Cuisine</span>
+              <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Chicken</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Dressing</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Fried</span>
+              <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Fish</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Duck</span>
+            </p>
+          </div> -->
+
+        <!-- End page content -->
+</div>
+
+
+<script>
+    // Script to open and close sidebar
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+    }
+     
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+    </script>
+</body>
+
+</html>

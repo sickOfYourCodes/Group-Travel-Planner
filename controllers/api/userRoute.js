@@ -43,7 +43,6 @@ router.post("/login", async (req, res) => {
       const userLogin = await User.findOne({
         where: { user_name: req.body.user_name },
       });
-      console.log(userLogin);
       if (!userLogin) {
         res
           .status(404)
@@ -61,7 +60,7 @@ router.post("/login", async (req, res) => {
       }
       req.session.loggedIn = true;
       req.session.user = userData.user_name;
-      res.status(200).json({ message: "Login successful!" });
+      res.status(200).render("dashboard");
     }
   } catch (err) {
     res.status(500).json(err);

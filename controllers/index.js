@@ -19,8 +19,8 @@ router.use("/signup", signupRoute);
 router.use("/faq", faqRoute);
 router.use("/about", aboutRoute);
 
-router.get("*", (req, res) => {
-  window.location.href = "/";
-});
+// router.get("*", (req, res) => {
+//   window.location.href = "/";
+// });
 
 module.exports = router;
