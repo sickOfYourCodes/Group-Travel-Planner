@@ -14,6 +14,7 @@ Trip.init(
     trip_name: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     },
     location: {
       type: DataTypes.STRING,
