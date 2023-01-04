@@ -1,56 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/assets/style.css" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="A group travel planner, so you and your group are all on the same page!" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--style reset links -->
+    <link rel="reset" href="/public/assets/css/reset.css" />
+    <!--framework links -->
+    <link href="https://unpkg.com/tailwindcss@%5E1.0/dist/tailwind.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--font links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!--framework stylesheets -->
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet" />
+    <!--link for bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css">
+    <link rel="stylesheet" href="/public/assets/css/style.css" />
+    <title>Group Travel Planner</title>
 </head>
 
-<body>
-    <!--navigation bar starts here-->
-    <nav id="nav">
-        <ul>
-            <li><a href="#" class="button">Sign Up</a></li>
-            <li><a href="index.html">Home</a></li>
-            <li>
-                <a href="#" class="icon solid fa-angle-down">About us</a>
-                <a href="#" class="icon solid fa-angle-down">Faqs</a>
-                <ul>
-                    <li><a href="generic.html">Contact</a>
-                        <ul>
-                            <li><a href="#">email</a></li>
-                            <li><a href="#">phone</a></li>
-                            <li><a href="#">social</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="contact.html">career</a></li>
-                    <li><a href="elements.html">contribute</a></li>
-                </ul>
-            </li>
-        </ul>
+<body class="relative h-full bg-white flex flex-col">
+
+    <nav id="hamburger-nav" class="navbar">
+        <div class="navbar-mobile">
+            <div class="container nav-container">
+                <input class="checkbox" type="checkbox" name="" id="" />
+                <div class="hamburger-lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+
+                <div class="wrapper">
+                    <nav class="tabs">
+                        <div class="selector"></div>
+                        <a href="#home.html" class="active"><i class="fa-solid fa-house"></i>Home</a>
+                        <a href="#about.html"><i class="fas fa-hand-rock"></i>About Us</a>
+                        <a href="#faq.html"><i class="fas fa-bolt"></i>FAQ</a>
+                        <a href="#login.html"><i class="fa-thin fa-user">Log In</i></a>
+                    </nav>
+
+                    <!-- navbar ends here -->
+                </div>
+            </div>
+        </div>
     </nav>
-    <header>
-        <!--information about our organization-->
-        <section id="banner">
-            <h2>Group Travel Planner</h2>
-            <!--detail of app, can be editted. pls edit LOL  -->
-            <p>
-                Not a calender app, or a planner app; not for socializing or scheduling. It is all of the above.
-            </p>
-            <ul class="actions special">
-                <li><a href="#" class="button primary">Log in</a></li>
-                <li><a href="#" class="button">Learn More</a></li>
-            </ul>
-        </section>
 
-    </header>
-    <main>
 
-        {{{body}}}
-    </main>
-    <!-- render the contents of the sub layout here-->
-    <!--copyright, socialmedia information/contact us link-->
+{{{body}}}
+
+
+
+    <footer id="footer" class="p-4 justify-center h-48 mt-24 flex gap-4 flex-col bg-blue-400">
+        <p class="text-center text-white text-xl font-semibold">
+            &copy; 2023 Travel Planner
+        </p>
+        <ul class="flex flex-row justify-center gap-2">
+            <li id="Travel-Planner"
+                class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md footer-items">
+                <a href="#home.html">Travel Planner</a>
+            </li>
+            <li id="About-Us"
+                class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md footer-items">
+                <a href="#about.html">About Us</a>
+            </li>
+            <li id="FAQ"
+                class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md footer-items">
+                <a href="#faq.html">FAQ</a>
+            </li>
+            <li id="Login"
+                class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md footer-items">
+                <a href="#login.html">Login</a>
+        </ul>
+
+    </footer>
+    <!-- <script src="./models/index.js" type='module' async defer></script>
+<script src="./models/trip.js" type="module" async defer></script>
+<script src="./models/user.js" type='module' async defer></script>
+<script src="./models/vacations.js" type='module' async defer></script>
+<!--links for navbar scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/public/assets/js/navbar.js"></script>
 
 </body>
 
