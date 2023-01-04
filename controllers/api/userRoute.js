@@ -2,11 +2,11 @@ const router = require("express").Router();
 const { User, Trip, Vacations } = require("../../models");
 const withAuth = require("../../utils/auth.js");
 
-router.get("/:user_name", withAuth, async (req, res) => {
+router.get("/:user_name", async (req, res) => {
   try {
     const userData = await User.findOne({
       where: { user_name: req.params.user_name },
-      // include: [{ model: Trip, through: Vacations, as: "destinations" }],
+      include: [{ model: Trip, through: Vacations, as: "destinations" }],
     });
     if (!userData) {
       res.status(404).json({ message: "Unable to find this user." });

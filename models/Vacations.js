@@ -11,7 +11,7 @@ Vacations.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    trip_id: {
+    tripId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -20,12 +20,12 @@ Vacations.init(
         unique: false,
       },
     },
-    user_name: {
+    userId: {
       type: DataTypes.STRING,
       allowNull: false,
       references: {
         model: "user",
-        key: "user_name",
+        key: "id",
         unique: false,
       },
     },
