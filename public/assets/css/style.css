@@ -48,7 +48,8 @@ body{
     box-shadow:0px 5px 20px rgba(0,0,0,0.1);
     display:inline-block;
     border-radius:50px;
-    position:relative;
+    position: relative;
+    top: 0px;
   }
   
   .tabs a{
