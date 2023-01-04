@@ -13,10 +13,10 @@ class User extends Model {
 User.init(
   {
     id: {
-      type: DataTypes.UUID,
-      defaultValue: Sequelize.UUIDV4,
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
+      autoIncrement: true,
     },
     first_name: {
       type: DataTypes.STRING,
@@ -51,6 +51,7 @@ User.init(
     hooks: {
       async beforeCreate(newUserData) {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        newUserData.user_name = await newUserData.user_name.toLowerCase();
         return newUserData;
       },
       async beforeUpdate(updatedUserData) {
@@ -58,6 +59,7 @@ User.init(
           updatedUserData.password,
           10
         );
+        updatedUserData.user_name = await newUserData.user_name.toLowerCase();
         return updatedUserData;
       },
     },

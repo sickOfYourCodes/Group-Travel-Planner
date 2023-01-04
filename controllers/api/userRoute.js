@@ -2,11 +2,13 @@ const router = require("express").Router();
 const { User, Trip, Vacations } = require("../../models");
 const withAuth = require("../../utils/auth.js");
 
-router.get("/:user_name", withAuth, async (req, res) => {
+// When logged in, users will be able to get their information as well as the trips they are going on
+
+router.get("/:user_name", async (req, res) => {
   try {
     const userData = await User.findOne({
       where: { user_name: req.params.user_name },
-      // include: [{ model: Trip, through: Vacations, as: "destinations" }],
+      include: [{ model: Trip, through: Vacations, as: "destinations" }],
     });
     if (!userData) {
       res.status(404).json({ message: "Unable to find this user." });
@@ -18,6 +20,8 @@ router.get("/:user_name", withAuth, async (req, res) => {
   }
 });
 
+// Users will be able to create an account
+
 router.post("/", async (req, res) => {
   try {
     const userData = await User.create(req.body, { individualHooks: true });
@@ -27,31 +31,41 @@ router.post("/", async (req, res) => {
   }
 });
 
+// This is the login route that checks to see if the username exists and if the password is correct
+
 router.post("/login", async (req, res) => {
   try {
-    const userLogin = await User.findOne({
-      where: { user_name: req.body.user_name },
-    });
-    if (!userLogin) {
-      res
-        .status(404)
-        .json({ message: "No user with that username was found." });
-      return;
+    if (req.session.loggedIn) {
+      res.render("dashboard");
+    } else {
+      const userLogin = await User.findOne({
+        where: { user_name: req.body.user_name },
+      });
+      console.log(userLogin);
+      if (!userLogin) {
+        res
+          .status(404)
+          .json({ message: "No user with that username was found." });
+        return;
+      }
+      const validPassword = await userLogin.checkPassword(req.body.password, {
+        individualHooks: true,
+      });
+      if (!validPassword) {
+        res
+          .status(400)
+          .json({ message: "Password was incorrect. Not authorized." });
+        return;
+      }
+      req.session.loggedIn = true;
+      res.status(200).json({ message: "Login successful!" });
     }
-    const validPassword = await userLogin.checkPassword(req.body.password, {
-      individualHooks: true,
-    });
-    if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: "Password was incorrect. Not authorized." });
-      return;
-    }
-    res.status(200).json({ message: "Login successful!" });
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
+// Users will be able to make edits to their account
 
 router.put("/:user_name", withAuth, async (req, res) => {
   try {
@@ -68,6 +82,8 @@ router.put("/:user_name", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// Users will be able to delete their account
 
 router.delete("/:user_name", withAuth, async (req, res) => {
   try {
