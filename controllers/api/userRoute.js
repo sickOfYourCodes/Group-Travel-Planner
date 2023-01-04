@@ -26,6 +26,7 @@ router.post("/", async (req, res) => {
   try {
     const userData = await User.create(req.body, { individualHooks: true });
     req.session.user = userData.user_name;
+    req.session.loggedIn = true;
     res.status(200).json(userData);
   } catch (err) {
     res.status(400).json(err);
