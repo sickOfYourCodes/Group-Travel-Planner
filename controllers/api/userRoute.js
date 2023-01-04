@@ -28,33 +28,32 @@ router.post("/", async (req, res) => {
 });
 
 router.post("/login", async (req, res) => {
-  console.log("hi");
   try {
-    console.log("hi1");
-    const userLogin = await User.findOne({
-      where: { user_name: req.body.user_name },
-    });
-    console.log(userLogin);
-    if (!userLogin) {
-      console.log("hi2");
-      res
-        .status(404)
-        .json({ message: "No user with that username was found." });
-      return;
+    if (req.session.loggedIn) {
+      res.render("dashboard");
+    } else {
+      const userLogin = await User.findOne({
+        where: { user_name: req.body.user_name },
+      });
+      console.log(userLogin);
+      if (!userLogin) {
+        res
+          .status(404)
+          .json({ message: "No user with that username was found." });
+        return;
+      }
+      const validPassword = await userLogin.checkPassword(req.body.password, {
+        individualHooks: true,
+      });
+      if (!validPassword) {
+        res
+          .status(400)
+          .json({ message: "Password was incorrect. Not authorized." });
+        return;
+      }
+      req.session.loggedIn = true;
+      res.status(200).json({ message: "Login successful!" });
     }
-    console.log("hi3");
-    const validPassword = await userLogin.checkPassword(req.body.password, {
-      individualHooks: true,
-    });
-    if (!validPassword) {
-      console.log("hi4");
-      res
-        .status(400)
-        .json({ message: "Password was incorrect. Not authorized." });
-      return;
-    }
-    console.log("hi5");
-    res.status(200).json({ message: "Login successful!" });
   } catch (err) {
     res.status(500).json(err);
   }
