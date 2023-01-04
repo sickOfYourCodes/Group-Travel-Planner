@@ -19,5 +19,19 @@
     "user_name": "panda",
     "email": "panda@gmail.com",
     "password": "password12345"
+  },
+  {
+    "first_name": "Eileen",
+    "last_name": "Ma",
+    "user_name": "Eileen",
+    "email": "eileen@gmail.com",
+    "password": "password12345"
+  },
+  {
+    "first_name": "Brian",
+    "last_name": "Wang",
+    "user_name": "bwang",
+    "email": "brian@gmail.com",
+    "password": "password12345"
   }
 ]

@@ -3,13 +3,13 @@ const Trip = require("./Trip.js");
 const Vacations = require("./Vacations.js");
 
 User.belongsToMany(Trip, {
-  through: { model: Vacations, unique: false },
-  as: "planned_trips",
+  foreignKey: "userId",
+  through: Vacations,
 });
 
 Trip.belongsToMany(User, {
-  through: { model: Vacations, unique: false },
-  as: "travelers",
+  foreignKey: "tripId",
+  through: Vacations,
 });
 
 module.exports = { User, Trip, Vacations };

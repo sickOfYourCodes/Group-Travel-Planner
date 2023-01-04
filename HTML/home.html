@@ -1,31 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="A group travel planner, so you and your group are all on the same page!" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!--style reset links -->
-    <link rel="reset" href="/public/assets/css/reset.css" />
-    <!--framework links -->
-    <link href="https://unpkg.com/tailwindcss@%5E1.0/dist/tailwind.min.css" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!--font links -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!--framework stylesheets -->
-    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet" />
-    <!--link for bootstrap-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="A group travel planner, so you and your group are all on the same page!" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!--style reset links -->
+        <link rel="reset" href="/public/assets/css/reset.css" />
+        <!--framework links -->
+        <link href="https://unpkg.com/tailwindcss@%5E1.0/dist/tailwind.min.css" rel="stylesheet" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!--font links -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <!--framework stylesheets -->
+        <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet" />
+        <!--link for bootstrap-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css">
-    <link rel="stylesheet" href="/public/assets/css/style.css" />
-    <title>Group Travel Planner</title>
-</head>
-
-<body class="relative h-full bg-white flex flex-col">
-     <nav id="hamburger-nav" class="">
+        <link rel="stylesheet" href="/public/assets/css/style.css" />
+        <title>Group Travel Planner</title>
+    </head>
+    
+    <body>
+        <!-- <header id="header" class="relative overflow-hidden bg-white pt-16 pb-32">
+                <div class="relative">
+                    <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
+                        <div class="mx-auto lg:max-w-none lg:py-16 lg:px-0 max-w-xl px-6 lg:mx-0">
+                            <div>
+                                <div>
+                                    <span class="flex rounded-xl bg-blue-400 h-12 w-full items-center justify-center">
+                                        <h1 class="font-bold text-2xl md:text-3xl text-center md:text-center">
+                                            Travel Planner
+                                        </h1>
+                                    </span>
+                                </div>
+                                <div class="mt-6">
+                                    <h2 class="text-3xl font-bold tracking-tight text-gray-900">
+                                        A group travel planner, so you and your group are all on the same page!
+                                    </h2>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="sm:mt-16 mt-12 lg:mt-0">
+                            <div class="-mr-48 lg:relative lg:m-0 lg:h-full pl-4 sm:pl-6 md:-mr-16 lg:px-0">
+                                <img class="w-full rounded-xl ring-opacity-5 lg:absolute lg:left-0 lg:h-full shadow-2xl ring-1 ring-black lg:w-auto lg:max-w-none"
+                                    src="./assets/images/hero-image.png" alt="Hero Image">
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+<!-- navbar ends here -->
+        <nav id="hamburger-nav" class="navbar">
         <div class="navbar-mobile">
             <div class="container nav-container">
                 <input class="checkbox" type="checkbox" name="" id="" />
@@ -45,6 +73,8 @@
     <a href="#faq.html"><i class="fas fa-bolt"></i>FAQ</a>
     <a href="#login.html"><i class="fa-thin fa-user">Log In</i></a>
   </nav>
+
+  <!-- navbar ends here -->
 </div> 
             </div>
         </div>
@@ -67,33 +97,6 @@
                 <a href="about.html">About Us</a>
         </ul>
     </nav>  -->
-<!-- <header id="header" class="relative overflow-hidden bg-white pt-16 pb-32">
-        <div class="relative">
-            <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
-                <div class="mx-auto lg:max-w-none lg:py-16 lg:px-0 max-w-xl px-6 lg:mx-0">
-                    <div>
-                        <div>
-                            <span class="flex rounded-xl bg-blue-400 h-12 w-full items-center justify-center">
-                                <h1 class="font-bold text-2xl md:text-3xl text-center md:text-center">
-                                    Travel Planner
-                                </h1>
-                            </span>
-                        </div>
-                        <div class="mt-6">
-                            <h2 class="text-3xl font-bold tracking-tight text-gray-900">
-                                A group travel planner, so you and your group are all on the same page!
-                            </h2>
-                            </div>
-                        </div>
-                    </div>
-                <div class="sm:mt-16 mt-12 lg:mt-0">
-                    <div class="-mr-48 lg:relative lg:m-0 lg:h-full pl-4 sm:pl-6 md:-mr-16 lg:px-0">
-                        <img class="w-full rounded-xl ring-opacity-5 lg:absolute lg:left-0 lg:h-full shadow-2xl ring-1 ring-black lg:w-auto lg:max-w-none"
-                            src="./assets/images/hero-image.png" alt="Hero Image">
-                    </div>
-                </div>
-            </div>
-        </div> -->
 
 
 
@@ -104,6 +107,21 @@
     <p class="text-center text-white text-xl font-semibold">
         &copy; 2023 Travel Planner
     </p>
+        <div class="inner">
+            <ul class="icons">
+                <!--TODO: link to github-->
+                <li><a href="#" class="icon brands fa-github">
+                    <span class="label">
+                        <i class="fa-brands fa-github"></i>Github</span></a></li>
+                <!--TODO: link to email -->
+                <li><a href="#" class="icon solid fa-envelope"><span class="label">
+                     <i class="fa-solid fa-envelope"></i>Email</span></a></li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; sickOfOurCodes!</li>
+            </ul>
+        </div>
+
     <ul class="flex flex-row justify-center gap-2">
         <li id="Travel-Planner"
             class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md footer-items">
@@ -134,14 +152,3 @@
 
 </html>
 
-
-<!-- 
-// !DOCTYPE html>
-// <html lang="en">
-
-// <head>
-//     <meta charset="UTF-8">
-//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-//     <link rel="stylesheet" href="/public/style.css" />
-// </head>
- -->
