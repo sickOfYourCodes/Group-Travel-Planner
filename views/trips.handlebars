@@ -30,30 +30,16 @@
     <div class="w3-row-padding w3-padding-16 w3-center" id="trips">
       <div class="w3-container w3-blue w3-padding-32">
         <div class="w3-row">
+          {{#each trips as |trip|}}
           <div class="w3-container w3-third trip">
-            <h3 class="w3-bottombar w3-border-green" id="trip_name">Spring Break</h5>
-              <h4 id="trip_location">New York</h4>
-              <p id="trip_description">Description</p>
-              <h6 id="trip_date"> Jan15th </h6>
-              <h5 id="trip_participants">People</h5>
-              <h5 id="trip_budget">$$$</h5>
+            <h3 class="w3-bottombar w3-border-green" id="trip_name">{{trip.trip_name}}</h5>
+              <h4 id="trip_location">{{trip.location}}</h4>
+              <p id="trip_description">{{trip.description}}</p>
+              <h6 id="trip_date"> {{trip.start_date}} - {{trip.end_date}} </h6>
+              <h5 id="trip_participants">{{trip.numPeople}}</h5>
+              <h5 id="trip_budget">{{trip.budget}}</h5>
           </div>
-          <div class="w3-container w3-third trip">
-            <h3 class="w3-bottombar w3-border-green" id="trip_name">Spring Break</h5>
-              <h4 id="trip_location">New York</h4>
-              <p id="trip_description">Description</p>
-              <h6 id="trip_date"> Jan15th </h6>
-              <h5 id="trip_participants">People</h5>
-              <h5 id="trip_budget">$$$</h5>
-          </div>
-          <div class="w3-container w3-third trip">
-            <h3 class="w3-bottombar w3-border-green" id="trip_name">Spring Break</h5>
-              <h4 id="trip_location">New York</h4>
-              <p id="trip_description">Description</p>
-              <h6 id="trip_date"> Jan15th </h6>
-              <h5 id="trip_participants">People</h5>
-              <h5 id="trip_budget">$$$</h5>
-          </div>
+          {{/each}}
         </div>
       </div>
 
