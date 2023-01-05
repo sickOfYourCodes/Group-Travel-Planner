@@ -13,9 +13,9 @@ function getCity(city) {
     history.push(cityName);
   }
   if (
-    document.querySelector(".units").value != "imperial" &&
-    document.querySelector(".units").value != "metric" &&
-    document.querySelector(".units").value != "standard"
+    document.querySelector("#units").value != "imperial" &&
+    document.querySelector("#units").value != "metric" &&
+    document.querySelector("#units").value != "standard"
   ) {
     window.alert(
       "Please pick a type of unit you would like to see information displayed in."

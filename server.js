@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({ helpers });
 
-// Our session 
+// Our session
 
 const sess = {
   secret: "Secret Stuff",
@@ -26,7 +26,7 @@ const sess = {
     maxAge: 1000 * 60 * 60 * 3,
   },
   resave: false,
-  saveUnitialized: false,
+  saveUnitialized: true,
 };
 
 app.use(session(sess));
