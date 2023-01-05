@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast </title>
+
+    <!--links for imported stylesheets -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
+    <!--links for imported stylesheets -->
+    <link rel="stylesheet" href="/public/assets/css/weather.css">
+</head>
+
+<body>
+    <div class="" id="wrapper">
+        <div class="container">
+
+            <!--Header to search for a city -->
+            <div class="card mx-auto mb-3 main-card">
+                <header class="card-header bg-warning">
+                    <!-- close button -->
+                    <button type="button" class="close" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <input type="text" name="city" id="cityInput">
+                    <!--todo, edit the icons to show up -->
+                    <button class="btn" id="searchBtn"><i class="uil uil-search"></i></button>
+                    <!--drop down area for units -->
+                    <select class="form-select" id="units" aria-label="Default select example">
+                        <option selected>select unit</option>
+                        <option value="metric">metric</option>
+                        <option value="imperial">imperial</option>
+                        <option value="standard">standard</option>
+                    </select>
+                    <div class="row container justify-content-center" id="searchHistory"></div>
+                </header>
+                <!-- End of section for searching for a city -->
+
+                <!-- Weather contents after sesarch -->
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-7 text-center">
+                            <!-- display city information and todays date -->
+                            <p class="bg-info" id="cityCard">
+                            <div class="row" id="nameDate">
+                                <h4 class="col-5" id="cityName">City </h4>
+                                <h4 class="col-5" id="cityDate">Date</h4>
+                                <img class="col-2" id="cityPic" src="" alt="">
+                            </div>
+                            <!-- <p>Temp: <span class="degree degreee-active" id="cityTempCur"></span></p>
+                            <p>Wind: <span id="cityWindCur"></span></p>
+                            <p>Humidity: <span id="cityHumCur"></span></p> -->
+                        </div>
+                        <!-- End Weather contents after sesarch -->
+                        <!-- FORECAST -->
+                        <div class="row card-img-bottom ml-0 text-center bg-info" id="forecast">
+                            <div  id="day1Card" class="col forecast-col first-day ">
+
+                                <h4 id="day1"></h4>
+                                <img id="cityPic1" src="" alt="">
+                                <p><i class="uil uil-temperature-minus weather_icon"></i>: <span class="blue-text"
+                                        id="cityTemp1"></span></p>
+                                <p><i class="uil uil-wind weather_icon"></i>: <span class="blue-text" id="cityWind1"></span></p>
+                                <p><i class="uil uil-tear weather_icon"></i>:<span class="blue-text" id="cityHumidity1"></span></p>
+                            </div>
+                            <div id="day2Card" class="col forecast-col">
+                                <h4 id="day1"></h4>
+                                <img id="cityPic1" src="" alt="">
+                                <p><i class="uil uil-temperature-minus weather_icon"></i>: <span class="blue-text"
+                                        id="cityTemp1"></span></p>
+                                <p><i class="uil uil-wind weather_icon"></i>: <span class="blue-text" id="cityWind1"></span></p>
+                                <p><i class="uil uil-tear weather_icon"></i>:<span class="blue-text" id="cityHumidity1"></span></p>
+                            </div>
+                            <div id="day3Card" class="col forecast-col">
+                                <h4 id="day3"></h4>
+                                <img id="cityPic1" src="" alt="">
+                                <p><i class="uil uil-temperature-minus weather_icon"></i>: <span class="blue-text"
+                                        id="cityTemp1"></span></p>
+                                <p><i class="uil uil-wind weather_icon"></i>: <span class="blue-text" id="cityWind1"></span></p>
+                                <p><i class="uil uil-tear weather_icon"></i> <span class="blue-text" id="cityHumidity1"></span></p>
+                            </div>
+                            <div id="day4Card" class="col forecast-col">
+                                <h4 id="day4"></h4>
+                                <img id="cityPic1" src="" alt="">
+                                <p><i class="uil uil-temperature-minus weather_icon"></i>: <span class="blue-text"
+                                        id="cityTemp1"></span></p>
+                                <p><i class="uil uil-wind weather_icon"></i>: <span class="blue-text" id="cityWind1"></span></p>
+                                <p><i class="uil uil-tear weather_icon"></i>:<span class="blue-text" id="cityHumidity1"></span></p>
+                            </div>
+                            <div id="day5Card" class="col forecast-col fifth-day">
+                                <h4 id="day5"></h4>
+                                <img id="cityPic1" src="" alt="">
+                                <p><i class="uil uil-temperature-minus weather_icon"></i>: <span class="blue-text"
+                                        id="cityTemp5"></span></p>
+                                <p><i class="uil uil-wind weather_icon"></i>: <span class="blue-text" id="cityWind5"></span></p>
+                                <p><i class="uil uil-tear weather_icon"></i>:<span class="blue-text" id="cityHumidity5"></span></p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!-- end of wewather content -->
+
+
+        </div>
+    </div>
+
+    <!--script tags -->
+
+</body>
+
+</html>
