@@ -20,9 +20,12 @@
   <!-- Sidebar (hidden by default) -->
   <nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left"
     style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
-    <!--TODO: add section for budget-->
-    <a href="#dashboard.html" onclick="w3_close()" class="w3-bar-item w3-button"><i
-        class="uil uil-calendar-alt"></i></a>
+    <!-- link to dashboard -->
+    <a href="#dashboard.html" onclick="w3_close()" class="w3-bar-item w3-button"><i class="uil uil-calendar-alt"></i>
+      Dashboard</a>
+    <!-- link to budget -->
+    <a href="#dashboard.html" onclick="w3_close()" class="w3-bar-item w3-button"> <i
+        class="uil uil-wallet"></i> Budget</a>
     <!-- add a instruction if we have time -->
     <!-- <a href="#" onclick="w3_close()" class="w3-bar-item w3-button">How to use</a> -->
     <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button"><i class="uil uil-multiply"></i></a>
@@ -47,27 +50,27 @@
           <li class="w3-padding-16">{{trip.description}}</li>
           <li class="w3-padding-16">{{trip.location}}</li>
         </ul>
-                  <!-- <h6 id="trip_date"> {{trip.start_date}} - {{trip.end_date}} </h6>
+        <!-- <h6 id="trip_date"> {{trip.start_date}} - {{trip.end_date}} </h6>
                   <h5 id="trip_participants">{{trip.numPeople}}</h5>
                   <h5 id="trip_budget">{{trip.budget}}</h5> -->
-              </div> 
-              <!-- {{/each}} -->
-          </div>
-        </div>
+      </div>
+      <!-- {{/each}} -->
+    </div>
+  </div>
 
-        <!-- Pagination -->
-        <div class="w3-center w3-padding-32">
-          <div class="w3-bar">
-            <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-            <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-            <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-            <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-            <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-            <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
-          </div>
-        </div>
-        <!--secton for tags -->
-        <!-- <div class="w3-third w3-serif">
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+    </div>
+  </div>
+  <!--secton for tags -->
+  <!-- <div class="w3-third w3-serif">
                 <h3>POPULAR TAGS</h3>
                 <p>
                   <span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Dinner</span>
@@ -78,20 +81,20 @@
                 </p>
               </div> -->
 
-        <!-- End page content -->
-      </div>
+  <!-- End page content -->
+  </div>
 
 
-      <script>
-        // Script to open and close sidebar
-        function w3_open() {
-          document.getElementById("mySidebar").style.display = "block";
-        }
+  <script>
+    // Script to open and close sidebar
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+    }
 
-        function w3_close() {
-          document.getElementById("mySidebar").style.display = "none";
-        }
-      </script>
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+  </script>
 </body>
 
 

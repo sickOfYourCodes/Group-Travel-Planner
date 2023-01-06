@@ -21,6 +21,10 @@ router.use("/faq", faqRoute);
 router.use("/about", aboutRoute);
 router.use("/user-home", userHomeRoute);
 
+// create route for budget. 
+//create route for individual trip 
+
+
 // router.get("*", (req, res) => {
 //   window.location.href = "/";
 // });
