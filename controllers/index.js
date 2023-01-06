@@ -23,6 +23,8 @@ router.use("/user-home", userHomeRoute);
 
 // create route for budget. " Dashboard/budget "
 //create route for individual trip "dashboard/trips/trip "
+// create route for weather "/dashboard/weather"
+// create route for "dashboard/trips/trip/edit-trip"
 
 
 // router.get("*", (req, res) => {

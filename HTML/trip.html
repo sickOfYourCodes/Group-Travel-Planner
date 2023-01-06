@@ -8,12 +8,15 @@
     <title>{{trip.trip_name}}</title>
     <!--imported style sheets-->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
 
 <body>
+
+
     <!-- Image Header -->
     <div class="w3-display-container w3-animate-opacity">
         <img src="/public/assets/images/sunrise-1014712_640.jpg" alt="boat"
@@ -35,24 +38,28 @@
                 <!-- budget, startdate, enddate,search for weather -->
                 <h4>{{trip.location}}</h4>
                 <!-- TODO: insert trip date-->
-                <h5 id="trip_date">Jan 2022 - Mar 2024 </h5>
+                <h5 id="trip_date">{{trip.start_date}} - {{trip.end_date}} </h5>
                 <!--TODO: insert trip budget -->
                 <h6 class="w3-text-light-blue w3-hover-text-blue" id="trip_budget">$$$</h6>
+                <h6 class="w3-text-light-blue w3-hover-text-blue" id="trip_numPeople"> {{trip.numPeople}}</h6>
             </header>
             <div class="w3-container">
-                <!-- TODO: attach link for weather /dashboard/weather --> 
-                <p> Click to search for <a class="w3-text-light-blue" href="weatherForecast.html">weather </a><i
-                        class="uil uil-cloud-sun"></i></p>
+                <p> Click to search for <a class="w3-text-light-blue" href="weatherForecast.html">weather</a>
+                    <i class="uil uil-cloud-sun"></i>
+                </p>
 
             </div>
             <!-- to edit trip detail -->
             <footer class="w3-container w3-dark-grey">
-                <!--TODO: attach route to weather here  -->
-                 <p class="w3-hover-text-white"> <a class="w3-hover" href="/HTML/edit-trip.html"> Edit trip detail</a><p>
+                <p class="w3-hover-text-white"> <a class="w3-hover" href="edit-trip.html"> Edit trip
+                        detail</a>
+                <p>
             </footer>
         </div>
 
     </div>
+
+   
 
     <!-- Participants Container Insert users ??? -->
     <div class="w3-container w3-padding-64 w3-center" id="team">
@@ -77,8 +84,10 @@
                 <img src="" alt="user" style="width:45%" class="w3-circle w3-hover-opacity">
                 <h3>Kai Ringo</h3>
             </div>
-
+            <i class="uil uil-plus-circle add_icon" id="add_new-Participant"></i>
         </div>
+        
+        
     </div>
     <!-- Participants Container Ends here ??? -->
 
