@@ -112,8 +112,8 @@
 	align-items: center;
 	margin-bottom: 24px;
   }
-  .calendar{}
-  
+  /* .calendar{}
+   */
   .calendar__week,
   .calendar__header {
 	display: grid;
