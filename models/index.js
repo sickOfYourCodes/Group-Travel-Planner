@@ -3,9 +3,10 @@ const Trip = require("./Trip.js");
 const Vacations = require("./Vacations.js");
 const Budget = require("./Budget.js");
 const dailyBudget = require("./dailyBudget.js");
+const Activity = require("./Activity.js");
 
 User.belongsToMany(Trip, {
-  foreignKey: "userId",
+  foreignKey: "userName",
   through: Vacations,
 });
 
@@ -30,4 +31,12 @@ dailyBudget.belongsTo(User, {
   foreignKey: "userId",
 });
 
-module.exports = { User, Trip, Vacations, Budget, dailyBudget };
+Activity.belongsTo(Trip, {
+  foreignKey: "tripId",
+});
+
+Activity.belongsTo(User, {
+  foreignKey: "userId",
+});
+
+module.exports = { User, Trip, Vacations, Budget, dailyBudget, Activity };

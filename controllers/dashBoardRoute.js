@@ -22,8 +22,8 @@ router.get("/", withAuth, async (req, res) => {
     // }
     // console.log(curMonthDates);
   };
-  const curMonthDates = monthDates.map((week) => week.get({ plain: true }));
   monthDisplay();
+  const curMonthDates = monthDates.map((week) => week.get({ plain: true }));
   res.status(200).render("dashboard", {
     layout: "user",
     curMonthDates,
