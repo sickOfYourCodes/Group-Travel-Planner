@@ -5,6 +5,7 @@ const { User, Trip, Vacations } = require("../models");
 router.get("/", withAuth, async (req, res) => {
   res.status(200).render("dashboard", {
     layout: "user",
+    user: req.session.user,
   });
 });
 
@@ -17,20 +18,12 @@ router.get("/weather", async (req, res) => {
 router.get("/trips", async (req, res) => {
   try {
     const userData = await User.findOne({
-      where: { user_name: req.session.user },
+      where: { user_name: req.session.user.user_name },
       include: [{ model: Trip, through: Vacations }],
     });
     if (!userData) {
       res.status(404).json({ message: "Unable to find this user." });
       return;
-    }
-    const tripIds = [];
-    for (const i = 0; i < userData.trips; i++) {
-      tripIds.push(userData.trips[i].id);
-    }
-    const tripData = [];
-    for (const i = 0; i < tripIds; i++) {
-      tripData.push(await Trip.findByPk(tripIds[i]));
     }
     const trips = userData.trips.map((trip) => trip.get({ plain: true }));
     res.status(200).render("trips", {
