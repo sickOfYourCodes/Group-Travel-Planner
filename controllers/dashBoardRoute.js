@@ -5,16 +5,33 @@ const Calendar = require("calendar-dates");
 const calendar = new Calendar();
 
 router.get("/", withAuth, async (req, res) => {
-  let curMonth = new Date();
-  const year = today.getFullYear();
-  const month = String(today.getMonth() + 1).padStart(2, "0");
-  curMonth = `(${year}, ${month})`;
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const curMonth = `(${year}, ${month})`;
+  console.log(curMonth);
+  const curMonthDates = [];
   const monthDisplay = async () => {
-    const monthDates = await calendar.getMatrix(curMonth);
+    try {
+      const monthData = await calendar.getMatrix(curMonth);
+      console.log(monthData);
+      const monthDates = monthData.map((week) => week.get({ plain: true }));
+      console.log(monthDates);
+      for (const i = 0; i < monthDates.length; i++) {
+        if (monthDates[i].type.includes("current")) {
+          curMonthDates.push(monthDates[i]);
+        }
+      }
+      console.log(curMonthDates);
+    } catch (err) {
+      console.log(err);
+    }
   };
   res.status(200).render("dashboard", {
     layout: "user",
+    curMonthDates,
     user: req.session.user,
+    loggedIn: req.session.loggedIn,
   });
 });
 

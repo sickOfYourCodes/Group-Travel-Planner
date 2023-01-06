@@ -21,15 +21,11 @@
           <div>fri</div>
           <div>sat</div>
         </div>
-        {{#each dates as |date|}}
+        {{#each curMonthDates as |week|}}
         <div class="calendar__week">
-          <div class="calendar__day day"></div>
-          <div class="calendar__day day"></div>
-          <div class="calendar__day day"></div>
-          <div class="calendar__day day"></div>
-          <div class="calendar__day day"></div>
-          <div class="calendar__day day"></div>
-          <div class="calendar__day day"></div>
+          {{#each week as |day|}}
+          <div class="calendar__day day">{{day.date}}</div>
+          {{/each}}
         </div>
         {{/each}}
       </div>
