@@ -653,7 +653,7 @@ header p {
 #banner input[type="button"]:active,
 #banner .button:active {
     background-color: rgba(255, 255, 255, 0.2);
-} */
+}
 
 /* #banner input[type="submit"].primary,
 #banner input[type="reset"].primary,

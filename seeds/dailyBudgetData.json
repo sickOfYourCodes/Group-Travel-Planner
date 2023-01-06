@@ -1,0 +1,23 @@
+[
+  {
+    "activity_name": "Flight",
+    "budgetCategory_name": "Transportation",
+    "amount": 1000,
+    "tripId": 1,
+    "userId": 1
+  },
+  {
+    "activity_name": "Taxi",
+    "budgetCategory_name": "Transportation",
+    "amount": 10,
+    "tripId": 1,
+    "userId": 1
+  },
+  {
+    "activity_name": "Dinner",
+    "budgetCategory_name": "Food",
+    "amount": 100,
+    "tripId": 1,
+    "userId": 1
+  }
+]

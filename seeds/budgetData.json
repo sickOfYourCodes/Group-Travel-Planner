@@ -1,0 +1,20 @@
+[
+  {
+    "category_name": "Transportation",
+    "amount": 2000,
+    "tripId": 1,
+    "userId": 1
+  },
+  {
+    "category_name": "Food",
+    "amount": 1000,
+    "tripId": 1,
+    "userId": 1
+  },
+  {
+    "category_name": "Living",
+    "amount": 500,
+    "tripId": 1,
+    "userId": 1
+  }
+]

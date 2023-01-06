@@ -1,15 +1,23 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection.js");
 
-class Vacations extends Model {}
+class dailyBudget extends Model {}
 
-Vacations.init(
+dailyBudget.init(
   {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
+    },
+    activity_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    amount: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
     },
     tripId: {
       type: DataTypes.INTEGER,
@@ -29,24 +37,23 @@ Vacations.init(
         unique: false,
       },
     },
-    budget: {
-      type: DataTypes.INTEGER,
+    budgetCategory_name: {
+      type: DataTypes.STRING,
       allowNull: false,
-    },
-    start_date: {
-      type: DataTypes.DATEONLY,
-      allowNull: false,
-    },
-    end_date: {
-      type: DataTypes.DATEONLY,
-      allowNull: false,
+      references: {
+        model: "budget",
+        key: "category_name",
+        unique: false,
+      },
     },
   },
   {
     sequelize,
-    timestamps: false,
-    modelName: "vacation",
+    timestamps: true,
+    freezeTableName: true,
+    underscored: true,
+    modelName: "dailyBudget",
   }
 );
 
-module.exports = Vacations;
+module.exports = dailyBudget;

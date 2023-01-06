@@ -23,9 +23,13 @@
         </div>
         {{#each curMonthDates as |week|}}
         <div class="calendar__week">
-          {{#each week as |day|}}
-          <div class="calendar__day day">{{day.date}}</div>
-          {{/each}}
+          <div class="calendar__day day">{{week.date}}</div>
+          <div class="calendar__day day">{{week.date}}</div>
+          <div class="calendar__day day">{{week.date}}</div>
+          <div class="calendar__day day">{{week.date}}</div>
+          <div class="calendar__day day">{{week.date}}</div>
+          <div class="calendar__day day">{{week.date}}</div>
+          <div class="calendar__day day">{{week.date}}</div>
         </div>
         {{/each}}
       </div>
