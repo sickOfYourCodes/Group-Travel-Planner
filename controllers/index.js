@@ -21,8 +21,8 @@ router.use("/faq", faqRoute);
 router.use("/about", aboutRoute);
 router.use("/user-home", userHomeRoute);
 
-// create route for budget. 
-//create route for individual trip 
+// create route for budget. " Dashboard/budget "
+//create route for individual trip "dashboard/trips/trip "
 
 
 // router.get("*", (req, res) => {
