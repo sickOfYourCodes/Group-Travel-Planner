@@ -38,12 +38,11 @@ router.post("/", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     if (req.session.loggedIn) {
-      res.render("dashboard");
+      res.status(200);
     } else {
       const userLogin = await User.findOne({
         where: { user_name: req.body.user_name },
       });
-      console.log(userLogin);
       if (!userLogin) {
         res
           .status(404)
@@ -59,9 +58,13 @@ router.post("/login", async (req, res) => {
           .json({ message: "Password was incorrect. Not authorized." });
         return;
       }
-      req.session.loggedIn = true;
-      req.session.user = userData.user_name;
-      res.status(200).json({ message: "Login successful!" });
+      const user = userLogin.get({ plain: true });
+      req.session.save(() => {
+        req.session.loggedIn = true;
+        req.session.user = userLogin;
+        res.status(200).json({ message: "You are now logged in." });
+        // .render("dashboard", { user: req.session.user });
+      });
     }
   } catch (err) {
     res.status(500).json(err);

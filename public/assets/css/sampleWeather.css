@@ -1,0 +1,61 @@
+/* .dateCardRow {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* #nameDate {
+  display: flex;
+  justify-content: space-evenly;
+} */
+
+/* body {
+  margin: 0;
+  width: 100%;
+} */
+
+h1 {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/*  .search {
+  margin: auto auto;
+} */
+
+h3 {
+  text-align: center;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+.cityButtons {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#cityCard {
+  padding: 5px;
+}
+
+#forecast {
+  margin-top: 10px;
+}
+
+#forecastCardTitle {
+  margin-bottom: 10px;
+}
+
+#cityInput {
+  margin-bottom: 5px;
+}
+
+#unitText {
+  margin-top: 10px;
+}
+
+#cityPic {
+  height: 50px;
+  width: auto;
+}
