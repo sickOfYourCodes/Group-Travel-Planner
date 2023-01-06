@@ -1,0 +1,24 @@
+<form action="action_page.php" style="border:1px solid #ccc">
+  <div class="container">
+    <h1>Create your trip</h1>
+    <p>Please fill in this form to create a new trip for you and your friends!</p>
+    <hr>
+    <label for="trip-name"><b>Trip Name</b></label>
+    <input type="text" placeholder="Enter Trip Name" name="trip-name" id="tname" required>
+
+    <label for="location"><b>Location</b></label>
+    <input type="text" placeholder="Enter Location" name="location" id="location" required>
+
+    <label for="description"><b>Description</b></label>
+    <input type="text" placeholder="Please describe what the trip is about" name="description" id="description" required>
+
+    <label for="numPeople"><b>Number of People</b></label>
+    <input type="number" placeholder="How many people are going on the trip?" name="numPeople" id="numPeople" required>
+
+
+    <div class="clearfix">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <button type="submit" class="signupbtn">Create</button>
+    </div>
+  </div>
+</form>

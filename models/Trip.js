@@ -29,18 +29,6 @@ Trip.init(
       allowNull: false,
       defaultValue: 1,
     },
-    budget: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    start_date: {
-      type: DataTypes.DATEONLY,
-      allowNull: false,
-    },
-    end_date: {
-      type: DataTypes.DATEONLY,
-      allowNull: false,
-    },
   },
   {
     sequelize,
