@@ -3,28 +3,19 @@
     "trip_name": "Kardasians Trip",
     "location": "New York City",
     "description": "Trip with friends to see a braodway show",
-    "numPeople": 5,
-    "budget": 800,
-    "start_date": "5/20/2023",
-    "end_date": "5/29/2023"
+    "numPeople": 5
   },
   {
     "trip_name": "Japan Solo Trip",
     "location": "Japan",
     "description": "Solo trip to see the cherry blossoms",
-    "numPeople": 1,
-    "budget": 2000,
-    "start_date": "10/1/2023",
-    "end_date": "10/20/2023"
+    "numPeople": 1
   },
   {
     "trip_name": "Taiwan Trip",
     "location": "Taiwan",
     "description": "A trip to see family.",
-    "numPeople": 1,
-    "budget": 2500,
-    "start_date": "11/3/2023",
-    "end_date": "11/20/2023"
+    "numPeople": 1
   }
 ]
 
