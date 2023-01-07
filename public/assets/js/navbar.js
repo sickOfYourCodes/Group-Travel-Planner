@@ -1,21 +1,14 @@
-var tabs = $(".tabs");
-var selector = $(".tabs").find("a").length;
-var selector = $(".tabs").find(".selector");
-var activeItem = tabs.find(".active");
-var activeWidth = activeItem.innerWidth();
-$(".selector").css({
-  left: activeItem.position.left + "px",
-  width: activeWidth + "px",
-});
+var mySidebar = document.getElementById("mySidebar");
 
-$(".tabs").on("click", "a", function (e) {
-  // e.preventDefault();
-  $(".tabs a").removeClass("active");
-  $(this).addClass("active");
-  var activeWidth = $(this).innerWidth();
-  var itemPos = $(this).position();
-  $(".selector").css({
-    left: itemPos.left + "px",
-    width: activeWidth + "px",
-  });
-});
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+} 
