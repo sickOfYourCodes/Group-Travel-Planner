@@ -14,9 +14,11 @@ const createTrip = async function (event) {
     }),
     headers: { "Content-Type": "application/json" },
   })
+  return trip_name
 };
 
-const response1 = await fetch(`/api/trip/tripname/${trip_name}`, {
+const getTripId = async function (tripName) {
+  await fetch(`/api/trip/tripname/${tripName}`, {
   method: "GET",
   headers: { "Content-Type": "application/json" },
 })
@@ -26,10 +28,23 @@ const response1 = await fetch(`/api/trip/tripname/${trip_name}`, {
   .then((data) => {
     console.log(data)
     const id = data.id;
-    if (response.ok) {
-      document.location.replace(`/dashboard/trips/${id}`);
-    } else {
-      alert("Failed to create trip. Please try again.");
-    }
-  });
-document.querySelector(".createbtn").addEventListener("click", createTrip);
+    return id;
+  })
+}
+
+const createVacation = async function (event) {
+  await fetch("/api/vacation", {
+  method: "POST",
+  body: JSON.stringify({
+    tripId: getTripId(createTrip(event)),
+    userId: sessionStorage.getItem("user").id,
+  })
+})  
+  if (response.ok) {
+    document.location.replace("/dashboard/trips/");
+  } else {
+    alert("Failed to create trip. Please try again.");
+  }
+}
+
+document.querySelector(".createbtn").addEventListener("click", createVacation);
