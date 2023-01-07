@@ -24,18 +24,17 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/trip/:num", async (req, res) => {
+router.get("/trip/:id", async (req, res) => {
   try {
-    const userData = await User.findOne({
-      where: { user_name: req.session.user.user_name },
-      include: [{ model: Trip, through: Vacations }],
+    const tripData = await Trip.findOne({
+      where: { id: req.params.id },
+      // include: [{ model: Trip, through: Vacations }],
     });
-    if (!userData) {
-      res.status(404).json({ message: "Unable to find this user." });
+    if (!tripData) {
+      res.status(404).json({ message: "Unable to find this trip." });
       return;
     }
-    const trips = userData.trips.map((trip) => trip.get({ plain: true }));
-    const trip = trips[req.params.num - 1];
+    const trip = tripData.get({ plain: true });
     console.log(trip);
     res.status(200).render("trip", {
       layout: "user",

@@ -23,9 +23,12 @@ router.get("/:id", withAuth, async (req, res) => {
 
 router.post("/", withAuth, async (req, res) => {
   try {
+    console.log("trying")
     const tripData = await Trip.create(req.body, { individualHooks: true });
+    console.log("created")
     res.status(200).json(tripData);
   } catch (err) {
+    console.log("error")
     res.status(500).json(err);
   }
 });
