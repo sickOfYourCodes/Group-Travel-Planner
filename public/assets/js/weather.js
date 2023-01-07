@@ -1,14 +1,14 @@
-var searchBtn = document.querySelector("#searchBtn");
+const searchBtn = document.querySelector("#searchBtn");
 
 // Takes the name of the input and makes two variables, cityName which is the display and cityNameSearch which is what is put into the search
 // Creates an array in localStorage called cities or gets the array cities and pushes in the cityName if it does not exist inside array
 // If the units are not selected, we stop the function and alert the user to pick a valid unit
 
-function getCity(city) {
-  var cityName = city || document.querySelector("#cityInput").value;
-  var cityNameSearch = cityName.toLowerCase();
+const getCity = async () => {
+  const cityName = document.querySelector("#cityInput").value;
+  let cityNameSearch = cityName.toString().toLowerCase();
   cityNameSearch = cityNameSearch.replace(" ", "_");
-  var history = JSON.parse(localStorage.getItem("cities")) || [];
+  const history = JSON.parse(localStorage.getItem("cities")) || [];
   if (!history.includes(cityName)) {
     history.push(cityName);
   }
@@ -24,15 +24,16 @@ function getCity(city) {
   }
   localStorage.setItem("cities", JSON.stringify(history));
   displayHistory();
+  console.log(cityNameSearch)
   findCityInfo(cityNameSearch);
 }
 
 // Allows us to create a button for each previously searched city
 function displayHistory() {
-  var history = JSON.parse(localStorage.getItem("cities")) || [];
+  const history = JSON.parse(localStorage.getItem("cities")) || [];
   document.querySelector("#searchHistory").innerHTML = "";
   for (var i = 0; i < history.length; i++) {
-    var cityEl = document.createElement("button");
+    let cityEl = document.createElement("button");
     cityEl.innerText = history[i];
     cityEl.classList.add(
       "row",
@@ -46,9 +47,9 @@ function displayHistory() {
 
 // Gets geo information from the searched city and passes that into the API to get all weather info
 
-function findCityInfo(cityNameSearch) {
+const findCityInfo = async (cityNameSearch) => {
   var geoAPI = `https://api.openweathermap.org/geo/1.0/direct?q=${cityNameSearch}&appid=1560a07c19638ebfb003c32577cdfee1`;
-  fetch(geoAPI)
+  await fetch(geoAPI)
     .then(function (response) {
       if (response.status != 200) {
         searchBtn.append("<p>Please input a valid city.</p>");
@@ -56,17 +57,15 @@ function findCityInfo(cityNameSearch) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
-      var lat = data[0].lat;
-      var lon = data[0].lon;
-      var units = document.querySelector(".units").value;
-      var curWeatherAPI = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=1560a07c19638ebfb003c32577cdfee1&units=${units}`;
+      const lat = data[0].lat;
+      const lon = data[0].lon;
+      const units = document.querySelector("#units").value;
+      const curWeatherAPI = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=1560a07c19638ebfb003c32577cdfee1&units=${units}`;
       fetch(curWeatherAPI)
         .then(function (response) {
           return response.json();
         })
         .then(function (data) {
-          console.log(data);
           document.querySelector("#cityName").textContent = `${data.name}`;
           document.querySelector(
             "#cityPic"
@@ -101,14 +100,14 @@ function findCityInfo(cityNameSearch) {
             "#cityHumCur"
           ).textContent = `${data.main.humidity} %`;
         });
-      var forecastAPI = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=1560a07c19638ebfb003c32577cdfee1&units=${units}`;
+      const forecastAPI = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=1560a07c19638ebfb003c32577cdfee1&units=${units}`;
       fetch(forecastAPI)
         .then(function (response) {
           return response.json();
         })
         .then(function (data) {
           console.log(data);
-          var curDate = data.list[5].dt_txt;
+          let curDate = data.list[5].dt_txt;
           curDate = curDate.split(" ");
           curDate = curDate[0];
           curDate = curDate.split("-");
@@ -118,20 +117,18 @@ function findCityInfo(cityNameSearch) {
             (parseInt(curDate[2]) - 1).toString() +
             "/" +
             curDate[0];
-          console.log(typeof curDate[2]);
-          console.log(curDate);
           document.querySelector("#cityDate").textContent = `${curDate}`;
           var dayNum = 1;
           for (var i = 5; i < 38; i += 8) {
-            var dayDate = data.list[i].dt_txt;
+            let dayDate = data.list[i].dt_txt;
             dayDate = dayDate.split(" ");
             dayDate = dayDate[0];
             dayDate = dayDate.split("-");
             dayDate = dayDate[1] + "/" + dayDate[2] + "/" + dayDate[0];
             document.querySelector(`#day${dayNum}`).textContent = `${dayDate}`;
-            var dayTemp = data.list[i].main.temp;
-            var dayWind = data.list[i].wind.speed;
-            var dayIcon = data.list[i].weather[0].icon;
+            const dayTemp = data.list[i].main.temp;
+            const dayWind = data.list[i].wind.speed;
+            const dayIcon = data.list[i].weather[0].icon;
             document.querySelector(
               `#cityPic${dayNum}`
             ).src = `https://openweathermap.org/img/wn/${dayIcon}.png`;
@@ -161,7 +158,7 @@ function findCityInfo(cityNameSearch) {
                 ).textContent = `${dayWind} meters/sec`;
                 break;
             }
-            var dayHum = data.list[i].main.humidity;
+            const dayHum = data.list[i].main.humidity;
             document.querySelector(
               `#cityHumidity${dayNum}`
             ).textContent = `${dayHum} %`;
@@ -175,11 +172,11 @@ function findCityInfo(cityNameSearch) {
 
 function prevSearch(event) {
   event.stopPropagation();
-  var prevCityName = event.target.innerText;
+  const prevCityName = event.target.innerText;
   getCity(prevCityName);
 }
 
 displayHistory();
 
-searchBtn.addEventListener("click", () => getCity());
+searchBtn.addEventListener("click", getCity);
 document.querySelector("#searchHistory").addEventListener("click", prevSearch);
