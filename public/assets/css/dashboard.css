@@ -91,7 +91,7 @@
 	  justify-content: flex-start;
 	}
 	.menu__text {
-	  display: inline-block;
+	  display: inline;
 	}
 	.avatar {
 	  flex-direction: column;
