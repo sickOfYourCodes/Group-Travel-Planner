@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { User, Trip, Vacations } = require("../../models");
 const withAuth = require("../../utils/auth.js");
+const sessionStorage = require("express-session")
 
 // When logged in, users will be able to get their information as well as the trips they are going on
 
@@ -59,12 +60,13 @@ router.post("/login", async (req, res) => {
         return;
       }
       const user = userLogin.get({ plain: true });
+      sessionStorage.setItem("user", user);
       req.session.save(() => {
         req.session.loggedIn = true;
         req.session.user = userLogin;
         res.status(200).json({ message: "You are now logged in." });
         // .render("dashboard", { user: req.session.user });
-      });
+      })
     }
   } catch (err) {
     res.status(500).json(err);

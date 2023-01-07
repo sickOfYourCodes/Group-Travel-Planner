@@ -3,10 +3,39 @@ const { Trip, User, Vacations } = require("../../models");
 const withAuth = require("../../utils/auth.js");
 
 // When logged in, users will be able to see a specific trip's information and should include which users are tied to this trip
+router.get("/", withAuth, async (req, res) => {
+  try {
+    const tripsData = await Trip.findAll({
+      include: [{ model: User, through: Vacations }],
+    });
+    if (!tripsData) {
+      res.status(400).json({ message: "Request failed." });
+      return;
+    }
+    res.status(200).json(tripsData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 router.get("/:id", withAuth, async (req, res) => {
   try {
     const tripData = await Trip.findByPk(req.params.id, {
+      include: [{ model: User, through: Vacations }],
+    });
+    if (!tripData) {
+      res.status(404).json({ message: "This trip does not exist." });
+      return;
+    }
+    res.status(200).json(tripData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/tripname/:tripname", withAuth, async (req, res) => {
+  try {
+    const tripData = await Trip.findOne({where: {trip_name: req.params.tripname},
       include: [{ model: User, through: Vacations }],
     });
     if (!tripData) {
