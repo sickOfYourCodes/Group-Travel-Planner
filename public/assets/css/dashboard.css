@@ -91,7 +91,7 @@
 	  justify-content: flex-start;
 	}
 	.menu__text {
-	  display: inline-block;
+	  display: inline;
 	}
 	.avatar {
 	  flex-direction: column;
@@ -172,7 +172,7 @@ sidebar {
 	padding: 16px 16px 16px 14px;
 	border-left: 4px solid transparent;
 	color: inherit;
-	text-decoration: underline;
+	text-decoration: none;
 	transition: color ease 0.3s;
   }
   
