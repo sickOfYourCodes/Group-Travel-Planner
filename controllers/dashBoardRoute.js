@@ -7,9 +7,10 @@ const tripsRoute = require("./userDashboard/trips.js");
 const budgetRoute = require("./userDashboard/budget.js");
 const weatherRoute = require("./userDashboard/weather.js");
 
-router.use("/weather", weatherRoute)
-router.use("/trips", tripsRoute)
-router.use("/budget", budgetRoute)
+router.use("/weather", weatherRoute);
+router.use("/trips", tripsRoute);
+router.use("/budget", budgetRoute);
+
 
 router.get("/", withAuth, async (req, res) => {
   const date = new Date();
@@ -38,6 +39,5 @@ router.get("/", withAuth, async (req, res) => {
     loggedIn: req.session.loggedIn,
   });
 });
-
 
 module.exports = router;
