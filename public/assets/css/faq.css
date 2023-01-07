@@ -5,6 +5,7 @@ body {
 .faq-heading {
     border-bottom: #777;
     padding: 20px 60px;
+    margin: 50px;
 }
 
 .faq-container{
@@ -37,10 +38,10 @@ body {
    padding: auto;
    
 }
-.active,
+/* .active,
 .faq-page:hover {
     background-color: #F9F9F9;
-}
+} */
 
 
 .faq-body {
@@ -58,6 +59,6 @@ body {
     margin-left: 5px;
 }
 
-.active:after {
+/* .active:after {
     content: "\2796";
-}
+} */

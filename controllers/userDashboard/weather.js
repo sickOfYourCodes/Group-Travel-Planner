@@ -1,7 +1,7 @@
 const router = require("express").Router();
 
 router.get("/", async (req, res) => {
-  res.status(200).render("sampleWeather", {
+  res.status(200).render("weather", {
     layout: "user",
   });
 });

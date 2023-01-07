@@ -1,105 +1,142 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="description" content="A group travel planner, so you and your group are all on the same page!" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!--style reset links -->
-  <link rel="reset" href="./assets/css/reset.css" />
-  <!--framework links -->
-  <link href="https://unpkg.com/tailwindcss@%5E1.0/dist/tailwind.min.css" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!--font links -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!--framework stylesheets -->
-  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet" />
-  <!--link for bootstrap-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css">
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="stylesheet" href="./assets/css/dashboard.css" />
-  <title>User Dashboard</title>
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="A group travel planner, so you and your group are all on the same page!"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--style reset links -->
+    <link rel="reset" href="/assets/css/reset.css" />
+    <!--font links -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Raleway%22%3E"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css%22%3E"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
 
-<body>
-  <!--navbar begins here--> 
- <div class="wrapper w3-top">
-    <div class="w3-bar w3-blue" id="myNavbar">
-      <div class="selector w3-right w3-hide-small">
-        <a href="/" class="active w3-bar-item w3-button ">  </i>Home</a>
-        <a href="/about" class="active w3-bar-item w3-button" ><i class="uil uil-users-alt"></i>About</a>
-        <a href="/faq" class="active w3-bar-item w3-button"><i class="uil uil-comment-alt-notes"></i>FAQ</a>
-        <a href="/login" class="active w3-bar-item w3-button" id="logBtn"><i class="uil uil-sign-in-alt"></i>Log In</i></a>
+  <body>
+    <!--navbar begins here-->
+    <div class="navWrapper w3-top">
+      <div class="w3-bar w3-blue" id="myNavbar">
+        <div class="selector w3-right w3-hide-small">
+          <a href="/" class="active w3-bar-item w3-button"><i
+              class="uil uil-estate"
+            ></i>Home</a>
+          <a href="/about" class="active w3-bar-item w3-button"><i
+              class="uil uil-users-alt"
+            ></i>About</a>
+          <a href="/faq" class="active w3-bar-item w3-button"><i
+              class="uil uil-comment-alt-notes"
+            ></i>FAQ</a>
+          <a href="/login" class="active w3-bar-item w3-button" id="logBtn"><i
+              class="uil uil-sign-in-alt"
+            ></i>Log In</a>
+        </div>
+        <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+        <a
+          href="javascript:void(0)"
+          class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+          onclick="w3_open()"
+        >
+          <i class="fa fa-bars"></i>
+        </a>
       </div>
-       <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-
-    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </div>
-  </div>
-
-  <!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
-    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-    <a href="/about" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
-    <a href="/faq" onclick="w3_close()" class="w3-bar-item w3-button">Faq</a>
-    <a href="/" onclick="w3_close()" class="w3-bar-item w3-button">Logout</a>
-  </nav>
-
-
-  <!--handlebar section -->
-  {{{body}}}
-
-  <!--handlebar section Ends -->
-
-  <footer id="footer" class="p-4 justify-center h-48 mt-24 flex gap-4 flex-col bg-blue-400">
-    <p class="text-center text-white text-xl font-semibold">
-      &copy; 2023 Travel Planner
-    </p>
-    <ul class="flex flex-row justify-center gap-2">
-      <li id="Travel-Planner"
-        class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md footer-items">
-        <a href="/">Travel Planner</a>
-      </li>
-      <li id="About-Us"
-        class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md footer-items">
-        <a href="/about">About Us</a>
-      </li>
-      <li id="FAQ"
-        class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md footer-items">
-        <a href="/faq">FAQ</a>
-      </li>
-      <li id="Logout"
-        class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md footer-items">
-        <a href="/">Logout</a>
-      </li>
-    </ul>
-    <div class="inner">
-      <ul class="icons">
-        <!--TODO: link to github-->
-        <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-        <!--TODO: link to email -->
-        <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-      </ul>
-      <ul class="copyright">
-        <li>&copy; sickOfOurCodes!</li>
-        <li>Design: cool coders club.</a></li>
-      </ul>
     </div>
 
-  </footer>
+    <!-- Sidebar on small screens when clicking the menu icon -->
+    <nav
+      class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large"
+      style="display:none"
+      id="mySidebar"
+    >
+      <a
+        href="javascript:void(0)"
+        onclick="w3_close()"
+        class="w3-bar-item w3-button w3-large w3-padding-16"
+      >Close ×</a>
+      <a
+        href="/about"
+        onclick="w3_close()"
+        class="w3-bar-item w3-button"
+      >About</a>
+      <a href="/faq" onclick="w3_close()" class="w3-bar-item w3-button">Faq</a>
+      <a
+        href="/login"
+        onclick="w3_close()"
+        class="w3-bar-item w3-button"
+      >Login</a>
+    </nav>
 
-  <!-- links for navbar scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="./assets/js/navbar.js"></script>
-  <script src="public/assets/js/user.js"></script>
+    <!--navbar ends here -->
 
-</body>
+    <!--handlebar section -->
+    {{{body}}}
+
+    <!--handlebar section Ends -->
+
+    <footer
+      id="footer"
+      class="p-4 justify-center h-48 mt-24 flex gap-4 flex-col bg-blue-400"
+    >
+      <p class="text-center text-white text-xl font-semibold">
+        &copy; 2023 Travel Planner
+      </p>
+      <ul class="flex flex-row justify-center gap-2">
+        <li
+          id="Travel-Planner"
+          class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md footer-items"
+        >
+          <a href="/">Travel Planner</a>
+        </li>
+        <li
+          id="About-Us"
+          class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md footer-items"
+        >
+          <a href="/about">About Us</a>
+        </li>
+        <li
+          id="FAQ"
+          class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md footer-items"
+        >
+          <a href="/faq">FAQ</a>
+        </li>
+        <li
+          id="Login"
+          class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md footer-items"
+        >
+          <a href="/login">Login</a>
+        </li>
+        <li
+          id="Login"
+          class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md footer-items"
+        >
+          <a href="/signup">Signup</a>
+        </li>
+      </ul>
+      <div class="inner">
+        <ul class="copyright">
+          <li>&copy; sickOfOurCodes!</li>
+          <li>Design: cool coders club.</li>
+        </ul>
+      </div>
+    </footer>
+    <!--script tag for navbar -->
+    <script src="/assets/js/navbar.js"></script>
+    <script src="/assets/js/main.js"></script>
+  </body>
 
 </html>
-
