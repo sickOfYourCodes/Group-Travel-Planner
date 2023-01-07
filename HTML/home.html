@@ -24,7 +24,7 @@
 </head>
 <!--navbar -->
 <div class="wrapper w3-top">
-    <div class="w3-bar w3-blue" id="myNavbar">
+    <div class="w3-bar w3-white" id="myNavbar">
       <div class="selector w3-right w3-hide-small">
         <a href="/" class="active w3-bar-item w3-button ">  </i>Home</a>
         <a href="/about" class="active w3-bar-item w3-button" ><i class="uil uil-users-alt"></i>About</a>
@@ -48,24 +48,82 @@
   </nav>
 
 <!--end of navbar -->
+<!--header with image -->
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+    <div class="w3-display-left w3-text-white" style="padding:48px">
+      <span class="w3-jumbo w3-hide-small">Our Vacation</span><br>
+      <span class="w3-xxlarge w3-hide-large w3-hide-medium">Budgeting for group vacations made easy</span><br>
+      <span class="w3-large">Organize spendings economically and saves money together</span>
+      <p><a href="signupform.html" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Sign up today</a></p>
+    </div> 
+    <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
+      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      <i class="fa fa-instagram w3-hover-opacity"></i>
+      <i class="fa fa-snapchat w3-hover-opacity"></i>
+      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+      <i class="fa fa-twitter w3-hover-opacity"></i>
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </div>
+  </header>
 
+<!--end of header with image -->
+
+<!-- about the app -->
+<!-- About Section -->
+<div class="w3-container" style="padding:128px 16px" id="about">
+    <h3 class="w3-center">Application Features </h3>
+    <div class="w3-row-padding w3-center" style="margin-top:64px">
+      <div class="w3-quarter">
+        <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+        <p class="w3-large">Visualize</p>
+        <p>Visual details about an upcoming or past trip </p>
+      </div>
+      <div class="w3-quarter">
+        <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
+        <p class="w3-large">Socialize</p>
+        <p>Connect with other users to pool spendings and justify costs</p>
+      </div>
+      <div class="w3-quarter">
+        <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+        <p class="w3-large">Design</p>
+        <p>Forecasts weather in any city to help prepare for any occasion</p>
+      </div>
+      <div class="w3-quarter">
+        <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+        <p class="w3-large">Support</p>
+        <p>Support each other with cost projection to limit actual spending </p>
+      </div>
+    </div>
+  </div>
+
+
+<!-- end of about section -->
+
+<!-- Contact Section -->
+<div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
+    <h3 class="w3-center">CONTACT</h3>
+    <p class="w3-center w3-large">Lets get in touch. Send us a message:</p>
+    <div style="margin-top:48px">
+      <form action="/action_page.php" target="_blank">
+        <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+        <p>
+          <button class="w3-button w3-black" type="submit">
+            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+          </button>
+        </p>
+      </form>
 <!-- bottom tab containg demo function featuring --> 
 
     <!-- footer section -->
     <footer id="footer" class="p-4 justify-center h-48 mt-24 flex gap-4 flex-col bg-blue-400">
-        <p class="text-center text-white text-xl font-semibold">
+      
+        <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>  <p class="text-center text-white text-xl font-semibold">
             &copy; 2023 Travel Planner
         </p>
         <div class="inner">
-            <ul class="icons">
-                <!--TODO: link to github-->
-                <li><a href="#" class="icon brands fa-github">
-                        <span class="label">
-                            <i class="fa-brands fa-github"></i>Github</span></a></li>
-                <!--TODO: link to email -->
-                <li><a href="#" class="icon solid fa-envelope"><span class="label">
-                            <i class="fa-solid fa-envelope"></i>Email</span></a></li>
-            </ul>
             <ul class="copyright">
                 <li>&copy; sickOfOurCodes!</li>
             </ul>
@@ -89,12 +147,7 @@
                 <a href="#login.html">Login</a>
         </ul>
     </footer>
-    <!-- <script src="./models/index.js" type='module' async defer></script>
-<script src="./models/trip.js" type="module" async defer></script>
-<script src="./models/user.js" type='module' async defer></script>
-<script src="./models/vacations.js" type='module' async defer></script>
-<!--links for navbar scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   
     <script src="/public/assets/js/navbar.js"></script>
 
 </body>
