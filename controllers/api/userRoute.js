@@ -60,7 +60,6 @@ router.post("/login", async (req, res) => {
         return;
       }
       const user = userLogin.get({ plain: true });
-      sessionStorage.setItem("user", user);
       req.session.save(() => {
         req.session.loggedIn = true;
         req.session.user = userLogin;
