@@ -13,12 +13,23 @@ const createTrip = async function (event) {
       numPeople: numPeople,
     }),
     headers: { "Content-Type": "application/json" },
-  });
-  if (response.ok) {
-    document.location.replace("/dashboard/trips");
-  } else {
-    alert("Failed to create trip. Please try again.");
-  }
+  })
+  const response1 = await fetch(`/api/trip/tripname/${trip_name}`, {
+    method: "GET",
+    headers: { "Content-Type": "application/json" },
+  })
+    .then((response) => {
+      response.json();
+    })
+    .then((data) => {
+      console.log(data)
+      const id = data.id;
+      if (response.ok) {
+        document.location.replace(`/dashboard/trips/${id}`);
+      } else {
+        alert("Failed to create trip. Please try again.");
+      }
+    });
 };
 
 document.querySelector(".createbtn").addEventListener("click", createTrip);
