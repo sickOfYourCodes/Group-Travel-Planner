@@ -1,0 +1,65 @@
+<div class="budget-section">
+
+    <div class="budget col col-md col-sm">
+      <h2>Budget</h2>
+      <img src=" width="40" alt="" />
+      <p class="amount">$ <span id="budgetAmount">0</span></p>
+    </div>
+
+    <div class="expenses col col-md col-sm">
+      <h2>expenses</h2>
+      <img src=" width="40" alt="" />
+      <p class="exp-amount">$ <span id="expensesAmount">0</span></p>
+    </div>
+
+    <div class="balance col col-md col-sm">
+      <h2>balance</h2>
+      <img src=" width="40" alt="" />
+      <p class="amount bala">$ <span id="balanceAmount">0</span></p>
+    </div>
+
+  </div>
+
+<div class="budget-form" id="budgetform">
+<form id="addForm">
+   <label for=""> Make a budget</label> <br />
+   <input type="number" id="number" /> <br />
+   <button type="submit">Add Budget</button>
+ </form>
+</div>
+<div class="expense-form" id="expense-form">
+<form action="" id="expForm">
+
+<div class="">
+ <label for="">Please enter your activity expense</label> <br />
+ <input type="text" id="expName" />
+</div>
+
+<div class="">
+  <label for="">Please enter your food expense amount</label> <br />
+  <input type="number" id="expNumber" />
+</div>
+
+<button type="submit" id="submitExpen">Add expense</button>
+</form>
+</div>
+<div class="expValue" id="${details[i].id}">
+  <div id="expTitleName" class="exp"><p>${details[i].name}</p></div>
+  <div id="expValueAmount" class="exp"><p> <span>$ </span> ${details[i].number}</p></div>
+  <div id="edite_delete">
+    </p>
+  </div>
+<div class="edit-form" id="editForm">
+<form action="" id="saveEdit">
+  <div class="">
+      <label for="">Edit your expense</label> <br />
+      <input type="text" id="editExpName" />
+  </div>
+  <div class="">
+      <label for="">Edit expense amount</label> <br />
+      <input type="number" id="editExpNumber" />
+  </div>
+  <button type="submit">Save changes</button>
+</form>
+</div>
+</div>

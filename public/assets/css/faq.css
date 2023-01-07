@@ -1,21 +1,24 @@
-body{
+body {
     font-family: 'Work Sans', sans-serif;
 }
-.faq-heading{
+
+.faq-heading {
     border-bottom: #777;
     padding: 20px 60px;
+    margin: 50px;
 }
-.faq-container{
-display: flex;
-justify-content: center;
-flex-direction: column;
 
+.faq-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
-.hr-line{
-  width: 60%;
-  margin: auto;
-  
+
+.hr-line {
+    width: 60%;
+    margin: auto;
 }
+
 .faq-page {
     background-color: white;
     color: #444;
@@ -35,10 +38,10 @@ flex-direction: column;
    padding: auto;
    
 }
-.active,
+/* .active,
 .faq-page:hover {
     background-color: #F9F9F9;
-}
+} */
 
 
 .faq-body {
@@ -56,6 +59,6 @@ flex-direction: column;
     margin-left: 5px;
 }
 
-.active:after {
+/* .active:after {
     content: "\2796";
-}
+} */

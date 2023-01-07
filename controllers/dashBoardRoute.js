@@ -3,6 +3,14 @@ const withAuth = require("../utils/auth.js");
 const { User, Trip, Vacations } = require("../models");
 const Calendar = require("calendar-dates");
 const calendar = new Calendar();
+const tripsRoute = require("./userDashboard/trips.js");
+const budgetRoute = require("./userDashboard/budget.js");
+const weatherRoute = require("./userDashboard/weather.js");
+
+router.use("/weather", weatherRoute);
+router.use("/trips", tripsRoute);
+router.use("/budget", budgetRoute);
+
 
 router.get("/", withAuth, async (req, res) => {
   const date = new Date();
@@ -30,34 +38,6 @@ router.get("/", withAuth, async (req, res) => {
     user: req.session.user,
     loggedIn: req.session.loggedIn,
   });
-});
-
-router.get("/weather", async (req, res) => {
-  res.status(200).render("sampleWeather", {
-    layout: "user",
-  });
-});
-
-router.get("/trips", async (req, res) => {
-  try {
-    const userData = await User.findOne({
-      where: { user_name: req.session.user.user_name },
-      include: [{ model: Trip, through: Vacations }],
-    });
-    if (!userData) {
-      res.status(404).json({ message: "Unable to find this user." });
-      return;
-    }
-    const trips = userData.trips.map((trip) => trip.get({ plain: true }));
-    res.status(200).render("trips", {
-      layout: "user",
-      trips,
-      loggedIn: req.session.loggedIn,
-      user: req.session.user,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
 });
 
 module.exports = router;

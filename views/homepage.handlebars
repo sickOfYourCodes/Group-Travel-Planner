@@ -1,50 +1,71 @@
-<!--strata header and body in 50:50 view for homepage content -->
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<title>Group Travel Planner</title>
+</head>
 
-<!--start of the left side content --> 
-<header id="header">
-    <div class="inner">
-        <a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
-        <h1>
-            <strong>APP NAME</strong>, is the only <br />
-            application we will ever <br />
-            need for planning trips.<br />
-        </h1>
-    </div>
+<body>
 
+<!--header with image -->
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+	<div class="w3-display-left w3-text-white" style="padding:48px">
+		<span class="w3-jumbo w3-hide-small">Our Vacation</span><br>
+		<span class="w3-xxlarge w3-hide-large w3-hide-medium">Budgeting for group vacations made easy</span><br>
+		<span class="w3-large">Organize spendings economically and saves money together</span>
+		<p><a href="/signup" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Sign up today</a></p>
+	</div> 
 </header>
-<!--main body containing intro video and sign up button --> 
-<div>
-<section id="one">
-    <div class="introVid" src=""> </div>
-    <!--button linked to singup html-->
-    <a><buttton> Sign up</buttton> </a>
-</section>
-<section id="two">
-    <h2>Features</h2>
-    <div class="row">
-        <article class="col-6 col-12-xsmall work-item">
-            <!--TODO: insert 4 thumbnails of function demo screenshots here -->
-								<a href="" class="image fit thumb"><img src="images/thumbs/01.jpg" alt="" /></a>
-								<h3>nailthumb of budgeting module</h3>
-								<p>Designed help budget for an event. </p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="" /></a>
-								<h3>nailthumb of friends module</h3>
-								<p>Add a friend to the event and collaborate together!</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="" class="image fit thumb"><img src="images/thumbs/03.jpg" alt="" /></a>
-								<h3>nailthumb of weathers module/h3>
-								<p>Know the weather forecast beforehand to plan for a good day!</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="" class="image fit thumb"><img src="images/thumbs/04.jpg" alt="" /></a>
-								<h3>nailthumb of calender module</h3>
-								<p>Colorblock timeblock stunningly displays your schedule</p>
-							</article>
-    </div>
-</section>
 
+<!--end of header with image -->
+
+<!-- about the app -->
+<!-- About Section -->
+<div class="w3-container" style="padding:128px 16px" id="about">
+	<h3 class="w3-center">Application features</h3>
+	<div class="w3-row-padding w3-center" style="margin-top:64px">
+		<div class="w3-quarter">
+			<i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+			<p class="w3-large">Visualize</p>
+			<p>Visual details about an upcoming or past trip</p>
+		</div>
+		<div class="w3-quarter">
+			<i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
+			<p class="w3-large">Socialize</p>
+			<p>Connect with other users to pool spendings and justify costs</p>
+		</div>
+		<div class="w3-quarter">
+			<i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+			<p class="w3-large">Design</p>
+			<p>Forecasts weather in any city to help prepare for any occasion</p>
+		</div>
+		<div class="w3-quarter">
+			<i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+			<p class="w3-large">Support</p>
+			<p>Support each other with cost projection to limit actual spending </p>
+		</div>
+	</div>
+</div>
+
+
+<!-- end of about section -->
+
+<!-- Contact Section -->
+<div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
+	<h3 class="w3-center">CONTACT</h3>
+	<p class="w3-center w3-large">Lets get in touch. Send us a message:</p>
+	<div style="margin-top:48px">
+		<form action="/action_page.php" target="_blank">
+			<p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
+			<p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
+			<p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
+			<p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+			<p>
+				<button class="w3-button w3-black" type="submit">
+					<i class="fa fa-paper-plane"></i> SEND MESSAGE
+				</button>
+			</p>
+		</form>
+	</div>
 </div>
 <!-- bottom tab containg demo function featuring --> 
+   
+</body>

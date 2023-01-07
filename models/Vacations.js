@@ -20,12 +20,12 @@ Vacations.init(
         unique: false,
       },
     },
-    userName: {
-      type: DataTypes.STRING,
+    userId: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: "user",
-        key: "user_name",
+        key: "id",
         unique: false,
       },
     },

@@ -6,7 +6,7 @@ const dailyBudget = require("./dailyBudget.js");
 const Activity = require("./Activity.js");
 
 User.belongsToMany(Trip, {
-  foreignKey: "userName",
+  foreignKey: "userId",
   through: Vacations,
 });
 

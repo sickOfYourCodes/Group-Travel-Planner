@@ -8,111 +8,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--style reset links -->
     <link rel="reset" href="/public/assets/css/reset.css" />
-    <!--framework links -->
-    <link href="https://unpkg.com/tailwindcss@%5E1.0/dist/tailwind.min.css" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
     <!--font links -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
     <!--framework stylesheets -->
-    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!--link for bootstrap-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/public/assets/css/style.css" />
     <title>Group Travel Planner</title>
 </head>
+<!--navbar -->
+<div class="wrapper w3-top">
+    <div class="w3-bar w3-white" id="myNavbar">
+      <div class="selector w3-right w3-hide-small">
+        <a href="/" class="active w3-bar-item w3-button ">  </i>Home</a>
+        <a href="/about" class="active w3-bar-item w3-button" ><i class="uil uil-users-alt"></i>About</a>
+        <a href="/faq" class="active w3-bar-item w3-button"><i class="uil uil-comment-alt-notes"></i>FAQ</a>
+        <a href="/login" class="active w3-bar-item w3-button" id="logBtn"><i class="uil uil-sign-in-alt"></i>Log In</i></a>
+      </div>
+       <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
-<body>
-    <!-- <header id="header" class="relative overflow-hidden bg-white pt-16 pb-32">
-                <div class="relative">
-                    <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
-                        <div class="mx-auto lg:max-w-none lg:py-16 lg:px-0 max-w-xl px-6 lg:mx-0">
-                            <div>
-                                <div>
-                                    <span class="flex rounded-xl bg-blue-400 h-12 w-full items-center justify-center">
-                                        <h1 class="font-bold text-2xl md:text-3xl text-center md:text-center">
-                                            Travel Planner
-                                        </h1>
-                                    </span>
-                                </div>
-                                <div class="mt-6">
-                                    <h2 class="text-3xl font-bold tracking-tight text-gray-900">
-                                        A group travel planner, so you and your group are all on the same page!
-                                    </h2>
-                                    </div>
-                                </div>
-                            </div>
-                        <div class="sm:mt-16 mt-12 lg:mt-0">
-                            <div class="-mr-48 lg:relative lg:m-0 lg:h-full pl-4 sm:pl-6 md:-mr-16 lg:px-0">
-                                <img class="w-full rounded-xl ring-opacity-5 lg:absolute lg:left-0 lg:h-full shadow-2xl ring-1 ring-black lg:w-auto lg:max-w-none"
-                                    src="./assets/images/hero-image.png" alt="Hero Image">
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-    <!-- navbar starts here
-    <nav id="hamburger-nav" class="navbar">
-        <div class="navbar-mobile">
-            <div class="container nav-container">
-                <input class="checkbox" type="checkbox" name="" id="" />
-                <div class="hamburger-lines">
-                    <span class="line line1"></span>
-                    <span class="line line2"></span>
-                    <span class="line line3"></span>
-                </div> -->
-
-    <div class="wrapper">
-        <nav class="tabs">
-            <div class="selector"></div>
-            <a href="#home.html" class="active"><i class="fa-solid fa-house"></i>Home</a>
-            <a href="#about.html"><i class="fas fa-hand-rock"></i>About Us</a>
-            <a href="#faq.html"><i class="fas fa-bolt"></i>FAQ</a>
-            <a href="#login.html"><i class="fa-thin fa-user">Log In</i></a>
-            <a href="#logout.html"><i class="fa-thin fa-user">Log Out</i></a>
-        </nav>
-
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+        <i class="fa fa-bars"></i>
+      </a>
     </div>
-    <!-- navbar ends here -->
+  </div>
 
-    <!-- navbar for large viewports -->
-    <!-- <nav id="large-navbar"
-        class="flex text-white flex-row justify-between items-center p-2 bg-blue-400 font-semibold h-16">
-        <li class="list-none p-1 hover:opacity-35 hover:bg-blue-300 rounded-md duration-300 ease-out hover:text-black">
-            <a href="./home.html">Travel Planner</a>
-        </li>
-        <ul class="flex flex-row justify-between gap-2 md:gap-8 mr-4">
-            <li class="p-1 hover:opacity-15 hover:bg-blue-300 rounded-md duration-300 ease-out hover:text-black">
-                <a href="faq.html">FAQ</a>
-            </li>
-            <li class="p-1 hover:opacity-35 hover:bg-blue-300 rounded-md duration-300 ease-out hover:text-black">
-                <a href="login.html">Login</a>
-            </li>
-            <li class="p-1 hover:opacity-35 hover:bg-blue-300 rounded-md duration-300 ease-out hover:text-black">
-                <a href="about.html">About Us</a>
-        </ul>
-    </nav>  -->
+  <!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+    <a href="/about" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
+    <a href="/faq" onclick="w3_close()" class="w3-bar-item w3-button">Faq</a>
+    <a href="/login" onclick="w3_close()" class="w3-bar-item w3-button">Login</a>
+  </nav>
+
+<!--end of navbar -->
+<!--header with image -->
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+    <div class="w3-display-left w3-text-white" style="padding:48px">
+      <span class="w3-jumbo w3-hide-small">Our Vacation</span><br>
+      <span class="w3-xxlarge w3-hide-large w3-hide-medium">Budgeting for group vacations made easy</span><br>
+      <span class="w3-large">Organize spendings economically and saves money together</span>
+      <p><a href="signupform.html" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Sign up today</a></p>
+    </div> 
+    <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
+      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      <i class="fa fa-instagram w3-hover-opacity"></i>
+      <i class="fa fa-snapchat w3-hover-opacity"></i>
+      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+      <i class="fa fa-twitter w3-hover-opacity"></i>
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </div>
+  </header>
+
+<!--end of header with image -->
+
+<!-- about the app -->
+<!-- About Section -->
+<div class="w3-container" style="padding:128px 16px" id="about">
+    <h3 class="w3-center">Application Features </h3>
+    <div class="w3-row-padding w3-center" style="margin-top:64px">
+      <div class="w3-quarter">
+        <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+        <p class="w3-large">Visualize</p>
+        <p>Visual details about an upcoming or past trip </p>
+      </div>
+      <div class="w3-quarter">
+        <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
+        <p class="w3-large">Socialize</p>
+        <p>Connect with other users to pool spendings and justify costs</p>
+      </div>
+      <div class="w3-quarter">
+        <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+        <p class="w3-large">Design</p>
+        <p>Forecasts weather in any city to help prepare for any occasion</p>
+      </div>
+      <div class="w3-quarter">
+        <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+        <p class="w3-large">Support</p>
+        <p>Support each other with cost projection to limit actual spending </p>
+      </div>
+    </div>
+  </div>
 
 
+<!-- end of about section -->
 
-
+<!-- Contact Section -->
+<div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
+    <h3 class="w3-center">CONTACT</h3>
+    <p class="w3-center w3-large">Lets get in touch. Send us a message:</p>
+    <div style="margin-top:48px">
+      <form action="/action_page.php" target="_blank">
+        <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+        <p>
+          <button class="w3-button w3-black" type="submit">
+            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+          </button>
+        </p>
+      </form>
+<!-- bottom tab containg demo function featuring --> 
 
     <!-- footer section -->
     <footer id="footer" class="p-4 justify-center h-48 mt-24 flex gap-4 flex-col bg-blue-400">
-        <p class="text-center text-white text-xl font-semibold">
+      
+        <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>  <p class="text-center text-white text-xl font-semibold">
             &copy; 2023 Travel Planner
         </p>
         <div class="inner">
-            <ul class="icons">
-                <!--TODO: link to github-->
-                <li><a href="#" class="icon brands fa-github">
-                        <span class="label">
-                            <i class="fa-brands fa-github"></i>Github</span></a></li>
-                <!--TODO: link to email -->
-                <li><a href="#" class="icon solid fa-envelope"><span class="label">
-                            <i class="fa-solid fa-envelope"></i>Email</span></a></li>
-            </ul>
             <ul class="copyright">
                 <li>&copy; sickOfOurCodes!</li>
             </ul>
@@ -136,12 +147,7 @@
                 <a href="#login.html">Login</a>
         </ul>
     </footer>
-    <!-- <script src="./models/index.js" type='module' async defer></script>
-<script src="./models/trip.js" type="module" async defer></script>
-<script src="./models/user.js" type='module' async defer></script>
-<script src="./models/vacations.js" type='module' async defer></script>
-<!--links for navbar scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   
     <script src="/public/assets/js/navbar.js"></script>
 
 </body>

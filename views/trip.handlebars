@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{trip.trip_name}}</title>
-    <!--imported style sheets-->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -16,12 +9,12 @@
 <body>
     <!-- Image Header -->
     <div class="w3-display-container w3-animate-opacity">
-        <img src="/public/assets/images/sunrise-1014712_640.jpg" alt="boat"
+        <img src="\assets\images\sunrise-1014712_640.jpg" alt="boat"
             style="width:100%;min-height:350px;max-height:600px;">
         <div class="w3-container w3-display-bottomleft w3-margin-bottom">
 
-            <button onclick="document.getElementById('id01').style.display='block'"
-                class="w3-button w3-xlarge w3-theme w3-hover-light-blue" title="Trip Detail">About this trip</button>
+            <button class="w3-button w3-xlarge w3-theme w3-hover-light-blue"
+                title="Trip Detail">{{trip.trip_name}}</button>
         </div>
     </div>
 
@@ -30,8 +23,7 @@
     <div id="id01" class="w3-modal">
         <div class="w3-modal-content w3-card-4 w3-animate-top">
             <header class="w3-container w3-white w3-display-container">
-                <span onclick="document.getElementById('id01').style.display='none'"
-                    class="w3-button w3-blue w3-display-topright"><i class="fa fa-remove"></i></span>
+                <span class="w3-button w3-blue w3-display-topright"><i class="fa fa-remove"></i></span>
                 <!-- budget, startdate, enddate,search for weather -->
                 <h4>{{trip.location}}</h4>
                 <!-- TODO: insert trip date-->
@@ -60,30 +52,16 @@
     <div class="w3-container w3-padding-64 w3-center" id="team">
         <h2>Participants</h2>
         <div class="w3-row"><br>
+            {{#each users as |user|}}
             <div class="w3-quarter w3-border">
                 <img src="" alt="user" style="width:45%" class="w3-circle w3-hover-opacity">
-                <h3>Johnny Walker</h3>
+                <h3>{{user.first_name}} {{user.last_name}}</h3>
+                <h5>Username: {{user.user_name}}</h5>
+                <h5>Email: {{user.email}}</h5>
             </div>
-
-            <div class="w3-quarter w3-border">
-                <img src="" alt="user" style="width:45%" class="w3-circle w3-hover-opacity">
-                <h3>Rebecca Flex</h3>
-            </div>
-
-            <div class="w3-quarter w3-border">
-                <img src="" alt="user" style="width:45%" class="w3-circle w3-hover-opacity">
-                <h3>Jan Ringo</h3>
-            </div>
-
-            <div class="w3-quarter w3-border">
-                <img src="" alt="user" style="width:45%" class="w3-circle w3-hover-opacity">
-                <h3>Kai Ringo</h3>
-            </div>
-        <!-- add another participant icon and form ---> 
+            {{/each}}
         </div>
     </div>
     <!-- Participants Container Ends here -->
 
 </body>
-
-</html>
