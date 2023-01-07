@@ -1,7 +1,7 @@
 {
   "name": "group-travel-planner",
   "version": "1.0.0",
-  "description": "",
+  "description": "***** TODO: add screenshot, gif, final review.  # Group Travel Planner",
   "main": "server.js",
   "scripts": {
     "test": "jest",
@@ -37,5 +37,8 @@
   "devDependencies": {
     "jest": "^29.3.1",
     "nodemon": "^2.0.20"
+  },
+  "directories": {
+    "test": "test"
   }
 }
