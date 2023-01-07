@@ -1,12 +1,11 @@
 
 
 ------------------------- ABOUT US ---------------------------------------------
-HELLO ! 
+Welcome to our site. 
 
-  We are a group of friendly coders who are sick of using excel and imessages to plan group activities. We want to help save some phone batteries and make lives easier by designing this app.  
-  
-  Our product will help friends collaborate on informations on what to do and communicate better when traveling. Data is power, and clear communication on tasks empowers friendships and reserve stemina. Who is going to where and when, what the weather is, and how to put budgets into porportions, and with great gusto we present our appliaction to the world. Explore the world with preparation and confidence! Go you! 
-  
+This application will help you and your pals budget and plan for a vacation anywhere. When we are on a trip, it might be hard to organize spending and regulate personal finances; this vacation budgeting app may be just what you need. This app categorizes spending to keep you on track for budgeting so your hard-earned money is spent wisely and not belligerently. This application has a bonus feature: a widget to look up weather conditions anywhere in the world. 
+
+ We hope to add more features to this application with the encouragement of user support. This current version of the application is the first published version. Future versions will include a calendar section to help users organize and collaborate on schedules while on the trip. We also hope to bring features to help users track   
 
 
 TEAM MEMBER's ROLE / SKILLSET: 
