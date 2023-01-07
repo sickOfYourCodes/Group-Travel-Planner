@@ -172,7 +172,7 @@ sidebar {
 	padding: 16px 16px 16px 14px;
 	border-left: 4px solid transparent;
 	color: inherit;
-	text-decoration: none;
+	text-decoration: underline;
 	transition: color ease 0.3s;
   }
   
