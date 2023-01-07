@@ -25,7 +25,7 @@
 	padding: 48px;
   }
   
-  .sidebar {
+.sidebar {
 	grid-area: sidebar;
 	display: grid;
 	grid-template-columns: 1fr 3fr 1fr;
@@ -58,6 +58,9 @@
   
   .copyright {
 	grid-area: copyright;
+  }
+  .current-month{
+	font-size: 2.5rem;
   }
   .menu {
 	grid-area: menu;
@@ -149,7 +152,7 @@
 	color: #A8B2B9;
   }
   
-  sidebar {
+sidebar {
 	background-color: white;
 	box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.2);
   }
