@@ -1,6 +1,7 @@
 const router = require("express").Router();
+const withAuth = require("../../utils/auth.js");
 
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   res.status(200).render("weather", {
     layout: "user",
   });

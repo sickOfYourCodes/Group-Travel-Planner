@@ -2,7 +2,7 @@ const router = require("express").Router();
 const withAuth = require("../../utils/auth.js");
 const { User, Trip, Vacations } = require("../../models");
 
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
     const userData = await User.findOne({
       where: { user_name: req.session.user.user_name },
@@ -24,7 +24,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/trip/:id", async (req, res) => {
+router.get("/trip/:id", withAuth, async (req, res) => {
   try {
     const tripData = await Trip.findOne({
       where: { id: req.params.id },
