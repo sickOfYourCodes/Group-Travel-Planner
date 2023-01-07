@@ -52,26 +52,14 @@
     <div class="w3-container w3-padding-64 w3-center" id="team">
         <h2>Participants</h2>
         <div class="w3-row"><br>
+            {{#each users as |user|}}
             <div class="w3-quarter w3-border">
                 <img src="" alt="user" style="width:45%" class="w3-circle w3-hover-opacity">
-                <h3>Johnny Walker</h3>
+                <h3>{{user.first_name}} {{user.last_name}}</h3>
+                <h5>Username: {{user.user_name}}</h5>
+                <h5>Email: {{user.email}}</h5>
             </div>
-
-            <div class="w3-quarter w3-border">
-                <img src="" alt="user" style="width:45%" class="w3-circle w3-hover-opacity">
-                <h3>Rebecca Flex</h3>
-            </div>
-
-            <div class="w3-quarter w3-border">
-                <img src="" alt="user" style="width:45%" class="w3-circle w3-hover-opacity">
-                <h3>Jan Ringo</h3>
-            </div>
-
-            <div class="w3-quarter w3-border">
-                <img src="" alt="user" style="width:45%" class="w3-circle w3-hover-opacity">
-                <h3>Kai Ringo</h3>
-            </div>
-            <!-- add another participant icon and form --->
+            {{/each}}
         </div>
     </div>
     <!-- Participants Container Ends here -->

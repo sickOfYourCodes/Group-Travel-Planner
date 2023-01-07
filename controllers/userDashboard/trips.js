@@ -2,7 +2,7 @@ const router = require("express").Router();
 const withAuth = require("../../utils/auth.js");
 const { User, Trip, Vacations } = require("../../models");
 
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
     const userData = await User.findOne({
       where: { user_name: req.session.user.user_name },
@@ -24,11 +24,11 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/trip/:id", async (req, res) => {
+router.get("/trip/:id", withAuth, async (req, res) => {
   try {
     const tripData = await Trip.findOne({
       where: { id: req.params.id },
-      // include: [{ model: Trip, through: Vacations }],
+      include: [{ model: User, through: Vacations }],
     });
     if (!tripData) {
       res.status(404).json({ message: "Unable to find this trip." });
@@ -36,9 +36,12 @@ router.get("/trip/:id", async (req, res) => {
     }
     const trip = tripData.get({ plain: true });
     console.log(trip);
+    const users = tripData.users.map((user) => user.get({ plain: true }));
+    console.log(users);
     res.status(200).render("trip", {
       layout: "user",
       trip,
+      users,
       loggedIn: req.session.loggedIn,
       user: req.session.user,
     });

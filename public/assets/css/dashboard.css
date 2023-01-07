@@ -6,7 +6,7 @@
 						 "content";
 	width: 100vw; /* unnecessary, but let's keep things consistent */
 	height: 100vh;
-  }
+	}
   
   @media screen and (min-width: 850px) {
 	.wrapper {
@@ -14,7 +14,7 @@
 	  grid-template-rows: 1fr;
 	  grid-template-areas: "sidebar content";
 	}
-  }
+}
   
   
   
