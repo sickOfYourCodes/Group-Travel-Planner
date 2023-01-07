@@ -1,4 +1,3 @@
-
 * { box-sizing: border-box; }
 
 .container { 
@@ -45,6 +44,7 @@
     padding: 20px;
 }
 
+
 .card-body {
     padding-top: 0px;
 }
@@ -53,3 +53,14 @@
     text-decoration: none;
 
 }
+
+section {
+    width: 100%;
+    display: inline-block;
+    background: #ccc;
+    height: 60vh;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    text-decoration: underline;
+  }
