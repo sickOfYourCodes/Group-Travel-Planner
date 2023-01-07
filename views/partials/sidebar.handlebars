@@ -1,0 +1,28 @@
+<sidebar>
+    <div class="avatar">
+      <div class="avatar__img">
+        <img src="https://picsum.photos/70" alt="avatar">
+      </div>
+      <div class="avatar__name">{{user.first_name}} {{user.last_name}}</div>
+    </div>
+    <nav class="menu">
+      <a class="menu__item" href="/user-home">
+        <i class="menu__icon fa fa-home"></i>
+        <span class="menu__text">Application Home</span>
+      </a>
+      <a class="menu__item" href="/dashboard/trips">
+        <i class="fa-regular fa-chart-network"></i>
+        <span class="menu__text">Trips</span>
+      </a>
+      <a class="menu__item menu__item--active" href="/dashboard">
+        <i class="menu__icon fa fa-calendar"></i>
+        <span class="menu__text">Calendar</span>
+      </a>
+      <!--- insert weather -->
+      <a class="menu__item" href="/dashboard/weather">
+        <i class="fa-solid fa-sun"></i>
+        <span class="menu__text">Weather</span>
+      </a>
+    </nav>
+    <div class="copyright">copyright &copy; 2018</div>
+  </sidebar>
