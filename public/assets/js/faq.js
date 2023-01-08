@@ -10,4 +10,4 @@ for (i = 0; i < acc.length; i++) {
     } else {
       faqBody.style.display = "block";
     }
-})};
+  })};

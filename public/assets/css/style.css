@@ -824,3 +824,7 @@ header p {
     background: #fff;
     color: #666 !important;
 } */
+
+#session_inf {
+    display: none
+}
