@@ -1,17 +1,20 @@
 [
   {
+    "id": 1,
     "trip_name": "Kardasians Trip",
     "location": "New York City",
     "description": "Trip with friends to see a braodway show",
     "numPeople": 5
   },
   {
+    "id": 2,
     "trip_name": "Japan Solo Trip",
     "location": "Japan",
     "description": "Solo trip to see the cherry blossoms",
     "numPeople": 1
   },
   {
+    "id": 3,
     "trip_name": "Taiwan Trip",
     "location": "Taiwan",
     "description": "A trip to see family.",

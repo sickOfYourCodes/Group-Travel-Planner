@@ -44,7 +44,7 @@
           <a href="/dashboard" class="active w3-bar-item w3-button"><i
               class="uil uil-estate"
             ></i>Dashboard</a>
-          <a href="/" class="active w3-bar-item w3-button Loutout"><i
+          <a href="/" class="active w3-bar-item w3-button Logout"><i
               class="uil uil-sign-in-alt"
             ></i>Logout</a>
         </div>
@@ -92,54 +92,33 @@
 
     <!--handlebar section Ends -->
 
-    <footer
-      id="footer"
-      class="p-4 justify-center h-48 mt-24 flex gap-4 flex-col bg-blue-400"
-    >
-      <p class="text-center text-white text-xl font-semibold">
-        &copy; 2023 Travel Planner
-      </p>
-      <ul class="flex flex-row justify-center gap-2">
-        <li
-          id="Travel-Planner"
-          class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md footer-items"
-        >
-          <a href="/">Travel Planner</a>
-        </li>
-        <li
-          id="About-Us"
-          class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md footer-items"
-        >
-          <a href="/about">About Us</a>
-        </li>
-        <li
-          id="FAQ"
-          class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md footer-items"
-        >
-          <a href="/faq">FAQ</a>
-        </li>
-        <li
-          id="Login"
-          class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md footer-items"
-        >
+        <footer class="footer-distributed">
+
+      <div class="footer-left">
+
+        <h3>Our Vacation</h3>
+
+        <p class="footer-links">
+          <a href="/">Home</a>
+          ·
+          <a href="/about">About</a>
+          ·
+          <a href="/faq">Faq</a>
+          ·
           <a href="/dashboard">Dashboard</a>
-        </li>
-        <li
-          class="p-1 hover:opacity-15 duration-300 ease-out hover:bg-blue-300 bg-blue-400 rounded-md footer-items Logout"
-        >
-          <a href="/">Logout</a>
-        </li>
-      </ul>
-      <div class="inner">
-        <ul class="copyright">
-          <li>&copy; sickOfOurCodes!</li>
-          <li>Design: cool coders club.</li>
-        </ul>
+          ·
+          <a href="/" id="Logout">Logout</a>
+        </p>
+
+        <p class="footer-company-name">Travel Planner © 2023</p>
+
       </div>
+
+      <div id="session_inf" data-value={{user.id}}></div>
     </footer>
     <!--script tag for navbar -->
     <script src="/assets/js/navbar.js"></script>
-    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/user.js"></script>
   </body>
 
 </html>

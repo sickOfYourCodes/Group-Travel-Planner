@@ -15,28 +15,32 @@ Trip.belongsToMany(User, {
   through: Vacations,
 });
 
-Budget.belongsTo(Trip, {
-  foreignKey: "tripId",
-});
+// Budget.belongsTo(Trip, {
+//   foreignKey: "tripId",
+// });
 
-Budget.belongsTo(User, {
-  foreignKey: "userId",
-});
+// Budget.belongsTo(User, {
+//   foreignKey: "userId",
+// });
 
-dailyBudget.belongsTo(Trip, {
-  foreignKey: "tripId",
-});
+// dailyBudget.belongsTo(Trip, {
+//   foreignKey: "tripId",
+// });
 
-dailyBudget.belongsTo(User, {
-  foreignKey: "userId",
-});
+// dailyBudget.belongsTo(User, {
+//   foreignKey: "userId",
+// });
 
-Activity.belongsTo(Trip, {
-  foreignKey: "tripId",
-});
+// dailyBudget.belongsTo(Budget, {
+//   foreignKey: "budgetCategory_name",
+// });
 
-Activity.belongsTo(User, {
-  foreignKey: "userId",
-});
+// Activity.belongsTo(Trip, {
+//   foreignKey: "tripId",
+// });
+
+// Activity.belongsTo(User, {
+//   foreignKey: "userId",
+// });
 
 module.exports = { User, Trip, Vacations, Budget, dailyBudget, Activity };

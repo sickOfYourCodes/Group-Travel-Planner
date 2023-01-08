@@ -4,8 +4,8 @@ const searchBtn = document.querySelector("#searchBtn");
 // Creates an array in localStorage called cities or gets the array cities and pushes in the cityName if it does not exist inside array
 // If the units are not selected, we stop the function and alert the user to pick a valid unit
 
-const getCity = async () => {
-  const cityName = document.querySelector("#cityInput").value;
+const getCity = async (city) => {
+  let cityName = city || document.querySelector("#cityInput").value;
   let cityNameSearch = cityName.toString().toLowerCase();
   cityNameSearch = cityNameSearch.replace(" ", "_");
   const history = JSON.parse(localStorage.getItem("cities")) || [];

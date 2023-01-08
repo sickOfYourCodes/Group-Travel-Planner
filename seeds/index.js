@@ -5,8 +5,8 @@ const { User, Trip, Vacations, Budget, dailyBudget } = require("../models");
 const userSeedData = require("./userData.json");
 const tripSeedData = require("./tripData.json");
 const vacationSeedData = require("./vacationData.json");
-const budgetSeedData = require("./budgetData.json");
-const dailyBudgetSeedData = require("./dailyBudgetData.json");
+// const budgetSeedData = require("./budgetData.json");
+// const dailyBudgetSeedData = require("./dailyBudgetData.json");
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
@@ -17,9 +17,9 @@ const seedAll = async () => {
 
   await Vacations.bulkCreate(vacationSeedData, { individualHooks: true });
 
-  await Budget.bulkCreate(budgetSeedData, { individualHooks: true });
+  // await Budget.bulkCreate(budgetSeedData, { individualHooks: true });
 
-  await dailyBudget.bulkCreate(dailyBudgetSeedData, { individualHooks: true });
+  // await dailyBudget.bulkCreate(dailyBudgetSeedData, { individualHooks: true });
 
   process.exit();
 };
