@@ -1,14 +1,13 @@
-var faq = document.getElementsByClassName("faq-page");
+var acc = document.getElementsByClassName("accordion");
 var i;
 
-for (i = 0; i < faq.length; i++) {
-    faq[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var body = this.nextElementSibling;
-        if (body.style.display === "block") {
-            body.style.display = "none";
-        } else {
-            body.style.display = "block";
-        }
-    });
-}
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var faqBody = this.nextElementSibling;
+    if (faqBody.style.display === "block") {
+      faqBody.style.display = "none";
+    } else {
+      faqBody.style.display = "block";
+    }
+  });

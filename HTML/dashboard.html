@@ -26,7 +26,7 @@
           <div class="toggle__option">week</div>
           <div class="toggle__option toggle__option--selected">month</div>
         </div>
-        <div class="current-month">June 2016</div>
+        <div class="current-month">Jan 2023</div>
         <div class="search-input">
           <input type="text" value="What are you looking for?">
           <i class="fa fa-search"></i>
@@ -34,13 +34,13 @@
       </div>
       <div class="calendar">
         <div class="calendar__header">
+          <div>sun</div>
           <div>mon</div>
           <div>tue</div>
           <div>wed</div>
           <div>thu</div>
           <div>fri</div>
           <div>sat</div>
-          <div>sun</div>
         </div>
         <div class="calendar__week">
           <div class="calendar__day day">1</div>
@@ -89,35 +89,7 @@
         </div>
       </div>
     </main>
-    <sidebar>
-      <div class="logo"> User Dashboard</div>
-      <div class="avatar">
-        <div class="avatar__img">
-          <img src="https://picsum.photos/70" alt="avatar">
-        </div>
-        <div class="avatar__name">John Smith</div>
-      <nav class="menu">
-        <a class="menu__item" href="#home.html">
-          <i class="menu__icon fa fa-home"></i>
-          <span class="menu__text"> App Home</span>
-        </a>
-        <a class="menu__item" href="#trips_overview.htm">
-          <i class="menu__icon fa fa-home"></i>
-          <span class="menu__text"> Trips</span>
-        </a>
-        <a class="menu__item menu__item--active" href="#dashboard.html">
-          <i class="menu__icon fa fa-calendar"></i>
-          <span class="menu__text">Calendar</span>
-        </a>
-        <a class="menu__item menu__item" href="#dashboard.html">
-          <i class="menu__icon fa fa-sun"></i>
-          <span class="menu__text">Weather</span>
-        </a>
-      </nav>
-
-      <div class="copyright">copyright &copy; 2018</div>
-
-    </sidebar>
+    {{>sidebar}}
   </div>
 
 </body>

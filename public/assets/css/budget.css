@@ -1,0 +1,76 @@
+/* * {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 1.25rem;
+    font-family: sans-serif;
+    line-height: 150%;
+    text-shadow: 0 2px 2px #b6701e;
+  }
+  
+  section {
+    color: #fff;
+    text-align: center;
+  }
+  
+  div {
+    height: 100%;
+  }
+  
+  article {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 1.75rem;
+    margin: 0 0 0.75rem 0;
+  } */
+  
+  /* Pattern styles */
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .budget-section {
+    background-color: #ff9e2c;
+    position: absolute;
+    align-items: stretch;
+    left: 0px;
+    width: 50%;
+  }
+
+  .h2 {
+    background-color: #ff9e2c;
+    position: absolute;
+    left: 0px;
+    width: 50%;
+  }
+  
+  .budget-form {
+    background-color: #b6701e;
+    position: absolute;
+    right: 0px;
+    width: 50%;
+  }
+
+  .expense-form {
+    background-color: #b6701e;
+    position: absolute;
+    right: 0px;
+    width: 50%;
+  }
+
+  .edit-form {
+    background-color: #b6701e;
+    position: absolute;
+    right: 0px;
+    width: 50%;
+  }
+  
