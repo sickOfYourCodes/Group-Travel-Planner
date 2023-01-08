@@ -1,31 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap');
+
 * { box-sizing: border-box; }
 
 .container {
-    display: flex;
-    flex-flow: row wrap;
+    display: block;
+    flex-flow: column wrap;
+    margin-top: 20px;
 }
 
 .card-wrap {
-    flex: 0 0 33.333%;
+    flex: 0 0 100%;
     display: flex;
     padding: 10px;
 }
 
 .card {
-    box-shadow: 0 0 4px rgba(0,0, 0, 0.4);
+    box-shadow: none;
     flex: 0 0 100%;
+    border: none;
+    margin: 20px 0;
 }
 
 .card-img-top {
+    display: inline-block;
     width: 100%;
     height: 15vw;
     object-fit: cover;
     padding: 20px;
+
 }
 
 
 .card-body {
     padding-top: 0px;
+}
+
+.card-title {
+    font-size: 400%;
+    font-family: 'EB Garamond', serif;
+}
+
+.card-text {
+    font-family: 'EB Garamond', serif;
+    font-weight: lighter;
+    color:black;
+    text-decoration: none;
 }
 
 .description_about {
@@ -35,11 +54,7 @@
 
 section {
     width: 100%;
-    display: inline-block;
-    background: #ccc;
     height: 60vh;
     text-align: center;
-    font-size: 22px;
-    font-weight: 700;
-    text-decoration: underline;
+    text-decoration: none;
   }
