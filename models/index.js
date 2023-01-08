@@ -31,12 +31,16 @@ dailyBudget.belongsTo(User, {
   foreignKey: "userId",
 });
 
-Activity.belongsTo(Trip, {
-  foreignKey: "tripId",
+dailyBudget.belongsTo(Budget, {
+  foreignKey: "budgetCategory_name",
 });
 
-Activity.belongsTo(User, {
-  foreignKey: "userId",
-});
+// Activity.belongsTo(Trip, {
+//   foreignKey: "tripId",
+// });
+
+// Activity.belongsTo(User, {
+//   foreignKey: "userId",
+// });
 
 module.exports = { User, Trip, Vacations, Budget, dailyBudget, Activity };

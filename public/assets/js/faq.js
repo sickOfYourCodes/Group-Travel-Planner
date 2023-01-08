@@ -11,3 +11,4 @@ for (i = 0; i < acc.length; i++) {
       faqBody.style.display = "block";
     }
   });
+}
