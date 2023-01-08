@@ -553,14 +553,15 @@ header p {
 }
 
 .footer-distributed{
-  background: #45c0ea;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  background: #45c1ea77;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0);
   box-sizing: border-box;
   width: 100%;
   font: bold 16px sans-serif;
   text-align: center;
   padding: 50px 60px 40px;
   overflow: hidden;
+  margin-top: 300px;
 }
 
 /* Footer left */
