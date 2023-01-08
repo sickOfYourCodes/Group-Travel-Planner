@@ -1,17 +1,25 @@
-body {
-    font-family: 'Work Sans', sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 
 .faq-heading {
-    border-bottom: #777;
     padding: 20px 60px;
     margin: 50px;
+    font-family: 'EB Garamond', serif;
+    text-align: center;
+    font-weight: 300;
 }
 
 .faq-container{
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+
+.faq-q {
+    font-family: Roboto, Arial, sans-serif;
+    font-weight: lighter;
+    font-size: 1.5rem;
 }
 
 .hr-line {
@@ -31,6 +39,10 @@ body {
     margin: auto;
 
 }
+.faq-icon {
+    font-size: .9rem;
+}
+
 .faq-body{
     margin: auto;
     text-align: center; 
