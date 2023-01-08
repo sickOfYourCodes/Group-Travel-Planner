@@ -1,17 +1,13 @@
-const buttons = document.querySelectorAll('.faq-q');
-document.addEventListener('DOMContentLoaded', function(){
-    
-    buttons.forEach(button => {
-      button.addEventListener('click', function() {
-        const target = this.getAttribute('data-target');
-        const answerElement = document.querySelector(target);
-    
-        if (answerElement.style.display === 'block') {
-          answerElement.style.display = 'none';
-        } else {
-          answerElement.style.display = 'block';
-        }
-      });
-    });
+var acc = document.getElementsByClassName("accordion");
+var i;
 
-});
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var faqBody = this.nextElementSibling;
+    if (faqBody.style.display === "block") {
+      faqBody.style.display = "none";
+    } else {
+      faqBody.style.display = "block";
+    }
+  });
