@@ -50,4 +50,30 @@ router.get("/trip/:id", withAuth, async (req, res) => {
   }
 });
 
+router.get("/trip/:id/budget", withAuth, async (req, res) => {
+  try {
+    const tripData = await Trip.findOne({
+      where: { id: req.params.id },
+      include: [{ model: User, through: Vacations }],
+    });
+    if (!tripData) {
+      res.status(404).json({ message: "Unable to find this trip." });
+      return;
+    }
+    const trip = tripData.get({ plain: true });
+    console.log(trip);
+    const users = tripData.users.map((user) => user.get({ plain: true }));
+    console.log(users);
+    res.status(200).render("trip", {
+      layout: "user",
+      trip,
+      users,
+      loggedIn: req.session.loggedIn,
+      user: req.session.user,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
