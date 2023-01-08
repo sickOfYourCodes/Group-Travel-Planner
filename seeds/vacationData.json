@@ -1,30 +1,18 @@
 [
   {
     "userId": 1,
-    "tripId": 1,
-    "budget": 800,
-    "start_date": "5/20/2023",
-    "end_date": "5/29/2023"
+    "tripId": 1
   },
   {
     "userId": 1,
-    "tripId": 2,
-    "budget": 800,
-    "start_date": "10/20/2023",
-    "end_date": "10/29/2023"
+    "tripId": 2
   },
   {
     "userId": 2,
-    "tripId": 3,
-    "budget": 800,
-    "start_date": "11/20/2023",
-    "end_date": "11/29/2023"
+    "tripId": 3
   },
   {
     "userId": 2,
-    "tripId": 2,
-    "budget": 800,
-    "start_date": "12/20/2023",
-    "end_date": "12/29/2023"
+    "tripId": 2
   }
 ]
