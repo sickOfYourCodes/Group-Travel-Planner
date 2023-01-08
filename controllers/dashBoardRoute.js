@@ -1,8 +1,8 @@
 const router = require("express").Router();
 const withAuth = require("../utils/auth.js");
 const { User, Trip, Vacations } = require("../models");
-const Calendar = require("calendar-dates");
-const calendar = new Calendar();
+// const Calendar = require("calendar-dates");
+// const calendar = new Calendar();
 const tripsRoute = require("./userDashboard/trips.js");
 const weatherRoute = require("./userDashboard/weather.js");
 
@@ -32,7 +32,7 @@ router.get("/", withAuth, async (req, res) => {
   // const curMonthDates = monthDates.map((week) => week.get({ plain: true }));
   res.status(200).render("dashboard", {
     layout: "user",
-    curMonthDates,
+    // curMonthDates,
     user: req.session.user,
     loggedIn: req.session.loggedIn,
   });
