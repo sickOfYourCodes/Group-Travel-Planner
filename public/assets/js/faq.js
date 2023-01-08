@@ -1,14 +1,17 @@
-var faq = document.getElementsByClassName("faq-page");
-var i;
-
-for (i = 0; i < faq.length; i++) {
-    faq[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var body = this.nextElementSibling;
-        if (body.style.display === "block") {
-            body.style.display = "none";
+const buttons = document.querySelectorAll('.faq-q');
+document.addEventListener('DOMContentLoaded', function(){
+    
+    buttons.forEach(button => {
+      button.addEventListener('click', function() {
+        const target = this.getAttribute('data-target');
+        const answerElement = document.querySelector(target);
+    
+        if (answerElement.style.display === 'block') {
+          answerElement.style.display = 'none';
         } else {
-            body.style.display = "block";
+          answerElement.style.display = 'block';
         }
+      });
     });
-}
+
+});

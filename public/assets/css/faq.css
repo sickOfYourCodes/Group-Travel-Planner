@@ -10,7 +10,7 @@
     font-weight: 300;
 }
 
-.faq-container{
+.faq-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -39,22 +39,38 @@
     margin: auto;
 
 }
+
 .faq-icon {
     font-size: .9rem;
 }
 
-.faq-body{
-    margin: auto;
-    text-align: center; 
-   width: 50%; 
-   padding: auto;
-   
+/* make background color for question boxes blue  */
+
+.faq-q-blue {
+    background-color: #45c1ea8a;
+    color: white;
+    margin-bottom: 20px;
+
 }
+
+.faq-body {
+    margin: auto;
+    text-align: center;
+    width: 50%;
+    padding: auto;
+
+}
+
 /* .active,
 .faq-page:hover {
     background-color: #F9F9F9;
 } */
 
+.faq-btn {
+    border: none; /* remove the border */
+    background: transparent; /* remove the background */
+    color: white;
+  }
 
 .faq-body {
     padding: 0 18px;
@@ -63,14 +79,19 @@
     overflow: hidden;
 }
 
-.faq-page:after {
-    content: '\02795';
-    font-size: 13px;
-    color: #777;
-    float: right;
-    margin-left: 5px;
+.faq-body.show {
+    display: block;
+    /* show the answer elements when the 'show' class is added */
 }
 
-/* .active:after {
-    content: "\2796";
-} */
+.faq-arrow {
+    transform: rotate(0deg);
+    /* initially set the arrow icon to its default position */
+
+}
+
+.faq-arrow.flip {
+    transform: rotate(180deg);
+    /* flip the arrow icon when the 'flip' class is added */
+}
+
