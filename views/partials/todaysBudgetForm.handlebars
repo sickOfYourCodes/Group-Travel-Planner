@@ -13,3 +13,12 @@
 <label><span> </span><input type="submit" value="Submit" /></label>
 </form>
 </div>
+
+{{#each categories as |category|}}
+    <div class="">
+      <label for="">Please enter the budget category</label>
+      <br />
+      <input type="radio" id={{category}} value={{category}} />
+      <label for="category">{{category}}</label>
+    </div>
+    {{/each}}

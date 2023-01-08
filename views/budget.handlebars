@@ -1,58 +1,93 @@
-<section class="py-5 text-center container">
-        <div class="row py-lg-5">
-          <div class="col-lg-6 col-md-8 mx-auto">
-            
-            <h1 style="font-family:garamond;font-size:600%;">Your Budget</h1>
-            
-            
-            
+<div class="budget-section">
 
-          </div>
-        </div>
-      </section>
+  <div class="budget col col-md col-sm">
+    <h2>Budget</h2>
+    <img src="" width="40" alt="" />
+    <p class="amount">$ <span id="budgetAmount">0</span></p>
+  </div>
 
-      <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 mb-4">
-                <div class="card">
-                    <img class="card-img-top" src="" alt="">
+  <div class="expenses col col-md col-sm">
+    <h2>Expenses</h2>
+    <img src="" width="40" alt="" />
+    <p class="exp-amount">$ <span id="expensesAmount">0</span></p>
+  </div>
+
+  <div class="balance col col-md col-sm">
+    <h2>Balance</h2>
+    <img src="" width="40" alt="" />
+    <p class="amount bala">$ <span id="balanceAmount">0</span></p>
+  </div>
+
+</div>
+
+<div class="budget-form" id="budgetform">
+  <form id="addForm">
+    
+    <label for="">Create a Budget Category</label>
+    <br />
+    <input type="text" id="category" />
+
+    <br />
+    
+    <label for="">Enter Expected Amount for Category</label>
+    <br />
+    <input type="number" id="cat-amount" />
+    <br />
+    <button type="submit">Add Budget</button>
   
-                    <div class="card-body">
-                        <h5 class="card-title">TOTAL TRIP BUDGET</h5>
-                        <p class="card-text">
-                            Budget Breakdown...
-                        </p>
-  
-                        <a href="#" class="btn btn-outline-primary btn-sm">
-                            Card link
-                        </a>
-                        <a href="#" class="btn btn-outline-secondary btn-sm">
-                            <i class="far fa-heart"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 mb-4">
-                <div class="card">
-                    <img class="card-img-top" src="" alt="">
-  
-                    <div class="card-body">
-                        <h5 class="card-title">TODAY'S BUDGET</h5>
-                        <p class="card-text">
-                            Budget Breakdown...
-                        </p>
-                          
-                        <a href="#" class="btn btn-outline-primary btn-sm">
-                            Card link
-                        </a>
-                        <a href="#" class="btn btn-outline-secondary btn-sm">
-                            <i class="far fa-heart"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+  </form>
+</div>
+<div class="expense-form" id="expense-form">
+  <form action="" id="expForm">
+
+    <div class="">
+      <label for="">Please enter name of activity</label>
+      <br />
+      <input type="text" id="expName" />
     </div>
 
+    <div class="">
+      <label for="">Please enter your activity expense amount</label>
+      <br />
+      <input type="number" id="expNumber" />
+    </div>
+
+    {{#each categories as |category|}}
+    <div class="">
+      <label for="">Please enter the budget category</label>
+      <br />
+      <input type="radio" id={{category}} value={{category}} />
+      <label for="category">{{category}}</label>
+    </div>
+    {{/each}}
+
+    <button type="submit" id="submitExpen">Add expense</button>
+  </form>
+</div>
+<div class="expValue" id="${details[i].id}">
+  <div id="expTitleName" class="exp"><p>${details[i].name}</p></div>
+  <div id="expValueAmount" class="exp"><p>
+      <span>$ </span>
+      ${details[i].number}</p></div>
+  <div id="edite_delete">
+  </div>
+  <div class="edit-form" id="editForm">
+    <form action="" id="saveEdit">
+      <div class="">
+        <label for="">Edit your expense</label>
+        <br />
+        <input type="text" id="editExpName" />
+      </div>
+      <div class="">
+        <label for="">Edit expense amount</label>
+        <br />
+        <input type="number" id="editExpNumber" />
+      </div>
+      <button type="submit">Save changes</button>
+    </form>
+  </div>
+</div>
+{{!-- 
     {{>totalBudgetForm}}
 
-    {{>todaysBudgetForm}}
+    {{>todaysBudgetForm}} --}}
