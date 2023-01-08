@@ -19,6 +19,7 @@ router.use("/login", loginRoute);
 router.use("/signup", signupRoute);
 router.use("/faq", faqRoute);
 router.use("/about", aboutRoute);
+router.use("*", homeRoute);
 
 
 // create route for budget. " Dashboard/budget "
@@ -27,8 +28,5 @@ router.use("/about", aboutRoute);
 // create route for "dashboard/trips/trip/edit-trip"
 
 
-// router.get("*", (req, res) => {
-//   window.location.href = "/";
-// });
 
 module.exports = router;
