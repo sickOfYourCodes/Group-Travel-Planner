@@ -82,17 +82,16 @@ button {
     display: flex;
     justify-content: flex-start;
     margin-top: 10px;
-   
-  }
+}
 
 .w3-quarter {
     display: flex; 
     align-items: center; 
     flex-direction: column; 
     text-align: center;
-  }
+}
 
-button.btn-info { 
+/* button.btn-info { 
     display: block;
 }
 
@@ -100,14 +99,45 @@ button.btn-info {
 .input-container {
     display: flex; 
     flex-direction: column;
-}
+} */
 
 button#submit {
     display: block; 
     margin: 0 auto; 
-    font-size: larger; 
+    font-size: larger;
+    float: none; 
+}
+
+button#userSubmit {
+    display: block; 
+    margin: 0 auto; 
+    font-size: larger;
+    float: none; 
+    margin-top: 3px;
 }
 
 .avatarpic {
     margin-top: 10px;
+}
+
+.nextButton {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+  margin: 0 auto;
+}
+
+.nextButton:hover {
+  background-color: #008CBA;
+  color: white;
 }
