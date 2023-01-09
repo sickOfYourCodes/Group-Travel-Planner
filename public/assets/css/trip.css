@@ -1,0 +1,72 @@
+body{
+
+    font-family:"";
+    color: white; 
+    text-align: center; 
+    font-size: 14px;
+}
+
+.pie_chart-content{
+    height: 600px; 
+    
+}
+
+.overlay{
+    height: 600px;
+    padding-top: 200px;
+    padding-bottom: 200px; 
+
+}
+
+.piechart-content .container{
+   background-color: white; 
+   border-radius: 40px;
+   padding: 0px;
+}
+
+.main_box h1{
+    padding: 50px 0px 50px 0px;
+    color: white;
+    background-color: rgba(10, 208, 243, 0.567);
+    height: 100%;
+}
+
+.main_box{
+    background-color: white;
+    height: 100%;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+}
+
+.count_box{
+    background-color:  rgba(10, 208, 243, 0.567);
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    height: 100%;
+    color: white;
+    padding: 100px;
+}
+
+.total-input{
+    background-color: #3546b0;
+    border: none;
+    color: white;
+}
+
+.form-control:disabled,
+form-control[readonly]{
+
+    background-color:  #3546b0;
+    opacity: 1;
+}
+
+.category-input{
+    background-color: white;
+    border: none;
+    color: #3546b0;
+}
+
+.form-control:focus{
+    background-color: transparent;
+    color: white;
+}
