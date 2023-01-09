@@ -47,11 +47,13 @@ section {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin-top: 20px;
   }
   .copyright {
 	text-align: center;
   }
   .avatar {
+	margin-top: 20px;
 	grid-area: avatar;
 	display: flex;
 	align-items: center;
