@@ -7,12 +7,7 @@
   <form>
     <label for="field1"><span>Activity Name
         <span class="required">*</span></span>
-        <input
-        type="text"
-        class="input-field"
-        name="field1"
-        value="" id="activity_name"
-      />
+      <input type="text" class="input-field" name="field1" value="" id="activity_name" />
     </label>
     <label for="field3"><span>Who needs to pay for this?
         <span class="required">*</span></span></label><br><br><br>
@@ -22,24 +17,20 @@
     {{/each}}
     <br /><br />
     <label for="field3"><span>Amount
-        <span class="required">*</span></span><input
-        type="number"
-        class="input-field"
-        name="field3"
-        value="" id="amount"
-      /></label>
-    <label><span> </span><input type="submit" value="Submit" id="submit"/></label>
-  </form>
+        <span class="required">*</span></span><input type="number" class="input-field" name="field3" value=""
+        id="amount" /></label>
+    <label><span> </span><input type="submit" value="Submit" id="submit" /></label>
   <button class="nextButton" type="button" id="budgetTotal" value="Total Budget">Total Budget</button>
+  </form>
 </div>
 
 <script src="/assets/js/dailyBudget.js"></script>
 
 {{!-- {{#each categories as |category|}}
-    <div class="">
-      <label for="">Please enter the budget category</label>
-      <br />
-      <input type="radio" id={{category}} value={{category}} />
-      <label for="category">{{category}}</label>
-    </div>
-    {{/each}} --}}
+<div class="">
+  <label for="">Please enter the budget category</label>
+  <br />
+  <input type="radio" id={{category}} value={{category}} />
+  <label for="category">{{category}}</label>
+</div>
+{{/each}} --}}
