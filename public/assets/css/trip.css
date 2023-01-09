@@ -70,3 +70,7 @@ form-control[readonly]{
     background-color: transparent;
     color: white;
 }
+
+.avatarpic {
+    margin-top: 10px;
+}
