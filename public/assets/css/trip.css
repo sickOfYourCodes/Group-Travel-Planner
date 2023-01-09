@@ -1,7 +1,7 @@
 body{
 
     font-family:"";
-    color: white; 
+    color: black; 
     text-align: center; 
     font-size: 14px;
 }
@@ -69,6 +69,43 @@ form-control[readonly]{
 .form-control:focus{
     background-color: transparent;
     color: white;
+}
+
+button {
+    float: right;
+    background-color: transparent;
+    border:none;
+    color: lightskyblue;
+  }
+
+#lower {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+   
+  }
+
+.w3-quarter {
+    display: flex; 
+    align-items: center; 
+    flex-direction: column; 
+    text-align: center;
+  }
+
+button.btn-info { 
+    display: block;
+}
+
+.add-self-btn 
+.input-container {
+    display: flex; 
+    flex-direction: column;
+}
+
+button#submit {
+    display: block; 
+    margin: 0 auto; 
+    font-size: larger; 
 }
 
 .avatarpic {
