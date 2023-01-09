@@ -25,13 +25,11 @@ router.get("/", withAuth, async (req, res) => {
 });
 
 router.get("/create-trip", withAuth, (req, res) => {
-  res
-    .status(200)
-    .render("createTrip", {
-      layout: "user",
-      loggedIn: req.session.loggedIn,
-      user: req.session.user,
-    });
+  res.status(200).render("createTrip", {
+    layout: "user",
+    loggedIn: req.session.loggedIn,
+    user: req.session.user,
+  });
 });
 
 router.get("/trip/:id", withAuth, async (req, res) => {
@@ -74,6 +72,46 @@ router.get("/trip/:id/daily-budget", withAuth, async (req, res) => {
       layout: "user",
       trip,
       users,
+      loggedIn: req.session.loggedIn,
+      user: req.session.user,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/trip/:id/daily-budget/total-budget", withAuth, async (req, res) => {
+  try {
+    const tripData = await Trip.findOne({
+      where: { id: req.params.id },
+      include: [{ model: User, through: Vacations }],
+    });
+    if (!tripData) {
+      res.status(404).json({ message: "Unable to find this trip." });
+      return;
+    }
+    const trip = tripData.get({ plain: true });
+    const users = tripData.users.map((user) => user.get({ plain: true }));
+    const budgetsData = await dailyBudget.findAll({
+      where: {
+        user_id: res.session.id,
+        trip_id: window.location.toString().split("/")[
+          window.location.toString().split("/").length - 3
+        ],
+      },
+    });
+    if (!budgetsData) {
+      res.status(404).json({ message: "Unable to find this budget." });
+      return;
+    }
+    const budgets = budgetsData.activity_name.map((activities) =>
+      activity.get({ plain: true })
+    );
+    res.status(200).render("totalBudget", {
+      layout: "user",
+      trip,
+      users,
+      budgets,
       loggedIn: req.session.loggedIn,
       user: req.session.user,
     });

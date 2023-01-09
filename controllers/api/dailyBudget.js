@@ -4,18 +4,20 @@ const withAuth = require("../../utils/auth.js");
 
 // When logged in, users will be able to see a specific budget's information and should include which users are tied to this budget
 
-// router.get("/", withAuth, async (req, res) => {
-//   try {
-//     const budgetData = await dailyBudget.findAll({where: {}});
-//     if (!budgetData) {
-//       res.status(404).json({ message: "This budget does not exist." });
-//       return;
-//     }
-//     res.status(200).json(budgetData);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+router.get("/", withAuth, async (req, res) => {
+  try {
+    const budgetData = await dailyBudget.findAll({where: {user_id: res.session.id, trip_id: window.location.toString().split("/")[
+        window.location.toString().split("/").length - 3
+      ]}});
+    if (!budgetData) {
+      res.status(404).json({ message: "This budget does not exist." });
+      return;
+    }
+    res.status(200).json(budgetData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // When logged in, users will be able to create a new budget
 
