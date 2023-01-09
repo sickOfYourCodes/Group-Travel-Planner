@@ -15,25 +15,25 @@ Trip.belongsToMany(User, {
   through: Vacations,
 });
 
-Budget.belongsTo(Trip, {
-  foreignKey: "tripId",
-});
+// Budget.belongsTo(Trip, {
+//   foreignKey: "tripId",
+// });
 
-Budget.belongsTo(User, {
-  foreignKey: "userId",
-});
+// Budget.belongsTo(User, {
+//   foreignKey: "userId",
+// });
 
-dailyBudget.belongsTo(Trip, {
-  foreignKey: "tripId",
-});
+// dailyBudget.belongsTo(Trip, {
+//   foreignKey: "tripId",
+// });
 
-dailyBudget.belongsTo(User, {
-  foreignKey: "userId",
-});
+// dailyBudget.belongsTo(User, {
+//   foreignKey: "userId",
+// });
 
-dailyBudget.belongsTo(Budget, {
-  foreignKey: "budgetCategory_name",
-});
+// dailyBudget.belongsTo(Budget, {
+//   foreignKey: "budgetCategory_name",
+// });
 
 // Activity.belongsTo(Trip, {
 //   foreignKey: "tripId",

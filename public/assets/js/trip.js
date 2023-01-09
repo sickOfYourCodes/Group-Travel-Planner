@@ -1,40 +1,54 @@
-// onclick = "document.getElementById('id01').style.display='block'";
-// onclick = "document.getElementById('id01').style.display='none'";
-
-import Chart from 'chart.js';
-
-$(document).ready(function() {
-    // Form submit event handler
-    $('#budgetForm').submit(function(e) {
-      e.preventDefault(); // Prevent form submission
-  
-      // Get form input values
-      var category = $('#category').val();
-      var amount = $('#amount').val();
-  
-      // Update pie chart data
-      var data = {
-        labels: [category], // Add new category to labels
-        datasets: [{
-          data: [amount], // Add new amount to data
-          backgroundColor: ["#FF6384"], // Add new color for new data point
-        }]
-      };
-      
-      function generatePieChart(data) {
-        // Get the pie chart canvas
-        var ctx = $("#pieChart");
-    
-        // Create the pie chart
-        var pieChart = new Chart(ctx, {
-          type: 'pie',
-          data: data,
-        });
-      }
-      // Generate pie chart
-      generatePieChart(data);
-    });
-  
-    // Generate pie chart function
+const addVacationSelf = async (event) => {
+  event.preventDefault();
+  const trip_id = window.location.toString().split("/")[
+    window.location.toString().split("/").length - 1
+  ];
+//   console.log(document.querySelector("#start-date").value);
+//   console.log(document.querySelector("#end-date").value);
+  const response = await fetch("/api/vacation/", {
+    method: "POST",
+    body: JSON.stringify({
+      tripId: trip_id,
+      userId: document.querySelector("#session_inf").getAttribute("data-value")
+    //   start_date: document.querySelector("#start-date").value,
+    //   end_date: document.querySelector("#end-date").value,
+    }),
+    headers: { "Content-Type": "application/json" },
   });
-  
+  window.location.reload();
+};
+
+const findUser = async () => {
+  const user = document.querySelector("#add-user").value
+  try {
+    const userResponse = await fetch(`/api/user/${user}`, {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    })
+    return userResponse.json()
+  } catch (err) {
+    alert("There was no user with that username, please try again.")
+  }
+};
+
+const addVacationUser = async (event) => {
+  event.preventDefault();
+  findUser().then(async function(result) {
+    console.log(result)
+    const trip_id = window.location.toString().split("/")[window.location.toString().split("/").length - 1];
+    const response = await fetch("/api/vacation/", {
+      method: "POST",
+      body: JSON.stringify({
+          tripId: trip_id,
+          userId: result.id
+        }),
+        headers: { "Content-Type": "application/json" },
+      });
+    if (response.ok) {
+      window.location.reload();
+    } 
+  })
+}
+
+document.querySelector("#userSubmit").addEventListener("click", addVacationUser)
+document.querySelector("#submit").addEventListener("click", addVacationSelf);

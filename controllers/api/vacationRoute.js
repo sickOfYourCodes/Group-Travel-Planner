@@ -17,7 +17,7 @@ router.get("/user/:user_name", withAuth, async (req, res) => {
     }
     res.status(200).json(vacationData);
   } catch (err) {
-    res.status(500).json({ message: "There was an error." });
+    res.status(500).json(err);
   }
 });
 
@@ -32,18 +32,24 @@ router.get("/:id", withAuth, async (req, res) => {
     }
     res.status(200).json(vacationData);
   } catch (err) {
-    res.status(500).json({ message: "There was an error." });
+    res.status(500).json(err);
   }
 });
 
 // This will create a new vacation
 
 router.post("/", withAuth, async (req, res) => {
+  console.log("hi")
   try {
+    console.log("starting")
     const vacationData = await Vacations.create(req.body);
+    console.log("creating")
+    if (!vacationData) {
+      res.status(404).json({message: "Unable to create this vacation"})
+    }
     res.status(200).json(vacationData);
   } catch (err) {
-    res.status(500).json({ message: "Unable to create this vacation." });
+    res.status(500).json(err);
   }
 });
 
@@ -62,7 +68,7 @@ router.delete("/:id", withAuth, async (req, res) => {
     }
     res.status(200).json(vacationData);
   } catch (err) {
-    res.status(500).json({ message: "Server error." });
+    res.status(500).json(err);
   }
 });
 
