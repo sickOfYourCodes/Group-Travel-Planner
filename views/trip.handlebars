@@ -23,8 +23,9 @@
       <h1 class="w3-xxlarge w3-text-white"><span
           class="w3-padding w3-black w3-opacity-min"
         ><b>{{trip.trip_name}}
-          </b></span>
-        <span class="w3-hide-small w3-text-light-grey"></span></h1>
+          </b></span> </h1>
+        <span class="w3-hide-small w3-text-light-grey"> </span>
+          <button id="submit" onclick="inviteUser()"><i class="uil uil-plus-circle add-icon userSubmit"> </i> </button> </span>
     </div>
     <div class="w3-container w3-display-bottomleft w3-margin-bottom">
 
@@ -43,7 +44,7 @@
       <header class="w3-container w3-white w3-display-container">
         <span
           onclick="document.getElementById('id01').style.display='none'"
-          class="w3-button w3-blue w3-display-topright"
+          class="w3-button w3-display-topright close-btn"
         ><i class="fa fa-remove"></i></span>
         <!-- budget, startdate, enddate,search for weather -->
         <h4>{{trip.location}}</h4>
@@ -51,13 +52,13 @@
         {{!-- <h5 id="trip_date">{{trip.start_date}} - {{trip.end_date}} </h5>
       <!--TODO: insert trip budget --> --}}
         <h6
-          class="w3-text-light-blue w3-hover-text-blue"
+          class=" w3-hover-text-blue"
           id="trip_budget"
-        >$$$</h6>
+        > $$</h6>
         <h6
-          class="w3-text-light-blue w3-hover-text-blue"
+          class=" w3-hover-text-blue"
           id="trip_numPeople"
-        >Number of People: {{trip.numPeople}}</h6>
+        >Participants : {{trip.numPeople}}</h6>
       </header>
       <div class="w3-container">
 
@@ -117,19 +118,13 @@
             </div>
             <div>
 
-              <button class="btn btn-info" onclick="inviteUser()"><i
+              <button class="w3-btn w3-ripple w3-xlarge " onclick="inviteUser()"><i
                   class="uil uil-plus"
-                ></i>Add Others
+                ></i>Add User
               </button>
 
             </div>
-            <div id="lower">
-              <button
-                class="btn btn-info add-self-btn"
-                id="submit"
-                onclick="inviteUser()"
-              ><i class="uil uil-plus"></i>Add Self </button>
-            </div>
+
           </form>
         </div>
       </div>
@@ -158,7 +153,7 @@
 
             </canvas>
 
-            <!-- start of form section for collecting input -->
+            {{!-- <!-- start of form section for collecting input -->
               <div class="col-md-6">
                 <div class="count_box">
                   <!--form starts here -->
@@ -243,7 +238,7 @@
                 </div>
 
               </div>
-              <!-- End of form section for collecting input -->
+              <!-- End of form section for collecting input --> --}}
 
             </div>
 
