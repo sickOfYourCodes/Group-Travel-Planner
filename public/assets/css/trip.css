@@ -66,6 +66,11 @@ form-control[readonly]{
     color: #3546b0;
 }
 
+.close-btn {
+    color: black;
+    cursor: pointer;
+    background-color: black;
+}
 .form-control:focus{
     background-color: transparent;
     color: white;
@@ -73,9 +78,10 @@ form-control[readonly]{
 
 button {
     float: right;
-    background-color: transparent;
+    cursor: pointer;
     border:none;
-    color: lightskyblue;
+    background-color: transparent;
+    color: white;
   }
 
 #lower {
@@ -89,6 +95,8 @@ button {
     align-items: center; 
     flex-direction: column; 
     text-align: center;
+    margin: 10px;
+    box-sizing: content-box;
 }
 
 /* button.btn-info { 
@@ -141,3 +149,26 @@ button#userSubmit {
   background-color: #008CBA;
   color: white;
 }
+.add-icon {
+    color: rgb(247, 232, 232);
+    font-weight: 50%;
+    font-size: 1.5rem;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
+  }
+
+  
