@@ -24,6 +24,16 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
+router.get("/create-trip", withAuth, (req, res) => {
+  res
+    .status(200)
+    .render("createTrip", {
+      layout: "user",
+      loggedIn: req.session.loggedIn,
+      user: req.session.user,
+    });
+});
+
 router.get("/trip/:id", withAuth, async (req, res) => {
   try {
     const tripData = await Trip.findOne({
