@@ -25,7 +25,7 @@
         ><b>{{trip.trip_name}}
           </b></span> </h1>
         <span class="w3-hide-small w3-text-light-grey"> </span>
-          <button id="submit" onclick="inviteUser()"><i class="uil uil-plus-circle add-icon userSubmit"> </i> </button> </span>
+          <button id="submit"><i class="uil uil-plus-circle add-icon userSubmit"> </i> </button> </span>
     </div>
     <div class="w3-container w3-display-bottomleft w3-margin-bottom">
 
@@ -74,7 +74,7 @@
         <p class="w3-hover-text-white">
           <a class="w3-hover" href="/dashboard/weather"> Check the forecast!</a>
         </p>
-
+        <button class="nextButton w3-row" type="button" id="dailyBudget" value="Daily Budget">Daily Budget</button>
       </footer>
     </div>
 
@@ -83,7 +83,7 @@
   <!-- Participants Container Insert users ??? -->
   <div class="w3-container w3-padding-64 w3-center" id="team">
     <h2>Participants</h2>
-    <div class="w3-row"><br />
+    <div class="w3-row w3-center"><br />
       {{#each users as |user|}}
         <div class="w3-quarter w3-border">
           <img
@@ -106,11 +106,10 @@
         />
         <div>
           <form action="">
-            {{! <label for="add-user">Invite User:</label> }}
             <div id="lower">
               <input
                 type="add-user"
-                placeholder="input userID"
+                placeholder="input username"
                 id="add-user"
                 name="add-user"
               />
@@ -118,18 +117,18 @@
             </div>
             <div>
 
-              <button class="w3-btn w3-ripple w3-xlarge " onclick="inviteUser()"><i
+              <button class="w3-btn w3-ripple w3-xlarge " id="userSubmit"><i
                   class="uil uil-plus"
                 ></i>Add User
               </button>
 
             </div>
-
           </form>
         </div>
       </div>
     </div>
   </div>
+
 
   <!-- button for add self  -->
 
@@ -138,7 +137,7 @@
   <!-- link for script tags -->
 
   <!-- Projected budget section -->
-  <section class="pie_chart-content">
+  {{!-- <section class="pie_chart-content">
     <div class="overlay">
       <div class="container">
         <div class="row">
@@ -238,7 +237,7 @@
                 </div>
 
               </div>
-              <!-- End of form section for collecting input --> --}}
+              <!-- End of form section for collecting input --> 
 
             </div>
 
@@ -246,7 +245,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
   <!-- End of budget section  -->
   <script
     src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"

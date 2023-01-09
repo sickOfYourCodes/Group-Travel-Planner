@@ -53,7 +53,13 @@ const addVacationUser = async (event) => {
   });
 };
 
+const dailyBudget = async (event) => {
+  event.preventDefault();
+  location.replace(`${window.location}/daily-budget`);
+};
+
 document
   .querySelector("#userSubmit")
   .addEventListener("click", addVacationUser);
 document.querySelector("#submit").addEventListener("click", addVacationSelf);
+document.querySelector("#dailyBudget").addEventListener("click", dailyBudget);
