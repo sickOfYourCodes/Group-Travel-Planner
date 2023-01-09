@@ -42,9 +42,11 @@
 
 .card-text {
     font-family: 'EB Garamond', serif;
+    font-size: 1.7rem;
     font-weight: lighter;
     color:black;
     text-decoration: none;
+    margin-top: 20px;
 }
 
 .description_about {
