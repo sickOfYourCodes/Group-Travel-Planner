@@ -1,42 +1,70 @@
-//store category input in a varaible
-const categoryInput =document.querySelector('.category-input');
-//put user input into an array 
-const categories = [categoryInput.value]
-//store amount input in a varariable
-const budgetInput = document.querySelector('amount');
-const budget = [budgetInput.value]
+/// Get a reference to the canvas element
+const canvas = document.getElementById('mychart');
 
-//getting a reference to an element with an id of 'mychart' on the page and then getting a 2D context for the canvas element. 
-const ctx = document.getElementById('mychart').getContext('2d')
-// creates a new chart using the `Chart` constructor and passes it the `ctx`object(the canvas context) and a configuration object. 
-let mychart = new Chart(ctx,{
-    type:'pie',
-    data: {
-        //specifies the categories for the chart which are stored in the categories array
-        labels: categories,
-        // contains an array of object that define the data to be plotted on the chart. Each object has a label property that specifies the label for the data. 
-        datasets: [
-            {
-                label:'budget',
-                data: [0,0,0],
-                backgroundColor: ['#2adece', '#dd3b79', '#ff766b' ],
-                borderWidth:1
+// Get a 2D context for the canvas element
+const ctx = canvas.getContext('2d');
 
-            }
-        ]
-    }
+// Get a list of all input elements with the name "amount"
+const budgetInputs = document.querySelectorAll('input[name="amount"]');
 
+// Initialize an array to store the data for the chart
+const data = [];
+
+// Iterate over the list of input elements
+budgetInputs.forEach((budgetInput) => {
+  // Get the value of the input element
+  const value = budgetInput.value;
+
+  // Add the value to the data array
+  data.push(value);
 });
 
-const updateChartValue =(input, dataOrder) => {
-    input.addEventListener ('change', e => {
-        mychart.data.datasets[0].data[dataOrder] = e.target.value;
-        mychart.update();
+// Get a list of all input elements with the class "category-input"
+const categoryInputs = document.querySelectorAll('.category-input');
 
+// Initialize an array to store the labels for the chart
+const labels = [];
 
+// Iterate over the list of input elements
+categoryInputs.forEach((categoryInput) => {
+  // Get the value of the input element
+  const label = categoryInput.value;
 
+  // Add the label to the labels array
+  labels.push(label);
+});
+
+// Create a new pie chart using the Chart constructor
+const pieChart = new Chart(ctx, {
+  type: 'pie',
+  data: {
+    labels: labels,
+    datasets: [{
+      data: data,
+      backgroundColor: ['#2adece', '#dd3b79', '#ff766b'],
+      borderWidth: 1
+    }]
+  }
+});
+
+// Add an event listener to each budget input element
+budgetInputs.forEach((budgetInput, index) => {
+    budgetInput.addEventListener('change', (e) => {
+      // Update the value in the data array with the new value
+      data[index] = e.target.value;
+  
+      // Update the chart
+      pieChart.update();
     });
-};
-
-updateChartValue(categories, 0);
-updateChartValue(budgetInput, 1);
+  });
+  
+  // Add an event listener to each category input element
+  categoryInputs.forEach((categoryInput, index) => {
+    categoryInput.addEventListener('change', (e) => {
+      // Update the label in the labels array with the new value
+      labels[index] = e.target.value;
+  
+      // Update the chart
+      pieChart.update();
+    });
+  });
