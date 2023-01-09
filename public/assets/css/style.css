@@ -16,7 +16,7 @@ section {
 
 /*navbar bootstrap styling */
 
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body,h1,h2,h3,h4,h5,h6 {font-family: 'Roboto', sans-serif}
 
 .navWrapper {
     position: sticky;
@@ -502,51 +502,10 @@ header p {
 /* End of image */
 
 
-/* Footer
-/*  */
-/* #footer .icons {
-    margin: 1em 0 0 0;
-}
-
-#footer .icons a {
-    color: rgba(255, 255, 255, 0.4);
-}
-
-#footer .copyright {
-    color: rgba(255, 255, 255, 0.4);
-    font-size: 0.8em;
-    list-style: none;
-    margin: 1em 0 0 0;
-    padding: 0;
-}
-
-#footer .copyright li {
-    border-left: solid 1px rgba(255, 255, 255, 0.25);
-    display: inline-block;
-    line-height: 1em;
-    margin-left: 0.75em;
-    padding-left: 0.75em;
-}
-
-#footer .copyright li:first-child {
-    border-left: 0;
-    margin-left: 0;
-    padding-left: 0;
-}
-
-#footer .copyright li a {
-    color: inherit;
-
-} */
-
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
-
-* {
-  font-family: Roboto;
-}
 
 .footer-distributed{
-    display: table;
+    display: flex;
+    justify-content: center;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -563,12 +522,12 @@ header p {
   overflow: hidden;
   margin-top: 300px;
 }
-
+/* 
 /* Footer left */
-
+ 
 .footer-distributed .footer-left{
   float: center;
-}
+} 
 
 /* The company logo */
 
@@ -607,7 +566,7 @@ header p {
 /* Footer social icons */
 
 .footer-distributed .footer-icons{
-  margin-top: 40px;
+  margin-top: 0px;
 }
 
 .footer-distributed .footer-icons a{
@@ -721,6 +680,12 @@ header p {
   }
 
 }
+
+@media (max-width: 850px) {
+    .footer-distributed {
+      margin-top: 6-0px;
+    }
+  }
 
 @media (max-width: 800px) {
 
