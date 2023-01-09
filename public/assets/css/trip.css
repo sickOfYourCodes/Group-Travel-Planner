@@ -143,6 +143,7 @@ button#userSubmit {
   color: black; 
   border: 2px solid #008CBA;
   margin: 0 auto;
+  float: none;
 }
 
 .nextButton:hover {
