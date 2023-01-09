@@ -62,10 +62,10 @@
       {{#each users as |user|}}
         <div class="w3-quarter w3-border">
           <img
-            src="https://picsum.photos/70"
+            src="https://picsum.photos/9{{user.id}}"
             alt="avatar"
-            style="width:45%"
-            class="w3-circle w3-hover-opacity"
+            style="width:25%"
+            class="w3-circle w3-hover-opacity avatarpic"
           />
           <h3>{{user.first_name}} {{user.last_name}}</h3>
           <h5>Username: {{user.user_name}}</h5>
