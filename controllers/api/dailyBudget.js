@@ -4,7 +4,7 @@ const withAuth = require("../../utils/auth.js");
 
 // When logged in, users will be able to see a specific budget's information and should include which users are tied to this budget
 
-router.get("/", withAuth, async (req, res) => {
+router.get("/total-budget", withAuth, async (req, res) => {
   try {
     const budgetData = await dailyBudget.findAll({where: {user_id: res.session.id, trip_id: window.location.toString().split("/")[
         window.location.toString().split("/").length - 3

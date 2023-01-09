@@ -4,12 +4,13 @@
       rel="stylesheet"
       href="https://www.w3schools.com/lib/w3-theme-black.css"
     />
+  <link rel="stylesheet" href="/assets/css/totalBudget.css">
 </head>
 
 <div class="row">
   <div class="column">
+    <p>Activity Name</p>
     <ol>
-      <li>Activity Name</li>
       {{#each budgets as |budget|}}
       <li>{{budget.activity_name}}</li>
       {{/each}}
@@ -17,10 +18,10 @@
     </ol>
   </div>
   <div class="column">
+    <p>Amount</p>
     <ol>
-      <li>Amount</li>
       {{#each budgets as |budget|}}
-      <li>{{budget.amount}}</li>
+      <li class="amount" data-value={{budget.amount}}>{{budget.amount}}</li>
       {{/each}}
       <li><span id="total"></span></li>
     </ol>
