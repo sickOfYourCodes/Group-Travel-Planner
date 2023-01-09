@@ -1,0 +1,31 @@
+<head>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link
+      rel="stylesheet"
+      href="https://www.w3schools.com/lib/w3-theme-black.css"
+    />
+  <link rel="stylesheet" href="/assets/css/totalBudget.css">
+</head>
+
+<div class="row">
+  <div class="column">
+    <p>Activity Name</p>
+    <ol>
+      {{#each budgets as |budget|}}
+      <li>{{budget.activity_name}}</li>
+      {{/each}}
+      <li>Total</li>
+    </ol>
+  </div>
+  <div class="column">
+    <p>Amount</p>
+    <ol>
+      {{#each budgets as |budget|}}
+      <li class="amount" data-value={{budget.amount}}>{{budget.amount}}</li>
+      {{/each}}
+      <li><span id="total"></span></li>
+    </ol>
+  </div>
+</div>
+
+<script src="/assets/js/totalBudget.js"></script>

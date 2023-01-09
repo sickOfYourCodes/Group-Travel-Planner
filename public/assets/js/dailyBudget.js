@@ -41,4 +41,11 @@ const addActivityBudget = async (event) => {
     }
   }
 };
+
+const totalBudget = async (event) => {
+  event.preventDefault();
+  location.replace(`${window.location}/total-budget`);
+};
+
+document.querySelector("#budgetTotal").addEventListener("click", totalBudget);
 document.querySelector("#submit").addEventListener("click", addActivityBudget);
