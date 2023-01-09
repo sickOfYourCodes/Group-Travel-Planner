@@ -3,6 +3,11 @@
 	max-width: 500px;
 	padding: 20px 12px 10px 20px;
 	font: 13px Arial, Helvetica, sans-serif;
+	border: 1px solid #ccc; 
+	width: 500 px; 
+	text-align: center;
+	padding: 20px; 
+	margin: 20px;
 }
 .form-style-2-heading{
 	font-weight: bold;
