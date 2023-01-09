@@ -1,3 +1,67 @@
+<head>
+  <style> 
+form {
+  border: 1px solid #ccc;
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  display: block;
+  margin: 10px 0;
+}
+
+input[type="text"], input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+.clearfix {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.cancelbtn, .createbtn {
+  width: 48%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancelbtn {
+  background-color: #f44336;
+}
+
+.createbtn:hover {
+  background-color: #45a049;
+}
+
+.cancelbtn:hover {
+  background-color: #dd4b39;
+}
+
+  </style>
+</head>
+
 <form style="border:1px solid #ccc">
     <div class="container">
       <h1>Create your trip</h1>
@@ -5,19 +69,19 @@
       <hr>
       
       <label for="trip-name"><b>Trip Name</b></label>
-      <input type="text" placeholder="Enter Trip Name" name="trip-name" id="tname" required>
+      <input type="text" placeholder="Name your Trip" name="trip-name" id="tname" required>
   
       <label for="trip-id"><b>Trip ID</b></label>
-      <input type="text" placeholder="Enter a unique trip ID Number" name="trip-name" id="trip-id" required>
-      
+      <input type="text" placeholder="Unique numbers for easy access" name="trip-name" id="trip-id" required>
+      </br>
       <label for="location"><b>Location</b></label>
       <input type="text" placeholder="Enter Location" name="location" id="location" required>
   
       <label for="description"><b>Description</b></label>
-      <input type="text" placeholder="Please describe what the trip is about" name="description" id="description" required>
-  
+      <input type="text" placeholder="what to do?" name="description" id="description" required>
+      </br> 
       <label for="numPeople"><b>Number of People</b></label>
-      <input type="number" placeholder="How many people are going on the trip?" name="numPeople" id="numPeople" required>
+      <input type="number" placeholder="" name="numPeople" id="numPeople" required>
   
   
       <div class="clearfix">
