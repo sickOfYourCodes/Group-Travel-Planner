@@ -1,33 +1,36 @@
 <head>
+    <!-- CSS framework & google fonts -->
+
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <title>{{trip.trip_name}}</title>
 </head>
 
 <body>
     <!-- Image Header -->
     <div class="w3-display-container w3-animate-opacity">
-        <img src="\assets\images\sunrise-1014712_640.jpg" alt="boat"
+        <img src="/assets/images/sunrise-1014712_640.jpg" alt="boat"
             style="width:100%;min-height:350px;max-height:600px;">
+         <div class="w3-display-middle w3-margin-top w3-center">
+            <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>{{trip.trip_name}} </b></span> <span class="w3-hide-small w3-text-light-grey"></span></h1>
+        </div>
         <div class="w3-container w3-display-bottomleft w3-margin-bottom">
 
-            <button class="w3-button w3-xlarge w3-theme w3-hover-light-blue"
-                title="Trip Detail">{{trip.trip_name}}</button>
+            <button onclick="document.getElementById('id01').style.display='block'"
+                class="w3-button w3-theme w3-hover-light-blue" title="Trip Detail"> Details</button>
         </div>
+        <!-- add title to display over the image -->
     </div>
-
+    <!-- end of image header -->
 
     <!-- Modal for trip information  -->
-    <div id="id01" class="w3-modal">
+    <div id="id01" class="w3-modal" onclick="toggleModal()">
         <div class="w3-modal-content w3-card-4 w3-animate-top">
             <header class="w3-container w3-white w3-display-container">
-                <span onclikc="document.getElementByID('id01').style.display='none'" 
-                    class="w3-button w3-blue w3-display-topright"><i class="fa fa-remove"></i></span>
-                <!-- budget, startdate, enddate,search for weather -->
                 <h4>{{trip.location}}</h4>
-                <!-- TODO: insert trip date-->
                 <h5 id="trip_date">{{trip.start_date}} - {{trip.end_date}} </h5>
                 <!--TODO: insert trip budget -->
                 <h6 class="w3-text-light-blue w3-hover-text-blue" id="trip_budget">$$$</h6>
@@ -48,7 +51,7 @@
         </div>
 
     </div>
-
+    
     <!-- Participants Container Insert users ??? -->
     <div class="w3-container w3-padding-64 w3-center" id="team">
         <h2>Participants</h2>
@@ -64,5 +67,16 @@
         </div>
     </div>
     <!-- Participants Container Ends here -->
+
+    <script>
+        function toggleModal() {
+            var modal = document.getElementById("id01");
+            if (modal.style.display === "block") {
+                modal.style.display = "none";
+            } else {
+                modal.style.display = "block";
+            }
+        }
+    </script>
 
 </body>
