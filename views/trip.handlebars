@@ -89,6 +89,21 @@
              <button class="btn btn-info add-self-btn " id="submit"  onclick="inviteUser()"><i class="uil uil-plus"></i>Add Self </button>
             </div>
           </form>
+    <!-- Participants Container Insert users ??? -->
+  <div class="w3-container w3-padding-64 w3-center" id="team">
+    <h2>Participants</h2>
+    <div class="w3-row"><br />
+      {{#each users as |user|}}
+        <div class="w3-quarter w3-border">
+          <img
+            src="https://picsum.photos/9{{user.id}}"
+            alt="avatar"
+            style="width:25%"
+            class="w3-circle w3-hover-opacity avatarpic"
+          />
+          <h3>{{user.first_name}} {{user.last_name}}</h3>
+          <h5>Username: {{user.user_name}}</h5>
+          <h5>Email: {{user.email}}</h5>
         </div>
       </div>
     </div>

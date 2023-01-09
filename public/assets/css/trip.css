@@ -107,3 +107,7 @@ button#submit {
     margin: 0 auto; 
     font-size: larger; 
 }
+
+.avatarpic {
+    margin-top: 10px;
+}
