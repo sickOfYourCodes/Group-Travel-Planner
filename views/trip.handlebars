@@ -1,35 +1,41 @@
 <head>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma" />
   <link
     rel="stylesheet"
     href="https://www.w3schools.com/lib/w3-theme-black.css"
   />
   <link
     rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-  />
-  <link
-    rel="stylesheet"
     href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
   />
+  <link rel="stylesheet" href="/assets/css/trip.css" />
 </head>
 
 <body>
   <!-- Image Header -->
   <div class="w3-display-container w3-animate-opacity">
     <img
-      src="\assets\images\sunrise-1014712_640.jpg"
+      src="/assets/images/sunrise-1014712_640.jpg"
       alt="boat"
       style="width:100%;min-height:350px;max-height:600px;"
     />
+    <div class="w3-display-middle w3-margin-top w3-center">
+      <h1 class="w3-xxlarge w3-text-white"><span
+          class="w3-padding w3-black w3-opacity-min"
+        ><b>{{trip.trip_name}}
+          </b></span> </h1>
+        <span class="w3-hide-small w3-text-light-grey"> </span>
+          <button id="submit"><i class="uil uil-plus-circle add-icon userSubmit"> </i> </button> </span>
+    </div>
     <div class="w3-container w3-display-bottomleft w3-margin-bottom">
 
       <button
-        class="w3-button w3-xlarge w3-theme w3-hover-light-blue"
+        onclick="document.getElementById('id01').style.display='block'"
+        class="w3-button w3-theme w3-hover-light-blue"
         title="Trip Detail"
-      >{{trip.trip_name}}</button>
+      > Details</button>
     </div>
+    <!-- add title to display over the image -->
   </div>
 
   <!-- Modal for trip information  -->
@@ -37,35 +43,38 @@
     <div class="w3-modal-content w3-card-4 w3-animate-top">
       <header class="w3-container w3-white w3-display-container">
         <span
-          onclikc="document.getElementByID('id01').style.display='none'"
-          class="w3-button w3-blue w3-display-topright"
+          onclick="document.getElementById('id01').style.display='none'"
+          class="w3-button w3-display-topright close-btn"
         ><i class="fa fa-remove"></i></span>
         <!-- budget, startdate, enddate,search for weather -->
         <h4>{{trip.location}}</h4>
         <!-- TODO: insert trip date-->
-        <h5 id="trip_date">{{trip.start_date}} - {{trip.end_date}} </h5>
-        <!--TODO: insert trip budget -->
+        {{!-- <h5 id="trip_date">{{trip.start_date}} - {{trip.end_date}} </h5>
+      <!--TODO: insert trip budget --> --}}
         <h6
-          class="w3-text-light-blue w3-hover-text-blue"
+          class=" w3-hover-text-blue"
           id="trip_budget"
-        >$$$</h6>
-        <h6 class="w3-text-light-blue w3-hover-text-blue" id="trip_numPeople">
-          {{trip.numPeople}}</h6>
+        > $$</h6>
+        <h6
+          class=" w3-hover-text-blue"
+          id="trip_numPeople"
+        >Participants : {{trip.numPeople}}</h6>
       </header>
       <div class="w3-container">
-        <p>
-          Click to search for
-          <a class="w3-text-light-blue" href="/dashboard/weather">weather</a>
-          <i class="uil uil-cloud-sun"></i>
-        </p>
 
       </div>
       <!-- to edit trip detail -->
       <footer class="w3-container w3-dark-grey">
+
+        {{! <p class="w3-hover-text-white"> <a class="w3-hover" href="/dashboard/trip"> Edit trip
+          detail</a>
+      <p> }}
+
+        <!--TODO: attach route to weather here -->
         <p class="w3-hover-text-white">
-          <a class="w3-hover" href="/dashboard/trips/trip/edit-trip">
-            Edit trip detail</a>
+          <a class="w3-hover" href="/dashboard/weather"> Check the forecast!</a>
         </p>
+        <button class="nextButton w3-row" type="button" id="dailyBudget" value="Daily Budget">Daily Budget</button>
       </footer>
     </div>
 
@@ -74,45 +83,172 @@
   <!-- Participants Container Insert users ??? -->
   <div class="w3-container w3-padding-64 w3-center" id="team">
     <h2>Participants</h2>
-    <div class="w3-row"><br />
+    <div class="w3-row w3-center"><br />
       {{#each users as |user|}}
         <div class="w3-quarter w3-border">
           <img
-            src=""
-            alt="user"
-            style="width:45%"
-            class="w3-circle w3-hover-opacity"
+            src="https://picsum.photos/9{{user.id}}"
+            alt="avatar"
+            style="width:25%"
+            class="w3-circle w3-hover-opacity avatarpic"
           />
           <h3>{{user.first_name}} {{user.last_name}}</h3>
           <h5>Username: {{user.user_name}}</h5>
           <h5>Email: {{user.email}}</h5>
         </div>
       {{/each}}
-    </div>
-  </div>
-  <form>
-    {{!-- <label for="start-date">Start Date:</label>
-    <input type="date" id="start-date" name="start-date" required />
-    <label for="end-date">End Date:</label>
-    <input type="date" id="end-date" name="end-date" required /> --}}
-    {{!-- <label for="add-user">Add User:</label>
-    <input type="add-user" id="add-user" name="add-user" /> --}}
-    <div id="lower">
-      <input type="submit" value="Add yourself to trip" id="submit" />
-    </div>
-  </form>
+      <div class="w3-quarter w3-border">
+        <img
+          src="https://picsum.photos/99"
+          alt="avatar"
+          style="width:25%"
+          class="w3-circle w3-hover-opacity avatarpic"
+        />
+        <div>
+          <form action="">
+            <div id="lower">
+              <input
+                type="add-user"
+                placeholder="input username"
+                id="add-user"
+                name="add-user"
+              />
+              <br />
+            </div>
+            <div>
 
-  <div>
-    <form action="">
-      <label for="add-user">Add User:</label>
-      <input type="add-user" id="add-user" name="add-user" />
-      <div id="lower">
-        <input type="submit" value="Add user to trip" id="userSubmit" />
+              <button class="w3-btn w3-ripple w3-xlarge " id="userSubmit"><i
+                  class="uil uil-plus"
+                ></i>Add User
+              </button>
+
+            </div>
+          </form>
+        </div>
       </div>
-    </form>
+    </div>
   </div>
+
+
+  <!-- button for add self  -->
+
   <!-- Participants Container Ends here -->
 
-  <script src="/assets/js/trip.js"></script>
+  <!-- link for script tags -->
 
+  <!-- Projected budget section -->
+  {{!-- <section class="pie_chart-content">
+    <div class="overlay">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="main_box">
+              <h1 class="projected-budget">
+                Budget
+              </h1>
+              <!-- chart element here --->
+
+            <canvas id="mychart">
+
+            </canvas>
+
+            {{!-- <!-- start of form section for collecting input -->
+              <div class="col-md-6">
+                <div class="count_box">
+                  <!--form starts here -->
+                  <div class="form-group">
+                    <label for="total-input">Total Budget For This Trip:</label>
+                    <input
+                      type="text"
+                      value="0"
+                      class="total-input form-control"
+                      readonly
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="category-input">Category:</label>
+                    <input
+                      type="text"
+                      class="category-input form-control"
+                      id="category"
+                      name="category-input"
+                      placeholder="Transportation"
+                    />
+                    <label for="amount"></label>
+                    <input type="number" value="0" name="amount" />
+
+                  </div>
+
+                  <div class="form-group">
+                    <label for="category-input">Category:</label>
+                    <input
+                      type="text"
+                      class="category-input form-control"
+                      id="category"
+                      name="category-input"
+                      placeholder="Food"
+                    />
+                    <label for="amount"></label>
+                    <input type="number" value="0" name="amount" />
+
+                  </div>
+
+                  <div class="form-group">
+                    <label for="category-input">Category:</label>
+                    <input
+                      type="text"
+                      class="category-input form-control"
+                      id="category"
+                      name="category-input"
+                      placeholder="Entertainment"
+                    />
+                    <label for="amount"></label>
+                    <input type="number" value="0" name="amount" />
+
+                  </div>
+
+                  <div class="form-group">
+                    <label for="category-input">Category:</label>
+                    <input
+                      type="text"
+                      class="category-input form-control"
+                      id="category"
+                      name="category-input"
+                      placeholder="Lodging"
+                    />
+                    <label for="amount"></label>
+                    <input type="number" value="0" name="amount" />
+
+                  </div>
+
+                  <div class="form-group">
+                    <label for="category-input">Category:</label>
+                    <input
+                      type="text"
+                      class="category-input form-control"
+                      id="category"
+                      name="category-input"
+                      placeholder="Shopping"
+                    />
+                    <label for="amount"></label>
+                    <input type="number" value="0" name="amount" />
+
+                  </div>
+                </div>
+
+              </div>
+              <!-- End of form section for collecting input --> 
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> --}}
+  <!-- End of budget section  -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"
+  ></script>
+  <script src="/assets/js/trip.js"> </script>
 </body>

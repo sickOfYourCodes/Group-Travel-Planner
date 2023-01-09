@@ -6,12 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{trip.trip_name}}</title>
-    <!--imported style sheets-->
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
-    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--imported style for icon and fonts -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <!-- link for bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/assets/css/trip.css" >
+    <!-- script tag for chart -->
+
 </head>
 
 <body>
@@ -21,8 +25,9 @@
     <div class="w3-display-container w3-animate-opacity">
         <img src="/public/assets/images/sunrise-1014712_640.jpg" alt="boat"
             style="width:100%;min-height:350px;max-height:600px;">
-         <div class="w3-display-middle w3-margin-top w3-center">
-            <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Trip </b></span> <span class="w3-hide-small w3-text-light-grey">Name</span></h1>
+        <div class="w3-display-middle w3-margin-top w3-center">
+            <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>{{trip.trip_name}}
+                    </b></span> <span class="w3-hide-small w3-text-light-grey"></span></h1>
         </div>
         <div class="w3-container w3-display-bottomleft w3-margin-bottom">
 
@@ -58,15 +63,20 @@
                         detail</a>
                 <p>
 
-                <!--TODO: attach route to weather here -->
-                 <p class="w3-hover-text-white"> <a class="w3-hover" href="/HTML/edit-trip.html"> Edit trip detail</a><p>
-
             </footer>
         </div>
-
     </div>
 
+
+    <!-- ======================             start of budget section  =================================          -->
    
+
+
+
+
+
+
+    <!-- ======================             End of budget section  =================================          -->
 
     <!-- Participants Container Insert users ??? -->
     <div class="w3-container w3-padding-64 w3-center" id="team">
@@ -91,15 +101,26 @@
                 <img src="" alt="user" style="width:45%" class="w3-circle w3-hover-opacity">
                 <h3>Kai Ringo</h3>
             </div>
-            
+
             <br><br>
-            
-            <i class="uil uil-plus-circle add_icon" id="add_new-Participant"> <a href="/HTML/add_new-Participant.html" ></a></i>
+
+            <i class="uil uil-plus-circle add_icon" id="add_new-Participant"> <a
+                    href="/HTML/add_new-Participant.html"></a></i>
         </div>
         <!-- -->
-        
+
     </div>
     <!-- Participants Container Ends here ??? -->
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="/public/assets/js/trip.js"> </script>
 
 </body>
 

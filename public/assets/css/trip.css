@@ -1,0 +1,175 @@
+body{
+
+    font-family:"";
+    color: black; 
+    text-align: center; 
+    font-size: 14px;
+}
+
+.pie_chart-content{
+    height: 600px; 
+    
+}
+
+.overlay{
+    height: 600px;
+    padding-top: 200px;
+    padding-bottom: 200px; 
+
+}
+
+.piechart-content .container{
+   background-color: white; 
+   border-radius: 40px;
+   padding: 0px;
+}
+
+.main_box h1{
+    padding: 50px 0px 50px 0px;
+    color: white;
+    background-color: rgba(10, 208, 243, 0.567);
+    height: 100%;
+}
+
+.main_box{
+    background-color: white;
+    height: 100%;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+}
+
+.count_box{
+    background-color:  rgba(10, 208, 243, 0.567);
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    height: 100%;
+    color: white;
+    padding: 100px;
+}
+
+.total-input{
+    background-color: #3546b0;
+    border: none;
+    color: white;
+}
+
+.form-control:disabled,
+form-control[readonly]{
+
+    background-color:  #3546b0;
+    opacity: 1;
+}
+
+.category-input{
+    background-color: white;
+    border: none;
+    color: #3546b0;
+}
+
+.close-btn {
+    color: black;
+    cursor: pointer;
+    background-color: black;
+}
+.form-control:focus{
+    background-color: transparent;
+    color: white;
+}
+
+button {
+    float: right;
+    cursor: pointer;
+    border:none;
+    background-color: transparent;
+    color: white;
+  }
+
+#lower {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.w3-quarter {
+    display: flex; 
+    align-items: center; 
+    flex-direction: column; 
+    text-align: center;
+    margin: 10px;
+    box-sizing: content-box;
+}
+
+/* button.btn-info { 
+    display: block;
+}
+
+.add-self-btn 
+.input-container {
+    display: flex; 
+    flex-direction: column;
+} */
+
+button#submit {
+    display: block; 
+    margin: 0 auto; 
+    font-size: larger;
+    float: none; 
+}
+
+button#userSubmit {
+    display: block; 
+    margin: 0 auto; 
+    font-size: larger;
+    float: none; 
+    margin-top: 3px;
+}
+
+.avatarpic {
+    margin-top: 10px;
+}
+
+.nextButton {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+  margin: 0 auto;
+  float: none;
+}
+
+.nextButton:hover {
+  background-color: #008CBA;
+  color: white;
+}
+.add-icon {
+    color: rgb(247, 232, 232);
+    font-weight: 50%;
+    font-size: 1.5rem;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
+  }
+
+  

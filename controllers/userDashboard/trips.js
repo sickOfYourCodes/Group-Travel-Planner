@@ -24,6 +24,16 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
+router.get("/create-trip", withAuth, (req, res) => {
+  res
+    .status(200)
+    .render("createTrip", {
+      layout: "user",
+      loggedIn: req.session.loggedIn,
+      user: req.session.user,
+    });
+});
+
 router.get("/trip/:id", withAuth, async (req, res) => {
   try {
     const tripData = await Trip.findOne({
@@ -35,9 +45,7 @@ router.get("/trip/:id", withAuth, async (req, res) => {
       return;
     }
     const trip = tripData.get({ plain: true });
-    console.log(trip);
     const users = tripData.users.map((user) => user.get({ plain: true }));
-    console.log(users);
     res.status(200).render("trip", {
       layout: "user",
       trip,
@@ -50,7 +58,7 @@ router.get("/trip/:id", withAuth, async (req, res) => {
   }
 });
 
-router.get("/trip/:id/budget", withAuth, async (req, res) => {
+router.get("/trip/:id/daily-budget", withAuth, async (req, res) => {
   try {
     const tripData = await Trip.findOne({
       where: { id: req.params.id },
@@ -61,10 +69,8 @@ router.get("/trip/:id/budget", withAuth, async (req, res) => {
       return;
     }
     const trip = tripData.get({ plain: true });
-    console.log(trip);
     const users = tripData.users.map((user) => user.get({ plain: true }));
-    console.log(users);
-    res.status(200).render("trip", {
+    res.status(200).render("dailyBudget", {
       layout: "user",
       trip,
       users,
